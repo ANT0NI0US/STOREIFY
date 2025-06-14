@@ -5,7 +5,7 @@ import Container from "@/ui/Container";
 
 export default function Offers() {
   return (
-    <section className="w-full overflow-hidden bg-secondary-color-light text-primary-color-light dark:bg-secondary-color dark:text-primary-color md:h-[530px]">
+    <section className="bg-secondary-color-light text-primary-color-light dark:bg-secondary-color dark:text-primary-color w-full overflow-hidden md:h-[530px]">
       <div className="flex h-full w-full flex-col-reverse md:flex-row md:items-center md:justify-evenly">
         <div className="h-full w-full basis-1/2">
           <img
@@ -15,13 +15,13 @@ export default function Offers() {
             alt="counter-timer-img"
           />
         </div>
-        <Container Styles="flexCenter flex-col md:basis-1/2 space-y-4 py-[80px] md:px-[30px] text-center md:py-0 md:text-left">
+        <Container Styles="flexCenter flex-col md:basis-1/2 flex flex-col gap-4 py-[80px] md:px-[30px] text-center md:py-0 md:text-left">
           <p className="font-bold">PROMOTION</p>
-          <h1 className="text-2xl font-semibold text-orange-color-light dark:text-orange-color md:text-5xl">
+          <h1 className="text-orange-color-light dark:text-orange-color text-2xl font-semibold md:text-5xl">
             Hurry up! 40% OFF
           </h1>
           <p>Thousands of high tech are waiting for you</p>
-          <h2 className="font-medium text-orange-color-light dark:text-orange-color">
+          <h2 className="text-orange-color-light dark:text-orange-color font-medium">
             Offer expires in:
           </h2>
           <Clock />

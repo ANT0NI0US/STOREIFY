@@ -35,13 +35,13 @@ export default function ProductContent({
   return (
     <div className="w-full text-primary-color-light dark:text-primary-color">
       <div className="h-[130px] p-3 text-center gridScreen:text-left">
-        <h3 className="mt-[15px] text-[1.3rem] font-[600] text-orange-color-light dark:text-orange-color gridScreen:text-[1.2rem]">
+        <h3 className="mt-[15px] text-[1.3rem] font-semibold text-orange-color-light dark:text-orange-color gridScreen:text-[1.2rem]">
           <Link to={`/shop/${id}`}>{productName}</Link>
         </h3>
         <p className="capitalize">{category}</p>
       </div>
       <div
-        className="flexBetween border-t-[0.5px] p-3 transition-all duration-200 group-hover:!border-primary-color-light dark:group-hover:!border-primary-color"
+        className="flexBetween border-t-[0.5px] p-3 transition-all duration-200 group-hover:border-primary-color-light! dark:group-hover:border-primary-color!"
         style={{
           borderColor: BorderColor,
         }}

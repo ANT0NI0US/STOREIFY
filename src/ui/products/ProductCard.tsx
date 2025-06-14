@@ -41,7 +41,7 @@ export default function ProductCard({
   const { imgUrl, productName } = item;
   return (
     <div
-      className="flexBetween group relative flex-col rounded-md border-[0.5px] shadow-md drop-shadow-2xl transition-all duration-500 hover:!border-primary-color-light  hover:!shadow-2xl hover:!shadow-primary-color-light dark:hover:!border-primary-color dark:hover:!shadow-primary-color"
+      className="flexBetween group relative flex-col rounded-md border-[0.5px] shadow-md drop-shadow-2xl transition-all duration-500 hover:border-primary-color-light!  hover:shadow-2xl! hover:shadow-primary-color-light! dark:hover:border-primary-color! dark:hover:shadow-primary-color!"
       style={{
         borderColor: finalBorderColor,
         boxShadow: `0 0 10px ${finalBorderColor}`,

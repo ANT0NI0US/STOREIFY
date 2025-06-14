@@ -42,7 +42,7 @@ export default function Login() {
     dispatch(signInFireBase(data))
       .unwrap()
       .then(() => {
-        navigate("/home");
+        navigate("/");
         toast.success("Successfully Logged in");
         reset();
       })
@@ -53,13 +53,13 @@ export default function Login() {
 
   return (
     <form
-      className="relative w-full space-y-8 text-main-color dark:text-light-color"
+      className="text-main-color dark:text-light-color relative flex w-full flex-col gap-8"
       onSubmit={handleSubmit(signIn)}
     >
       <div>
-        <h1 className="text-center text-lg font-extrabold xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+        <h1 className="xs:text-xl text-center text-lg font-extrabold sm:text-2xl md:text-3xl lg:text-4xl">
           Welcome To
-          <span className="font-black text-primary-color-light dark:text-primary-color">
+          <span className="text-primary-color-light dark:text-primary-color font-black">
             STOREIFY
           </span>
         </h1>

@@ -15,7 +15,7 @@ export default function ShowOrder({ selectedOrderId }: orderDetailsProps) {
           <Button
             ArialLabel="show order"
             variation="secondary"
-            Font="!h-[35px]"
+            Font="h-[35px]!"
           >
             <TbListDetails />
           </Button>

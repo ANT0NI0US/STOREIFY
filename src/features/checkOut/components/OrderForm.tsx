@@ -105,7 +105,7 @@ export default function OrderForm({
         dispatch(cartActions.resetCartItemsAndTotal());
         toast.success("order has been submitted");
         reset();
-        navigate("/home");
+        navigate("/");
       })
       .catch(() => {
         toast.error("something went wrong");
@@ -123,11 +123,14 @@ export default function OrderForm({
   }, [dispatch, reset, uid]);
 
   return (
-    <div className="col-span-12 rounded-md border-[0.5px] border-card-bg-01-light p-5 dark:border-secondary-color md:col-span-8">
+    <div className="border-card-bg-01-light dark:border-secondary-color col-span-12 rounded-md border-[0.5px] p-5 md:col-span-8">
       <h3 className="mb-5 text-center text-lg font-bold md:text-left">
         Billing Information
       </h3>
-      <form onSubmit={handleSubmit(addNewOrder)} className="space-y-2">
+      <form
+        onSubmit={handleSubmit(addNewOrder)}
+        className="flex flex-col gap-2"
+      >
         <Input
           label="Name"
           placeholder="Name"
@@ -278,7 +281,7 @@ export default function OrderForm({
           Icon={<MdOutlineMapsHomeWork />}
         />
 
-        <motion.div whileTap={{ scale: 1.1 }} className="!mt-10 w-full">
+        <motion.div whileTap={{ scale: 1.1 }} className="mt-10! w-full">
           <Button
             ArialLabel="place-an-order"
             type="submit"

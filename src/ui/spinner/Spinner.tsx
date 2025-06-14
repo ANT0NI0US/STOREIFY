@@ -5,10 +5,10 @@ interface spinnerProps {
 }
 
 export default function Spinner({
-  height = "h-[100vh] min-h-full",
+  height = "h-screen min-h-full",
 }: spinnerProps) {
   return (
-    <div className={`flexCenter ${height} bg-transparent backdrop-blur-sm`}>
+    <div className={`flexCenter ${height} bg-transparent backdrop-blur-xs`}>
       <div className={`${styles.loader}`}></div>
     </div>
   );

@@ -29,7 +29,7 @@ export default function TextArea({
         className={`input resize-none rounded-md bg-light-color/60 transition-all  dark:bg-main-color/55 ${
           error
             ? "border-[3px] border-red-600"
-            : "border-[1px] border-orange-color-light dark:border-orange-color"
+            : "border border-orange-color-light dark:border-orange-color"
         }`}
         {...(register ? register : {})}
         {...rest}

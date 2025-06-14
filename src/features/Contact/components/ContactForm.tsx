@@ -68,7 +68,7 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit(sendEmail)}
-      className="w-full space-y-3 rounded-md p-6 shadow-md dark:shadow-secondary-color sm:basis-2/3"
+      className="dark:shadow-secondary-color flex w-full flex-col gap-3 rounded-md p-6 shadow-md sm:basis-2/3"
     >
       <ModalFormGrid>
         <Input

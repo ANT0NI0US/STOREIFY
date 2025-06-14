@@ -20,12 +20,12 @@ export default function SmallScreenLinks({
     showSidebar && (
       <div className="md:hidden">
         {/* OVERLAY */}
-        <div className="fixed inset-0 z-[100] h-full w-full bg-black/40 backdrop-blur-sm dark:bg-white/10"></div>
+        <div className="fixed inset-0 z-100 h-full w-full bg-black/40 backdrop-blur-xs dark:bg-white/10"></div>
 
         {/* SIDEBAR */}
         <nav
           ref={ref}
-          className="fixed bottom-0 right-0 z-[101] h-full w-[180px] bg-light-color py-16 text-primary-color-light shadow-md drop-shadow-xl dark:bg-main-color dark:text-primary-color xs:w-[300px]"
+          className="fixed bottom-0 right-0 z-101 h-full w-[180px] bg-light-color py-16 text-primary-color-light shadow-md drop-shadow-xl dark:bg-main-color dark:text-primary-color xs:w-[300px]"
         >
           {/* CLOSE SIDEBAR BUTTON*/}
           <div className="absolute right-2 top-3 w-[35px]">
@@ -33,7 +33,7 @@ export default function SmallScreenLinks({
               variation="delete"
               ArialLabel="Close-icon"
               onClick={closeSidebar}
-              Font="!rounded-full !h-[35px]"
+              Font="rounded-full! h-[35px]!"
             >
               <div className="flexCenter">
                 <IoCloseSharp className="text-light-color" size={20} />

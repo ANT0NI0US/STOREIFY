@@ -24,9 +24,9 @@ export default function Button({
   ArialLabel,
   To,
 }: ButtonProps) {
-  const base = `focus:outline-none w-full rounded-md border relative flexCenter
+  const base = `focus:outline-hidden w-full rounded-md border relative flexCenter
    transition-all h-[45px] font-bold
-  ${(disabled || loading) && "cursor-not-allowed border-main-color !bg-[#0000004d] !text-main-color dark:border-light-color dark:!bg-[#ffffff59] dark:!text-light-color"}`;
+  ${(disabled || loading) && "cursor-not-allowed border-main-color bg-[#0000004d]! text-main-color! dark:border-light-color dark:bg-[#ffffff59]! dark:text-light-color!"}`;
 
   const styles: Record<typeof variation, string> = {
     primary: `bg-secondary-color-light text-orange-color-light border-orange-color-light 

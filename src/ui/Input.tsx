@@ -37,7 +37,7 @@ export default function Input({
       <Label htmlFor={fileName || name} text={label} />
 
       <div
-        className={`${type !== "file" ? `${error ? "border-[3px]	border-[#EE4B2B] dark:border-red-600" : "border-[1px] border-orange-color-light dark:border-orange-color"} z-10 flex w-full  items-center rounded-md  bg-light-color/60 transition-all  dark:bg-main-color/55` : ""} ${type === "password" || Icon ? "relative" : ""}`}
+        className={`${type !== "file" ? `${error ? "border-[3px]	border-[#EE4B2B] dark:border-red-600" : "border border-orange-color-light dark:border-orange-color"} z-10 flex w-full  items-center rounded-md  bg-light-color/60 transition-all  dark:bg-main-color/55` : ""} ${type === "password" || Icon ? "relative" : ""}`}
       >
         <input
           id={fileName || name}

@@ -2,7 +2,7 @@ import { Toaster } from "react-hot-toast";
 import { useDarkMode } from "@/hooks/useDarkMode";
 
 export default function ToasterWrapper() {
-  const { isDarkMode } = useDarkMode(); // Get the current theme state from context
+  const { isDarkMode } = useDarkMode();
 
   return (
     <Toaster
@@ -10,15 +10,15 @@ export default function ToasterWrapper() {
       reverseOrder={false}
       gutter={8}
       toastOptions={{
-        duration: 10000,
+        duration: 3000,
         success: {
           style: {
             background: isDarkMode ? " #163b48" : "#a3ffce",
             color: isDarkMode ? "#88d07a" : "#253b45",
           },
           iconTheme: {
-            primary: isDarkMode ? "#0e1013" : "#daf3ff",
-            secondary: isDarkMode ? "#c18500" : "#f39530",
+            primary: isDarkMode ? "#0e1013" : "#f39530",
+            secondary: isDarkMode ? "#c18500" : "#daf3ff",
           },
         },
         error: {

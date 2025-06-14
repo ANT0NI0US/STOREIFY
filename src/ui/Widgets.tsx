@@ -4,7 +4,7 @@ import { WidgetsProps } from "@/utils/types";
 
 export default function Widgets({ widgetsData, type = "color" }: WidgetsProps) {
   return (
-    <GridContainer Styles="xs:!grid-cols-[repeat(auto-fill,minmax(300px,1fr))] !gap-[10px]">
+    <GridContainer Styles="xs:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]! gap-[10px]!">
       {widgetsData?.map((widget, index) => (
         <motion.div
           initial="hidden"
@@ -16,7 +16,7 @@ export default function Widgets({ widgetsData, type = "color" }: WidgetsProps) {
           }}
           whileHover={{ scale: 1.05 }}
           key={index}
-          className={`flex ${type === "color" ? "odd:bg-card-bg-01-light even:bg-card-bg-02-light odd:dark:bg-card-bg-02 even:dark:bg-card-bg-01 md:flex-row md:items-start md:text-left" : "border"} min-h-[125px] w-full flex-col items-center gap-[15px] rounded-md p-5 text-center`}
+          className={`flex ${type === "color" ? "odd:bg-card-bg-01-light even:bg-card-bg-02-light dark:odd:bg-card-bg-02 dark:even:bg-card-bg-01 md:flex-row md:items-start md:text-left" : "border"} min-h-[125px] w-full flex-col items-center gap-[15px] rounded-md p-5 text-center`}
         >
           <div
             className={`${type === "color" ? "bg-primary-color-light text-light-color dark:bg-main-color dark:text-light-color md:text-3xl" : "border md:text-5xl"} flexCenter rounded-full p-3 text-4xl md:p-[10px]`}

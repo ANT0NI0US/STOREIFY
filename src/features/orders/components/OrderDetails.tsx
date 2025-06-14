@@ -30,7 +30,7 @@ export default function OrderDetails({ selectedOrderId }: Props) {
 
   return (
     <>
-      <h1 className="rounded-tl-lg rounded-tr-lg border-b bg-white py-4 ps-4 text-xl font-bold uppercase tracking-widest text-primary-color-light shadow-sm dark:bg-black dark:text-primary-color sm:text-3xl">
+      <h1 className="rounded-tl-lg rounded-tr-lg border-b bg-white py-4 ps-4 text-xl font-bold uppercase tracking-widest text-primary-color-light shadow-xs dark:bg-black dark:text-primary-color sm:text-3xl">
         Order Details
       </h1>
       <div className="flex max-h-[calc(80vh-125px)] flex-col gap-[15px] overflow-auto p-[15px] md:gap-[20px] md:p-[20px]">
