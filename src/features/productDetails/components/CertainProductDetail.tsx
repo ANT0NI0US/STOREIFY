@@ -29,12 +29,12 @@ export default function CertainProductDetail({
       <div className="flexCenter h-full md:basis-1/2">
         {/* Product Image */}
         <img
-          className="h-full max-h-full w-full max-w-full object-contain xs:w-[600px]"
+          className="xs:w-[600px] h-full max-h-full w-full max-w-full object-contain"
           src={imgUrl}
           alt={productName}
         />
       </div>
-      <div className="space-y-4 text-center md:basis-1/2 md:text-left">
+      <div className="flex flex-col gap-4 text-center md:basis-1/2 md:text-left">
         {/* Product Head Details */}
         <h2 className="text-2xl font-semibold md:text-3xl">{productName}</h2>
         <p className="text-sm leading-6">{shortDesc}</p>
@@ -48,7 +48,10 @@ export default function CertainProductDetail({
           />
           <p className="leading-[28px]">
             (
-            <span className="font-[600] text-lime-600"> {adjustedRating} </span>
+            <span className="font-semibold text-lime-600">
+              {" "}
+              {adjustedRating}{" "}
+            </span>
             Ratings )
           </p>
         </div>

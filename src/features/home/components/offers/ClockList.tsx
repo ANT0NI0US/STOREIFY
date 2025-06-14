@@ -46,7 +46,7 @@ export default function ClockList({ clock }: clockListProps) {
 
   return (
     <div className="flex w-[60px] flex-col gap-1">
-      <div className="flexCenter h-[60px] rounded-md bg-light-color text-main-color shadow-xl drop-shadow-sm dark:bg-main-color dark:text-light-color">
+      <div className="flexCenter h-[60px] rounded-md bg-light-color text-main-color shadow-xl drop-shadow-xs dark:bg-main-color dark:text-light-color">
         <h1 className="text-sm sm:text-lg">
           {clock.label === "days"
             ? padWithZero(days ?? 0)

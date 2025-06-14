@@ -1,43 +1,103 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-xs: 480px;
+  --breakpoint-grid-screen: 653px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1060px;
+  --breakpoint-lg: 1280px;
+
+  --background-image-common-section-pattern: linear-gradient(
+      rgba(0, 0, 0, 0.562),
+      rgba(0, 0, 0, 0.562)
+    ),
+    url("https://i.ibb.co/dDS4MWS/common-section.webp");
+
+  --color-main-color: #0e1013;
+  --color-primary-color: #88d07a;
+  --color-secondary-color: #163b48;
+  --color-orange-color: #c18500;
+  --color-card-bg-01: #007c49;
+  --color-card-bg-02: #636568;
+  --color-light-color: #daf3ff;
+  --color-primary-color-light: #253b45;
+  --color-secondary-color-light: #a3ffce;
+  --color-orange-color-light: #f39530;
+  --color-card-bg-01-light: #98afba;
+  --color-card-bg-02-light: #ccb29e;
 }
 
-body {
-  font-family: "Merienda", cursive;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-@layer components {
-  .input {
-    @apply w-full items-center rounded-md bg-light-color/60 p-[10px] text-primary-color-light outline-none transition-all placeholder:text-sm placeholder:text-primary-color-light dark:bg-main-color/55 dark:text-primary-color dark:placeholder:text-primary-color;
-    &:-webkit-autofill {
-      -webkit-text-fill-color: #253b45;
-      box-shadow: 0 0 0px 1000px rgb(218 243 255 / 0.6) inset;
-      caret-color: #253b45;
-    }
+@utility input {
+  @apply bg-light-color/60 text-primary-color-light placeholder:text-primary-color-light dark:bg-main-color/55 dark:text-primary-color dark:placeholder:text-primary-color w-full items-center rounded-md p-[10px] outline-hidden transition-all placeholder:text-sm;
+  &:-webkit-autofill {
+    -webkit-text-fill-color: #253b45;
+    box-shadow: 0 0 0px 1000px rgb(218 243 255 / 0.6) inset;
+    caret-color: #253b45;
   }
 
-  .dark .input:-webkit-autofill {
+  .dark &:-webkit-autofill {
     -webkit-text-fill-color: #88d07a;
     box-shadow: 0 0 0px 1000px rgba(14, 16, 19, 0.923) inset;
     caret-color: #88d07a;
   }
+}
 
-  .flexCenter {
-    @apply flex items-center justify-center;
+@layer components {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@utility dark {
+  & .input:-webkit-autofill {
+    -webkit-text-fill-color: #88d07a;
+    box-shadow: 0 0 0px 1000px rgba(14, 16, 19, 0.923) inset;
+    caret-color: #88d07a;
+  }
+}
+
+@utility flexCenter {
+  @apply flex items-center justify-center;
+}
+
+@utility flexBetween {
+  @apply flex items-center justify-between;
+}
+
+@utility flexEvenly {
+  @apply flex items-center justify-evenly;
+}
+
+@layer utilities {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
   }
 
-  .flexBetween {
-    @apply flex items-center justify-between;
-  }
-
-  .flexEvenly {
-    @apply flex items-center justify-evenly;
+  body {
+    font-family: "Merienda", cursive;
   }
 }
 

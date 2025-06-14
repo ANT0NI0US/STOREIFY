@@ -116,7 +116,7 @@ export default function SignUp() {
   return (
     <form
       onSubmit={handleSubmit(signUp)}
-      className="relative w-full space-y-8 text-main-color dark:text-light-color"
+      className="text-main-color dark:text-light-color relative flex w-full flex-col gap-8"
     >
       <h1 className="text-center text-lg font-bold uppercase">Sign Up</h1>
       <Input

@@ -7,7 +7,7 @@ export default function Logo() {
 
   return (
     <Link
-      to={isAdmin ? "/dashboard" : "/home"}
+      to={isAdmin ? "/dashboard" : "/"}
       className="flex items-center justify-start"
     >
       <img
@@ -16,7 +16,7 @@ export default function Logo() {
         src="https://i.ibb.co/ZS4YhxK/storeify-logo.webp"
         alt="Storeify-logo"
       />
-      <h1 className="text-xl font-extrabold text-orange-color-light dark:text-orange-color">
+      <h1 className="text-orange-color-light dark:text-orange-color text-xl font-extrabold">
         TOREIFY
       </h1>
     </Link>

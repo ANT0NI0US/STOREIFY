@@ -29,7 +29,7 @@ export default function DeleteButton({ item }: DeleteButtonProps) {
           className="absolute right-4 top-4 w-[45px] cursor-pointer"
         >
           <Button
-            Font="!rounded-full"
+            Font="rounded-full!"
             ArialLabel="Delete Product"
             variation="danger"
           >

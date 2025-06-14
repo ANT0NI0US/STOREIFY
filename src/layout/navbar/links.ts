@@ -2,7 +2,7 @@ import { arrLinks } from "@/utils/types";
 
 export const userLinks: Array<arrLinks> = [
   {
-    path: "home",
+    path: "/",
     text: "Home",
   },
   {

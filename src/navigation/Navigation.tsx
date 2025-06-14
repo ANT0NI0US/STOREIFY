@@ -40,8 +40,7 @@ export default function Navigation() {
             </ProtectedRoute>
           }
         >
-          <Route index element={<Navigate replace to="home" />} />
-          <Route path="home" element={<Home />} />
+          <Route index element={<Home />} />
         </Route>
         <Route
           element={

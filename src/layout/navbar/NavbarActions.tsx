@@ -13,7 +13,7 @@ interface allActionsProps {
   value: number;
 }
 const iconStyle: string =
-  "cursor-pointer transition-all hover:text-primary-color-light/[0.8] dark:hover:text-primary-color/[0.8]";
+  "cursor-pointer transition-all hover:text-primary-color-light/80 dark:hover:text-primary-color/80";
 
 export default function NavbarActions() {
   const navigate = useNavigate();

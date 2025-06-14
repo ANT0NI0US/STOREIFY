@@ -19,8 +19,8 @@ export default function CardStuff({ singleStuff }: stuffProps) {
           className="h-[350px] w-full object-contain object-center"
         />
       </div>
-      <div className="space-y-1 p-6">
-        <h3 className="text-3xl font-semibold capitalize tracking-wider text-orange-color-light dark:text-orange-color">
+      <div className="flex flex-col gap-1 p-6">
+        <h3 className="text-orange-color-light dark:text-orange-color text-3xl font-semibold tracking-wider capitalize">
           {name}
         </h3>
         <p className="font-medium">{job}</p>

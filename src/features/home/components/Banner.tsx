@@ -6,7 +6,7 @@ const Year = new Date().getFullYear();
 
 export default function Banner() {
   return (
-    <section className="flexCenter min-h-screen w-full pb-[10px] pt-[100px] md:h-screen md:pb-0">
+    <section className="flexCenter min-h-screen w-full pt-[100px] pb-[10px] md:h-screen md:pb-0">
       <Container Styles="flexBetween flex-col gap-2 md:flex-row md:gap-12">
         <>
           {/* BANNER TEXT */}
@@ -18,10 +18,10 @@ export default function Banner() {
               hidden: { opacity: 0, x: -50 },
               visible: { opacity: 1, x: 0 },
             }}
-            className={`space-y-2 text-center md:mt-0 md:basis-[55%] md:space-y-3 md:text-left`}
+            className="flex flex-col gap-2 text-center md:mt-0 md:basis-[55%] md:gap-3 md:text-left"
           >
-            <p className="font-medium ">Trending Product in {Year}</p>
-            <h2 className="text-2xl font-semibold text-orange-color-light dark:text-orange-color md:text-4xl">
+            <p className="font-medium">Trending Product in {Year}</p>
+            <h2 className="text-orange-color-light dark:text-orange-color text-2xl font-semibold md:text-4xl">
               Make your Interior More Minimalistic & Modern
             </h2>
             <p className="leading-[28px]">

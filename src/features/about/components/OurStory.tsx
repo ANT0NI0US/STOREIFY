@@ -12,9 +12,9 @@ export default function OurStory() {
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
           }}
-          className={`mx-auto w-[90%] space-y-4 pb-[40px] text-center sm:w-5/6 md:w-fit md:basis-3/5 md:px-[30px] md:pb-0 md:text-left`}
+          className={`mx-auto flex w-[90%] flex-col gap-4 pb-[40px] text-center sm:w-5/6 md:w-fit md:basis-3/5 md:px-[30px] md:pb-0 md:text-left`}
         >
-          <h2 className="my-2 text-2xl font-extrabold uppercase tracking-widest text-orange-color-light dark:text-orange-color md:text-4xl">
+          <h2 className="text-orange-color-light dark:text-orange-color my-2 text-2xl font-extrabold tracking-widest uppercase md:text-4xl">
             Our Story
           </h2>
           <p className="leading-[28px]">
@@ -30,7 +30,7 @@ export default function OurStory() {
             ranging from consumer.
           </p>
         </motion.div>
-        <div className="w-full overflow-hidden rounded-none md:basis-3/5 md:rounded-bl-lg md:rounded-tl-lg">
+        <div className="w-full overflow-hidden rounded-none md:basis-3/5 md:rounded-tl-lg md:rounded-bl-lg">
           <img
             loading="lazy"
             className={`max-h-full w-full object-cover object-center`}

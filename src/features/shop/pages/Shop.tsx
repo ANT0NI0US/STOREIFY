@@ -40,7 +40,7 @@ export default function Shop() {
   return (
     <div className="bg-light-color text-primary-color-light dark:bg-main-color dark:text-primary-color">
       <CommonSection title="Products" />
-      <Container Styles="py-[40px] md:py-[80px] space-y-10">
+      <Container Styles="py-[40px] md:py-[80px] flex flex-col gap-10">
         <FilterProducts
           productsData={productsData}
           allProducts={allProducts}

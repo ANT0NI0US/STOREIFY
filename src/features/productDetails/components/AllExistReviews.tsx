@@ -27,7 +27,7 @@ export default function AllExistReviews({ reviews }: Props) {
       {reviews?.map((review, index) => (
         <div
           key={index}
-          className="space-y-2 rounded-md border-[0.5px] border-secondary-color p-3 shadow-md drop-shadow-2xl transition-all duration-500 hover:!border-primary-color hover:!shadow-2xl hover:!shadow-primary-color sm:space-y-3 sm:p-4"
+          className="border-secondary-color hover:border-primary-color! hover:shadow-primary-color! flex flex-col gap-2 rounded-md border-[0.5px] p-3 shadow-md drop-shadow-2xl transition-all duration-500 hover:shadow-2xl! sm:gap-3 sm:p-4"
         >
           <StarRatings
             defaultRating={adjustRating(review.rating)}
@@ -38,7 +38,7 @@ export default function AllExistReviews({ reviews }: Props) {
             <p className="text-base font-extrabold capitalize sm:text-xl">
               {review?.name || "Antonious Nasr"}
             </p>
-            <FaCheckCircle className="text-base text-orange-color sm:text-lg" />
+            <FaCheckCircle className="text-orange-color text-base sm:text-lg" />
           </div>
           <p className="text-sm">"{review.text}"</p>
         </div>
