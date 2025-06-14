@@ -31,24 +31,11 @@ export default function Navigation() {
           <Route path="login" element={<Login />} />
           <Route path="signUp" element={<SignUp />} />
         </Route>
-        <Route path="*" element={<PageNotFound />} />
 
-        <Route
-          element={
-            <ProtectedRoute>
-              <HomeLayout />
-            </ProtectedRoute>
-          }
-        >
+        <Route element={<HomeLayout />}>
           <Route index element={<Home />} />
         </Route>
-        <Route
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
+        <Route element={<AppLayout />}>
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:id" element={<ProductDetails />} />
           <Route path="orders" element={<Orders />} />
@@ -56,8 +43,16 @@ export default function Navigation() {
           <Route path="contact" element={<Contact />} />
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" element={<Favorites />} />
-          <Route path="checkout" element={<CheckOut />} />
+          <Route
+            path="checkout"
+            element={
+              <ProtectedRoute>
+                <CheckOut />
+              </ProtectedRoute>
+            }
+          />
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Suspense>
   );

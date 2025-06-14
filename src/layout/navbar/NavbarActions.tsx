@@ -39,17 +39,17 @@ export default function NavbarActions() {
 
   return (
     <div className="flexBetween gap-3 sm:gap-5">
-      <div className="flexBetween gap-3 ">
+      <div className="flexBetween gap-3">
         {allActions.map((action: allActionsProps) => (
           <div
             key={action.text}
             title={action.text}
-            className="relative "
+            className="relative"
             onClick={() => navigate(`${action.href}`)}
           >
             {action.icon}
             {action.value > 0 && (
-              <span className="flexCenter absolute left-[11px] top-[-11px] z-10 h-[20px] w-[20px] rounded-full bg-orange-color-light p-1 text-xs text-light-color dark:bg-orange-color">
+              <span className="flexCenter bg-orange-color-light text-light-color dark:bg-orange-color absolute top-[-11px] left-[11px] z-10 h-[20px] w-[20px] rounded-full p-1 text-xs">
                 {action.value}
               </span>
             )}
