@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import ConfirmMessage from "./ConfirmMessage";
 import Modal from "@/ui/Modal";

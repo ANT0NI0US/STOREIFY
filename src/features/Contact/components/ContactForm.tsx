@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { AiOutlinePhone } from "react-icons/ai";
 import { MdDriveFileRenameOutline, MdOutlineEmail } from "react-icons/md";
 import Input from "@/ui/Input";

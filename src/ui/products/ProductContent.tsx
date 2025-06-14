@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { IoMdAdd } from "react-icons/io";
 import { newProductProps } from "@/utils/types";

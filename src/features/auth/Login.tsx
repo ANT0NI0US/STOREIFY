@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import Button from "@/ui/Button.tsx";
 import Input from "@/ui/Input.tsx";
 import { loginState } from "@/utils/types";
