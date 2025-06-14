@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
 import { userLinks } from "./links";
-import Button from "@/ui/Button";
 import { arrLinks } from "@/utils/types";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 
