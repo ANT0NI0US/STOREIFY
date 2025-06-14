@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { IoMdAdd } from "react-icons/io";
 import Button from "@/ui/Button";
@@ -39,7 +39,7 @@ export default function FavoriteProductTableRow({
               : undefined
           }
           alt={perfectItem.productName}
-          className="h-16 max-h-full w-16 max-w-full 
+          className="h-16 max-h-full w-16 max-w-full
              object-contain object-center sm:h-24 sm:w-24 lg:h-32 lg:w-32"
         />
       </Table.Cell>

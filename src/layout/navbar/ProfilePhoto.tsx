@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { signOut } from "firebase/auth";

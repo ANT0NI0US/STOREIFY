@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import Button from "@/ui/Button";
 import { cartActions } from "@/store/slice/cartSlice";

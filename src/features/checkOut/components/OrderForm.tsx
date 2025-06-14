@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import {
   MdDriveFileRenameOutline,

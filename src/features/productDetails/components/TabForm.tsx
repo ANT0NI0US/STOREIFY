@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import StarRatings from "@/ui/StarRatings";
 import Button from "@/ui/Button";
