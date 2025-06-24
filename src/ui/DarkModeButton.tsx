@@ -8,13 +8,17 @@ export default function DarkModeButton() {
   return (
     <div
       title={`${isDarkMode ? "light mode" : "dark mode"} `}
-      className="flexCenter bg-main-color dark:bg-light-color fixed right-2 bottom-2 cursor-pointer rounded-full p-2"
+      className="flexCenter bg-main-color dark:bg-light-color fixed right-2 bottom-2 cursor-pointer rounded-full p-1 sm:p-1.5 md:p-2"
     >
-      <button aria-label="color theme" onClick={toggleDarkMode}>
+      <button
+        aria-label="color theme"
+        onClick={toggleDarkMode}
+        className="text-xl sm:text-2xl md:text-3xl"
+      >
         {isDarkMode ? (
-          <LuSunMoon size={30} color="#FDB813" />
+          <LuSunMoon color="#FDB813" />
         ) : (
-          <FaMoon size={30} color="#F6F1D5" />
+          <FaMoon color="#F6F1D5" />
         )}
       </button>
     </div>

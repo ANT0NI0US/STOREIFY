@@ -27,7 +27,7 @@ export default function ToasterWrapper() {
             color: "#ffffff",
           },
           iconTheme: {
-            primary: isDarkMode ? "#0e1013" : "#a3ffce",
+            primary: "#a3ffce",
             secondary: isDarkMode ? "#EE4B2B" : "#EE4B2B",
           },
         },

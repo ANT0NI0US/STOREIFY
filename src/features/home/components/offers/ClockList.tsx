@@ -18,7 +18,7 @@ export default function ClockList({ clock }: clockListProps) {
   };
 
   const countDown = () => {
-    const destination = new Date("jun 10 , 2025").getTime();
+    const destination = new Date("Dec 10 , 2025").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = destination - now;
@@ -46,7 +46,7 @@ export default function ClockList({ clock }: clockListProps) {
 
   return (
     <div className="flex w-[60px] flex-col gap-1">
-      <div className="flexCenter h-[60px] rounded-md bg-light-color text-main-color shadow-xl drop-shadow-xs dark:bg-main-color dark:text-light-color">
+      <div className="flexCenter bg-light-color text-main-color dark:bg-main-color dark:text-light-color h-[60px] rounded-md shadow-xl drop-shadow-xs">
         <h1 className="text-sm sm:text-lg">
           {clock.label === "days"
             ? padWithZero(days ?? 0)
@@ -57,7 +57,7 @@ export default function ClockList({ clock }: clockListProps) {
                 : padWithZero(seconds ?? 0)}
         </h1>
       </div>
-      <h5 className="text-center text-xs text-main-color dark:text-light-color">
+      <h5 className="text-main-color dark:text-light-color text-center text-xs">
         {clock.label.charAt(0).toUpperCase() + clock.label.slice(1)}
       </h5>
     </div>

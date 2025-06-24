@@ -6,7 +6,7 @@ export function Error({ message }: ErrorProps) {
   if (!message) return null;
 
   return (
-    <div className="mt-[3px] pl-[5px] text-sm text-[#880808] dark:text-[#d47e6c]">
+    <div className="text-error-light dark:text-error mt-1 pl-1 text-xs">
       {message}
     </div>
   );

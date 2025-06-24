@@ -8,7 +8,7 @@ export function Label({ htmlFor, text }: LabelProps) {
   return (
     <label
       htmlFor={htmlFor}
-      className="block p-[3px] text-sm font-extrabold uppercase tracking-wider text-main-color dark:text-light-color"
+      className="text-main-color dark:text-light-color block ps-1 text-sm font-bold tracking-wider uppercase"
     >
       {text}
     </label>

@@ -40,12 +40,12 @@ export default function AddFavoriteProduct({
       }
       onClick={addToFavorite}
       whileTap={{ scale: 1.2 }}
-      className="flexCenter absolute left-0 top-0 z-10 cursor-pointer rounded-full p-2"
+      className="flexCenter absolute top-0 left-0 z-10 cursor-pointer rounded-full p-2"
     >
       {id && checkProductExistInPerfectProducts(id) ? (
-        <IoMdHeart className=" h-7 w-7 text-red-600" />
+        <IoMdHeart className="text-error-light dark:text-error h-7 w-7" />
       ) : (
-        <IoMdHeartEmpty className=" h-7 w-7 text-primary-color" />
+        <IoMdHeartEmpty className="text-error-light dark:text-error h-7 w-7" />
       )}
     </motion.div>
   );

@@ -17,7 +17,7 @@ export default function Offers() {
         </div>
         <Container Styles="flexCenter flex-col md:basis-1/2 flex flex-col gap-4 py-[80px] md:px-[30px] text-center md:py-0 md:text-left">
           <p className="font-bold">PROMOTION</p>
-          <h1 className="text-orange-color-light dark:text-orange-color text-2xl font-semibold md:text-5xl">
+          <h1 className="text-2xl font-semibold uppercase md:text-5xl">
             Hurry up! 40% OFF
           </h1>
           <p>Thousands of high tech are waiting for you</p>

@@ -1,17 +1,18 @@
 import { NavLink } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
-import { userLinks } from "./links";
 import { arrLinks } from "@/utils/types";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 
 interface smallLinksProps {
   showSidebar: boolean;
   closeSidebar: () => void;
+  links: arrLinks[];
 }
 
 export default function SmallScreenLinks({
   showSidebar,
   closeSidebar,
+  links,
 }: smallLinksProps) {
   const ref = useOutsideClick(() => closeSidebar());
 
@@ -44,7 +45,7 @@ export default function SmallScreenLinks({
 
           {/* LINKS */}
           <div className="flex w-full flex-col">
-            {userLinks?.map((item: arrLinks, index: number) => (
+            {links?.map((item: arrLinks, index: number) => (
               <div
                 onClick={() => closeSidebar()}
                 key={item.text}

@@ -17,18 +17,20 @@
     url("https://i.ibb.co/dDS4MWS/common-section.webp");
 
   --color-main-color: #0e1013;
-  --color-primary-color: #88d07a;
-  --color-secondary-color: #163b48;
-  --color-orange-color: #c18500;
+  --color-primary-color: #f0faff;
+  --color-secondary-color: #192635;
+  --color-orange-color: #88d07a;
   --color-card-bg-01: #007c49;
   --color-card-bg-02: #636568;
+  --color-error: #dd0808;
 
-  --color-light-color: #daf3ff;
+  --color-light-color: #ffeace;
   --color-primary-color-light: #253b45;
-  --color-secondary-color-light: #a3ffce;
-  --color-orange-color-light: #f39530;
+  --color-secondary-color-light: #c9b69b;
+  --color-orange-color-light: #ba881d;
   --color-card-bg-01-light: #98afba;
   --color-card-bg-02-light: #ccb29e;
+  --color-error-light: #e60023;
 }
 
 /*
@@ -50,13 +52,13 @@
 }
 
 @utility input {
-  @apply bg-light-color/60 text-primary-color-light placeholder:text-primary-color-light dark:bg-main-color/55 dark:text-primary-color dark:placeholder:text-primary-color w-full items-center rounded-md p-[10px] outline-hidden transition-all placeholder:text-sm;
+  @apply placeholder:text-primary-color-light dark:placeholder:text-primary-color w-full p-[10px] outline-0 transition-all duration-300 placeholder:text-sm disabled:cursor-not-allowed disabled:border-0;
+
   &:-webkit-autofill {
     -webkit-text-fill-color: #253b45;
     box-shadow: 0 0 0px 1000px rgb(218 243 255 / 0.6) inset;
     caret-color: #253b45;
   }
-
   .dark &:-webkit-autofill {
     -webkit-text-fill-color: #88d07a;
     box-shadow: 0 0 0px 1000px rgba(14, 16, 19, 0.923) inset;
@@ -98,7 +100,7 @@
   }
 
   body {
-    font-family: "Merienda", cursive;
+    font-family: "Winky Sans", sans-serif;
   }
 }
 
@@ -122,4 +124,12 @@
 /* Horizontal scrollbar */
 *::-webkit-scrollbar:horizontal {
   @apply h-[10px];
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

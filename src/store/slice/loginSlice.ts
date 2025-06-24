@@ -1,13 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   getUserByToken,
+  sendResetPasswordEmail,
   signInFireBase,
+  signInWithGoogle,
   signUpFirebase,
 } from "../service/loginService";
 import { loginServiceState } from "@/utils/types";
 
-const storedToken = localStorage.getItem("token");
-const storedIsAdmin = localStorage.getItem("isAdmin");
+const storedToken =
+  localStorage.getItem("token") || sessionStorage.getItem("token");
+const storedIsAdmin =
+  localStorage.getItem("isAdmin") || sessionStorage.getItem("isAdmin");
 
 const initialState: loginServiceState = {
   isLoading: false,
@@ -22,12 +26,10 @@ const loginSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-    logoutUser: (state) => {
-      state.isAuthenticated = false;
-      state.token = null;
-      state.isAdmin = false;
-      window.localStorage.removeItem("token");
-      window.localStorage.removeItem("isAdmin");
+    logoutUser: () => {
+      window.localStorage.clear();
+      window.sessionStorage.clear();
+      return initialState;
     },
   },
   extraReducers: (builder) => {
@@ -38,23 +40,32 @@ const loginSlice = createSlice({
         state.errors = null;
       })
       .addCase(signInFireBase.fulfilled, (state, action) => {
-        const { type, uid } = action.payload;
+        const { type } = action.payload;
         state.isLoading = false;
         state.isAuthenticated = true;
         state.isAdmin = type === "admin";
-        if (typeof uid === "string") {
-          localStorage.setItem("token", uid);
-          state.token = uid;
-        } else {
-          state.token = null;
-        }
-        localStorage.setItem("isAdmin", state.isAdmin.toString());
         state.user = action.payload;
       })
       .addCase(signInFireBase.rejected, (state, action) => {
         state.isLoading = false;
         state.isAuthenticated = false;
         state.errors = action.payload as string;
+      })
+      .addCase(signInWithGoogle.pending, (state) => {
+        state.isLoading = true;
+        state.errors = null;
+      })
+      .addCase(signInWithGoogle.fulfilled, (state, action) => {
+        const { type } = action.payload;
+        state.isLoading = false;
+        state.isAuthenticated = true;
+        state.isAdmin = type === "admin";
+        state.user = action.payload;
+      })
+      .addCase(signInWithGoogle.rejected, (state, action) => {
+        state.isLoading = false;
+        state.errors = action.payload as string;
+        state.isAuthenticated = false;
       })
       .addCase(signUpFirebase.pending, (state) => {
         state.isLoading = true;
@@ -77,6 +88,17 @@ const loginSlice = createSlice({
         state.user = action.payload || {};
       })
       .addCase(getUserByToken.rejected, (state, action) => {
+        state.isLoading = false;
+        state.errors = action.payload as string;
+      })
+      .addCase(sendResetPasswordEmail.pending, (state) => {
+        state.isLoading = true;
+        state.errors = null;
+      })
+      .addCase(sendResetPasswordEmail.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(sendResetPasswordEmail.rejected, (state, action) => {
         state.isLoading = false;
         state.errors = action.payload as string;
       });

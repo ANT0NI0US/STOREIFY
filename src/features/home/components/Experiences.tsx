@@ -21,13 +21,13 @@ export default function Experiences() {
             hidden: { opacity: 0, x: 50 },
             visible: { opacity: 1, x: 0 },
           }}
-          className="mx-auto flex w-[90%] flex-col gap-4 pb-[80px] text-center sm:w-5/6 md:w-fit md:basis-3/5 md:px-[30px] md:pb-0 md:text-left"
+          className="mx-auto flex w-[90%] flex-col gap-4 pb-20 text-center sm:w-5/6 md:w-fit md:basis-3/5 md:px-7 md:pb-0 md:text-left"
         >
           <p className="font-medium">EXPERIENCES</p>
-          <h2 className="text-orange-color-light dark:text-orange-color my-2 text-2xl font-semibold md:text-4xl">
+          <h2 className="text-orange-color-light dark:text-orange-color text-2xl font-semibold md:text-4xl">
             We Provide You The Best Experience
           </h2>
-          <p className="leading-[28px]">
+          <p className="leading-8 md:w-3/4">
             You don't have worry about the result because all of these interiors
             are made by people who are professionals in their fields with an
             elegant and luxurious style and with premium quality materials.

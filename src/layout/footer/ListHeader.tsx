@@ -4,7 +4,7 @@ interface headerProps {
 
 export default function ListHeader({ title }: headerProps) {
   return (
-    <h4 className="mb-2 text-xl font-extrabold uppercase tracking-wider text-orange-color-light dark:text-orange-color sm:mb-0">
+    <h4 className="text-orange-color-light dark:text-orange-color mb-2 text-base font-extrabold tracking-wider uppercase sm:mb-0 sm:text-xl">
       {title}
     </h4>
   );

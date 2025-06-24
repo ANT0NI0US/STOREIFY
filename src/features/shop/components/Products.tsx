@@ -18,5 +18,5 @@ export default function Products({
       <div className="pb-[80px] text-center text-3xl">No Products Found!</div>
     );
 
-  return <ProductsList items={productsData} BorderColor="#f39530" />;
+  return <ProductsList items={productsData} />;
 }

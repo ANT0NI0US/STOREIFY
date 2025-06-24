@@ -8,15 +8,15 @@ export default function Logo() {
   return (
     <Link
       to={isAdmin ? "/dashboard" : "/"}
-      className="flex items-center justify-start"
+      className="flex items-center gap-0.5"
     >
       <img
         loading="lazy"
-        className="max-h-full w-[45px] max-w-[45px]"
+        className="max-h-full w-9 sm:w-11"
         src="https://i.ibb.co/ZS4YhxK/storeify-logo.webp"
         alt="Storeify-logo"
       />
-      <h1 className="text-orange-color-light dark:text-orange-color text-xl font-extrabold">
+      <h1 className="text-orange-color-light dark:text-orange-color text-base font-extrabold sm:text-xl">
         TOREIFY
       </h1>
     </Link>
