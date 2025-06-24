@@ -9,6 +9,7 @@ import { AppDispatch } from "@/store";
 import { cartActions } from "@/store/slice/cartSlice";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 import useAuth from "@/hooks/useAuth";
+import { logoutUser } from "@/store/slice/loginSlice";
 
 export default function ProfilePhoto() {
   const [toggleImageMenu, setToggleImageMenu] = useState<boolean>(false);
@@ -17,14 +18,13 @@ export default function ProfilePhoto() {
   const dispatch = useDispatch<AppDispatch>();
   const currentUser = useAuth();
 
-  console.log(currentUser);
   const ref = useOutsideClick<HTMLDivElement>(() => closeImageMenu());
 
-  const logout = () => {
-    signOut(auth)
+  const logout = async () => {
+    await signOut(auth)
       .then(() => {
         toast.success("Logout successfully");
-        localStorage.removeItem("token");
+        dispatch(logoutUser());
         navigate("/login", { replace: true });
         setToggleImageMenu(false);
         dispatch(cartActions.returnToInitialState());
@@ -42,12 +42,12 @@ export default function ProfilePhoto() {
   return (
     <div
       ref={ref}
-      className="flexCenter relative"
+      className="flexCenter relative size-8 sm:size-10"
       onClick={() => setToggleImageMenu((prev) => !prev)}
     >
       <motion.img
         whileTap={{ scale: 1.2 }}
-        className="h-[40px] w-[40px] cursor-pointer rounded-full"
+        className="size-8 cursor-pointer rounded-full object-cover sm:size-10"
         src={
           (currentUser as { photoURL?: string })?.photoURL ||
           "https://i.ibb.co/rtVJ2Fs/user-icon.webp"

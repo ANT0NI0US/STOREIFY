@@ -1,19 +1,13 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { IoMdAdd } from "react-icons/io";
 import { newProductProps } from "@/utils/types";
+import { FaOpencart } from "react-icons/fa6";
 import { AppDispatch } from "@/store";
 import { cartActions } from "@/store/slice/cartSlice";
+import Button from "../Button";
 
-export default function ProductContent({
-  item,
-  BorderColor,
-}: {
-  item: newProductProps;
-  BorderColor: string;
-}) {
+export default function ProductContent({ item }: { item: newProductProps }) {
   const dispatch = useDispatch<AppDispatch>();
 
   const addToCart = () => {
@@ -30,31 +24,37 @@ export default function ProductContent({
     }
   };
 
-  const { id, productName, category, price } = item;
+  const { id, productName, category, price, shortDesc } = item;
 
   return (
-    <div className="w-full text-primary-color-light dark:text-primary-color">
-      <div className="h-[130px] p-3 text-center gridScreen:text-left">
-        <h3 className="mt-[15px] text-[1.3rem] font-semibold text-orange-color-light dark:text-orange-color gridScreen:text-[1.2rem]">
+    <div className="text-primary-color-light dark:text-primary-color bg-light-color dark:bg-secondary-color w-full rounded-t-xl">
+      <div className="p-3 text-start">
+        <h3 className="text-orange-color-light dark:text-orange-color text-lg font-semibold sm:text-xl">
           <Link to={`/shop/${id}`}>{productName}</Link>
         </h3>
-        <p className="capitalize">{category}</p>
+        <span className="border-orange-color-light dark:border-orange-color mt-1.5 mb-2 block w-fit rounded-md border-2 p-1 text-[10px] capitalize">
+          {category}
+        </span>
+        <p className="w-full text-xs leading-6 sm:w-11/12 sm:text-sm">
+          {shortDesc}
+        </p>
       </div>
-      <div
-        className="flexBetween border-t-[0.5px] p-3 transition-all duration-200 group-hover:border-primary-color-light! dark:group-hover:border-primary-color!"
-        style={{
-          borderColor: BorderColor,
-        }}
-      >
-        <span className="text-lg font-medium">${price}</span>
-        <motion.div
+      <div className="flexBetween gap-2 p-3 transition-all duration-200">
+        <div>
+          <h4 className="text-orange-color-light dark:text-orange-color tracking-widest uppercase">
+            Price
+          </h4>
+          <span className="text-lg font-extrabold sm:text-xl">${price}</span>
+        </div>
+        <Button
           onClick={addToCart}
-          whileTap={{ scale: 1.2 }}
-          className="flexCenter cursor-pointer rounded-full bg-primary-color-light p-2 dark:bg-primary-color"
-          title="add to cart"
+          ArialLabel="Add to cart"
+          variation="secondary"
+          Font="w-1/2!"
         >
-          <IoMdAdd className="text-secondary-color-light dark:text-secondary-color" />
-        </motion.div>
+          <FaOpencart size={20} />
+          <span>Add to cart</span>
+        </Button>
       </div>
     </div>
   );

@@ -18,9 +18,11 @@ export default function Materials() {
           <h2 className="text-orange-color-light dark:text-orange-color my-2 text-2xl font-semibold md:text-4xl">
             Very Serious Materials For Making Furniture
           </h2>
-          <p className="leading-[28px]">
-            Serious design furniture for our environment, using a very expensive
-            and famous capital but at a relatively low price.
+          <p className="leading-8 md:w-3/4">
+            Each piece is thoughtfully crafted to blend seamlessly into modern
+            living spaces, offering both comfort and sophistication while
+            maintaining a strong focus on sustainability and timeless design
+            aesthetics.
           </p>
         </motion.div>
         <div className="flex w-full basis-3/4 flex-col-reverse items-center md:flex-row md:gap-[30px]">

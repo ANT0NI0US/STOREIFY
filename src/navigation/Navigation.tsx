@@ -9,6 +9,7 @@ import AppLayout from "@/layout/AppLayout";
 const HomeLayout = lazy(() => import("@/layout/HomeLayout"));
 const Login = lazy(() => import("@/features/auth/Login"));
 const SignUp = lazy(() => import("@/features/auth/SignUp"));
+const ForgetPassword = lazy(() => import("@/features/auth/ForgetPassword"));
 
 // USER
 const Home = lazy(() => import("@/features/home/pages/Home"));
@@ -29,7 +30,8 @@ export default function Navigation() {
       <Routes>
         <Route element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
-          <Route path="signUp" element={<SignUp />} />
+          <Route path="sign-up" element={<SignUp />} />
+          <Route path="forget-password" element={<ForgetPassword />} />
         </Route>
 
         <Route element={<HomeLayout />}>
@@ -38,19 +40,16 @@ export default function Navigation() {
         <Route element={<AppLayout />}>
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:id" element={<ProductDetails />} />
-          <Route path="orders" element={<Orders />} />
+
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" element={<Favorites />} />
-          <Route
-            path="checkout"
-            element={
-              <ProtectedRoute>
-                <CheckOut />
-              </ProtectedRoute>
-            }
-          />
+
+          <Route element={<ProtectedRoute />}>
+            <Route path="orders" element={<Orders />} />
+            <Route path="checkout" element={<CheckOut />} />
+          </Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

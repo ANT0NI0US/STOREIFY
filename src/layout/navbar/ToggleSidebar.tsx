@@ -6,7 +6,7 @@ interface toggleMenuProps {
 
 export default function ToggleSidebar({ toggleSidebar }: toggleMenuProps) {
   return (
-    <div className="flexCenter md:hidden">
+    <div className="flexCenter sm:hidden">
       <button
         aria-label="Toggle-menu"
         title="Toggle menu"

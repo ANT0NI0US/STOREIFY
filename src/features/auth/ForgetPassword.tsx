@@ -4,29 +4,23 @@ import { useForm } from "react-hook-form";
 import HeaderAuth from "./HeaderAuth";
 import Button from "@/ui/Button.tsx";
 import Input from "@/ui/Input.tsx";
-import Checkbox from "@/ui/Checkbox";
 import { loginState } from "@/utils/types";
 import { EMAIL_REGEX } from "@/utils/constants.ts";
 import { isOnlySpaces } from "@/utils/helpers.ts";
-import { signInFireBase } from "@/store/service/loginService.ts";
+import { sendResetPasswordEmail } from "@/store/service/loginService.ts";
 import { AppDispatch } from "@/store/index.ts";
 import useHelmet from "@/hooks/useHelmet";
-import SignInWithGoogle from "./SignInWithGoogle";
 
-interface loginFormProps {
+interface ForgetPasswordProps {
   email: string;
-  password: string;
-  rememberMe: boolean;
 }
 
-const initialState: loginFormProps = {
+const initialState: ForgetPasswordProps = {
   email: "",
-  password: "",
-  rememberMe: false,
 };
 
-export default function Login() {
-  useHelmet("login");
+export default function ForgetPassword() {
+  useHelmet("forget password");
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
 
@@ -41,24 +35,23 @@ export default function Login() {
     mode: "onChange",
   });
 
-  const signIn = async (data: loginFormProps) => {
-    await dispatch(signInFireBase(data))
+  const forgetPassword = async (data: ForgetPasswordProps) => {
+    await dispatch(sendResetPasswordEmail(data.email))
       .unwrap()
       .then(() => {
-        navigate("/");
+        navigate("/login", { replace: true });
       });
   };
 
   return (
     <>
       <HeaderAuth
-        title="Let's Get Started"
-        desc="We Missed You! Please enter your details"
+        title="Reset Password"
+        desc="Just enter your email, and we’ll send you a secure link to reset your password.
+Make sure to check your Spam or Promotions folder if it doesn’t arrive shortly!"
       />
 
-      <SignInWithGoogle />
-
-      <form onSubmit={handleSubmit(signIn)}>
+      <form onSubmit={handleSubmit(forgetPassword)}>
         <div className="flex flex-col gap-6">
           <Input
             label="Email"
@@ -76,39 +69,14 @@ export default function Login() {
             })}
             error={errors?.email?.message}
           />
-
-          <div className="flex flex-col gap-2">
-            <Input
-              label="Password"
-              type="password"
-              disabled={isLoading}
-              register={register("password", {
-                required: "This Field is required",
-                validate: {
-                  noOnlySpaces: (value) =>
-                    !isOnlySpaces(value) || "It Mustn't contains only spaces",
-                },
-              })}
-              error={errors?.password?.message}
-            />
-            <div className="flex items-center justify-between px-2">
-              <Checkbox
-                id="rememberMe"
-                label="Remember Me"
-                disabled={isLoading}
-                register={register("rememberMe")}
-              />
-              <Link to="/forget-password">Forget Password ?</Link>
-            </div>
-          </div>
         </div>
         <Button
           loading={isLoading}
-          ArialLabel="Login"
+          ArialLabel="Reset Password"
           type="submit"
           Font="my-5"
         >
-          Login
+          Reset Password
         </Button>
 
         <div className="mx-auto text-center text-sm sm:text-base">

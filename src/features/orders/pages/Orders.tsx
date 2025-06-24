@@ -20,19 +20,15 @@ export default function Orders() {
   const { isLoading, allOrders } = useSelector(
     (state: orderState) => state.order,
   );
-  const currentUser = useAuth();
-
-  const { uid } = currentUser as CurrentUser;
+  const currentUser = useAuth() as CurrentUser | null;
+  const filteredOrders = useMemo(
+    () => allOrders?.filter((order) => order.userId === currentUser?.uid),
+    [allOrders, currentUser?.uid],
+  );
 
   useEffect(() => {
     dispatch(getOrders());
   }, [dispatch]);
-
-  const filteredOrders = useMemo(
-    () => allOrders.filter((order) => order.userId === uid),
-    [allOrders, uid],
-  );
-
   return (
     <>
       <CommonSection title="Orders" />
