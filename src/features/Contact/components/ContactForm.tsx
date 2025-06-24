@@ -68,9 +68,9 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit(sendEmail)}
-      className="dark:shadow-secondary-color flex w-full flex-col gap-3 rounded-md p-6 shadow-md sm:basis-2/3"
+      className="dark:shadow-secondary-color flex w-full flex-col gap-6 rounded-md p-6 shadow-md sm:basis-2/3"
     >
-      <ModalFormGrid>
+      <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
         <Input
           label="First Name"
           placeholder="First Name"
@@ -116,7 +116,7 @@ export default function ContactForm() {
           error={errors?.user_last_name?.message}
           Icon={<MdDriveFileRenameOutline />}
         />
-      </ModalFormGrid>
+      </div>
 
       <Input
         label="Email"
@@ -158,7 +158,6 @@ export default function ContactForm() {
 
       <TextArea
         label="Message"
-        placeholder="Message"
         disabled={isLoading}
         register={register("message", {
           required: "This Field is required",
