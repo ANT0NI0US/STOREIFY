@@ -3,13 +3,7 @@ import ProductCard from "./ProductCard";
 import { newProductProps } from "@/utils/types";
 import GridContainer from "../GridContainer";
 
-export default function ProductsList({
-  items,
-  BorderColor,
-}: {
-  items: newProductProps[];
-  BorderColor?: string;
-}) {
+export default function ProductsList({ items }: { items: newProductProps[] }) {
   return (
     <GridContainer>
       {items?.map((item: newProductProps) => (
@@ -23,7 +17,7 @@ export default function ProductsList({
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <ProductCard key={item.id} item={item} BorderColor={BorderColor} />
+          <ProductCard key={item.id} item={item} />
         </motion.div>
       ))}
     </GridContainer>
