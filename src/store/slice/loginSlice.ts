@@ -56,6 +56,7 @@ const loginSlice = createSlice({
         state.errors = null;
       })
       .addCase(signInWithGoogle.fulfilled, (state, action) => {
+        if (!action.payload) return;
         const { type } = action.payload;
         state.isLoading = false;
         state.isAuthenticated = true;
