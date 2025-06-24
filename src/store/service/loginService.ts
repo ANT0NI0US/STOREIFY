@@ -80,26 +80,30 @@ export const signInWithGoogle = createAsyncThunk(
 
       let existingUser = fetchedUsers.find((u) => u.uid === user.uid);
 
+      console.log(existingUser);
+
       if (!existingUser) {
-        const userData = {
+        const userData: userProps = {
           uid: user.uid,
-          displayName: user.displayName,
-          email: user.email,
-          photoURL: user.photoURL,
+          displayName: user.displayName || "",
+          email: user.email || "",
+          photoURL: user.photoURL || "",
           type: "user",
         };
         await setDoc(doc(db, "users", user.uid), userData);
         existingUser = userData;
       }
 
-      localStorage.setItem("token", existingUser.uid);
+      localStorage.setItem("token", existingUser?.uid || "");
       localStorage.setItem("isAdmin", "false");
 
-      toast.success(`Welcome ${existingUser.displayName}`);
+      toast.success(`Welcome ${existingUser?.displayName}`);
       return thunkAPI.fulfillWithValue({ ...existingUser });
     } catch (error) {
-      toast.error("Google sign-in failed.");
-      return thunkAPI.rejectWithValue(error.message);
+      if (error instanceof Error) {
+        toast.error("Google sign-in failed.");
+        return thunkAPI.rejectWithValue(error.message);
+      }
     }
   },
 );
@@ -179,8 +183,10 @@ export const sendResetPasswordEmail = createAsyncThunk(
       toast.success("Password reset email sent successfully.");
       return thunkAPI.fulfillWithValue("Email sent");
     } catch (error) {
-      toast.error("Failed to send password reset email.");
-      return thunkAPI.rejectWithValue(error.message);
+      if (error instanceof Error) {
+        toast.error("Failed to send password reset email.");
+        return thunkAPI.rejectWithValue(error.message);
+      }
     }
   },
 );

@@ -16,7 +16,7 @@ export default function Logo() {
         src="https://i.ibb.co/ZS4YhxK/storeify-logo.webp"
         alt="Storeify-logo"
       />
-      <h1 className="text-orange-color-light dark:text-orange-color text-base font-extrabold sm:text-xl">
+      <h1 className="text-orange-color-light dark:text-orange-color font-Merienda text-base font-extrabold sm:text-xl">
         TOREIFY
       </h1>
     </Link>

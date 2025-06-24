@@ -27,7 +27,7 @@ export default function SignInWithGoogle() {
         <span>Sign in with Google</span>
       </button>
 
-      <div className="flexCenter my-3 gap-2">
+      <div className="flexCenter my-4 gap-2">
         <span className="bg-primary-color-light dark:bg-primary-color h-px w-20 sm:w-40" />
         <span className="dark:text-primary-color text-primary-color-light text-sm font-medium whitespace-nowrap">
           OR
