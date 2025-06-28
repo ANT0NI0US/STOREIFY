@@ -12,7 +12,7 @@ export default function TotalCost({
   deliveryDate,
 }: totalCostProps) {
   return (
-    <div className="border-accent-light-color dark:border-accent-dark-color col-span-12 h-fit rounded-md border-[0.5px] p-5 md:col-span-4">
+    <div className="border-accent-light-color dark:border-accent-dark-color bg-secondary-light-color dark:bg-secondary-dark-color col-span-12 h-fit rounded-md border-[0.5px] p-5 md:col-span-4">
       <div className="flex w-full flex-col gap-5">
         <h6 className="flexBetween w-full">
           <span className="font-bold">Order Date:</span>
