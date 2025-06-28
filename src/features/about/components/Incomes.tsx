@@ -31,7 +31,7 @@ const incomesData: widgetProps[] = [
 
 export default function Incomes() {
   return (
-    <section className="bg-secondary-color-light py-[40px] dark:bg-secondary-color md:py-[80px]">
+    <section className="dark:bg-secondary-color py-[40px] md:py-[80px]">
       <Container>
         <Widgets widgetsData={incomesData} type="noColor" />
       </Container>

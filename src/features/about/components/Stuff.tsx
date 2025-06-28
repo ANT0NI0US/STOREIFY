@@ -42,13 +42,13 @@ const AllStuff = [
 
 export default function Stuff() {
   return (
-    <section className="py-[40px] md:py-[80px]">
+    <section className="bg-secondary-light-color py-[40px] md:py-[80px]">
       <Container>
         <Slider>
           {AllStuff?.map((singleStuff) => (
             <div
               key={singleStuff.id}
-              className="mx-2 rounded-md shadow-md shadow-secondary-color-light dark:shadow-secondary-color"
+              className="shadow-secondary-light-color dark:shadow-secondary-color mx-2 rounded-md shadow-md"
             >
               <CardStuff singleStuff={singleStuff} />
             </div>

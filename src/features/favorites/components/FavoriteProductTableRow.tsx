@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { IoMdAdd } from "react-icons/io";
 import Button from "@/ui/Button";
 import Table from "@/ui/Table";
 import { Item } from "@/utils/types";
 import { AppDispatch } from "@/store";
 import { cartActions } from "@/store/slice/cartSlice";
+import { MdAddShoppingCart } from "react-icons/md";
 
 interface perfectItemProp {
   perfectItem: Item;
@@ -39,23 +39,21 @@ export default function FavoriteProductTableRow({
               : undefined
           }
           alt={perfectItem.productName}
-          className="h-16 max-h-full w-16 max-w-full
-             object-contain object-center sm:h-24 sm:w-24 lg:h-32 lg:w-32"
+          className="h-16 max-h-full w-16 max-w-full object-contain object-center sm:h-24 sm:w-24 lg:h-32 lg:w-32"
         />
       </Table.Cell>
       <Table.Cell>{perfectItem.productName}</Table.Cell>
       <Table.Cell>${perfectItem.price}</Table.Cell>
       <Table.Cell>
-        <motion.div className="mx-auto w-[135px]" whileTap={{ scale: 1.2 }}>
+        <motion.div whileTap={{ scale: 1.1 }}>
           <Button
-            ArialLabel="add-To-Cart"
+            ArialLabel="Add to cart"
             variation="secondary"
+            size="actions"
             onClick={() => addToCart(perfectItem)}
+            Font="!w-10"
           >
-            <div className="flexCenter gap-1">
-              <p>Add To Cart</p>
-              <IoMdAdd />
-            </div>
+            <MdAddShoppingCart />
           </Button>
         </motion.div>
       </Table.Cell>

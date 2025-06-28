@@ -3,7 +3,7 @@ import Empty from "@/ui/Empty";
 import Table from "@/ui/Table";
 import { Item } from "@/utils/types";
 
-const tableHeadCells = ["Image", "Product Name", "Price", ""];
+const tableHeadCells = ["Image", "Product Name", "Price", "actions"];
 
 interface favoriteTableProps {
   perfectItems: Item[];

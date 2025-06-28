@@ -7,7 +7,7 @@ export default function AppLayout() {
   return (
     <>
       <Navbar />
-      <main className="bg-light-color text-primary-color-light dark:bg-main-color dark:text-primary-color">
+      <main className="bg-primary-light-color dark:bg-main-color">
         <Outlet />
         <Services />
       </main>

@@ -26,10 +26,10 @@ export default function DarkModeProvider({ children }: DarkModeProviderProps) {
 
   useEffect(() => {
     if (isDarkMode) {
-      document.body.classList.add("dark");
+      document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
-      document.body.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);

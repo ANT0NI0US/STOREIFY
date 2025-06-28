@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="bg-light-color text-primary-color-light dark:bg-main-color dark:text-primary-color fixed top-0 z-30 h-[80px] w-full shadow-md">
+      <div className="bg-primary-light-color text-text-light-color dark:bg-main-color dark:text-primary-color fixed top-0 z-30 h-[80px] w-full shadow-md">
         <Container Styles="flexBetween gap-6">
           {/* LOGO */}
           <Logo />

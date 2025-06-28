@@ -5,11 +5,11 @@ interface Props {
 export default function HeadText({ text }: Props) {
   return (
     <h2 className="mb-10 flex flex-row flex-nowrap items-center">
-      <span className="block grow border-t border-primary-color-light dark:border-primary-color"></span>
-      <span className="mx-4 block flex-none rounded-sm bg-primary-color-light px-4 py-2.5 text-xl font-medium leading-none text-light-color dark:bg-primary-color dark:text-main-color">
+      <span className="border-text-light-color dark:border-primary-color block grow border-t" />
+      <span className="bg-text-light-color text-secondary-light-color dark:bg-primary-color dark:text-main-color mx-4 block flex-none rounded-sm px-4 py-2.5 text-xl leading-none font-medium">
         {text}
       </span>
-      <span className="block grow border-t border-primary-color-light dark:border-primary-color"></span>
+      <span className="border-text-light-color dark:border-primary-color block grow border-t" />
     </h2>
   );
 }

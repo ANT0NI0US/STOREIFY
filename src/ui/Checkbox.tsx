@@ -22,11 +22,11 @@ export default function Checkbox({
         type="checkbox"
         disabled={disabled}
         defaultChecked={defaultChecked}
-        className="peer border-primary-color-light dark:border-primary-color checked:bg-secondary-color-light dark:checked:bg-secondary-color relative size-5 shrink-0 cursor-pointer appearance-none rounded border-2"
+        className="peer border-accent-light-color dark:border-primary-color checked:bg-primary-light-color dark:checked:bg-secondary-color relative size-4 shrink-0 cursor-pointer appearance-none rounded border-2 sm:size-5"
         {...(register ? register : {})}
       />
       <svg
-        className="text-primary-color-light dark:text-primary-color pointer-events-none invisible absolute top-1 left-0.5 size-4 peer-checked:visible"
+        className="text-text-light-color dark:text-primary-color pointer-events-none invisible absolute top-1 left-0.5 size-3 peer-checked:visible sm:size-4"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

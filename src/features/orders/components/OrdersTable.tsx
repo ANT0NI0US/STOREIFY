@@ -12,10 +12,10 @@ type ordersTableProps = {
 const tableHeadCells = [
   "Name",
   "Phone",
-  "price",
-  "order Date",
-  "delivered",
-  "",
+  "Price",
+  "Order Date",
+  "Delivered",
+  "Actions",
 ];
 
 export default function OrdersTable({ orders, loading }: ordersTableProps) {

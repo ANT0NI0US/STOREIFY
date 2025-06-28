@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Experiences() {
   return (
-    <section className="flexCenter bg-light-color text-primary-color-light dark:bg-main-color dark:text-primary-color w-full pt-[80px] pb-0 md:h-[calc(100vh-80px)] md:pb-[80px]">
+    <section className="flexCenter dark:bg-main-color dark:text-primary-color w-full pt-[80px] pb-0 md:h-[calc(100vh-80px)] md:pb-[80px]">
       <div
         className={`flexBetween mx-auto w-full flex-col-reverse overflow-hidden md:flex-row`}
       >
@@ -24,10 +24,10 @@ export default function Experiences() {
           className="mx-auto flex w-[90%] flex-col gap-4 pb-20 text-center sm:w-5/6 md:w-fit md:basis-3/5 md:px-7 md:pb-0 md:text-left"
         >
           <p className="font-medium">EXPERIENCES</p>
-          <h2 className="text-orange-color-light dark:text-orange-color text-2xl font-semibold md:text-4xl">
+          <h2 className="dark:text-orange-color text-2xl font-semibold md:text-4xl">
             We Provide You The Best Experience
           </h2>
-          <p className="leading-8 md:w-3/4">
+          <p className="leading-7 md:w-3/4">
             You don't have worry about the result because all of these interiors
             are made by people who are professionals in their fields with an
             elegant and luxurious style and with premium quality materials.

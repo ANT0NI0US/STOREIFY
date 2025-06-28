@@ -11,12 +11,12 @@ export default function BigScreenLinks({ links }: BigScreenLinksProps) {
       {links?.map((item: arrLinks) => (
         <div
           key={item.text}
-          className={`flexCenter h-full text-center text-lg font-semibold transition-all hover:font-extrabold`}
+          className="flexCenter h-full text-center text-lg font-semibold transition-all hover:font-extrabold"
         >
           <NavLink
             className={(navClass) =>
               navClass.isActive
-                ? "flexCenter text-orange-color-light dark:text-orange-color h-full w-full text-xl font-extrabold"
+                ? "flexCenter text-accent-light-color dark:text-orange-color h-full w-full text-xl font-extrabold"
                 : "flexCenter h-full w-full"
             }
             to={item?.path}

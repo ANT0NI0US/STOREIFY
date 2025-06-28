@@ -56,7 +56,7 @@ export default function Input({
           id={fileName || name}
           type={showPassword ? "text" : type}
           placeholder={!label || variation === "filled" ? placeholder : " "}
-          className={`input ${disabled ? "!bg-primary-color-light dark:!bg-light-color cursor-not-allowed" : ""} ${
+          className={`input ${disabled ? "!bg-primary-light-color dark:!bg-light-color cursor-not-allowed" : ""} ${
             styles.input
           } ${type === "file" ? "hidden" : ""} ${
             !Icon && type !== "password"
@@ -70,7 +70,7 @@ export default function Input({
 
         {Icon && type !== "file" && type !== "password" && (
           <div
-            className={`flexCenter text-orange-color-light dark:text-orange-color h-full w-[40px] rounded-tr-[1px] rounded-br-[1px] ${disabled ? "bg-disabled cursor-not-allowed" : ""}`}
+            className={`flexCenter bg-primary-light-color text-text-light-color dark:text-orange-color h-full w-[40px] rounded-tr-[1px] rounded-br-[1px] text-2xl ${disabled ? "bg-disabled cursor-not-allowed" : ""}`}
           >
             {Icon}
           </div>
@@ -79,15 +79,11 @@ export default function Input({
         {type === "password" && (
           <button
             type="button"
-            className="text-orange-color-light dark:text-orange-color flexCenter bg-light-color dark:bg-main-color h-full w-[40px] rounded-tr-[1px] rounded-br-[1px]"
+            className="text-text-light-color dark:text-orange-color flexCenter bg-primary-light-color dark:bg-main-color h-full w-[40px] rounded-tr-[1px] rounded-br-[1px] text-2xl"
             onClick={toggleShowPassword}
             aria-label={showPassword ? "Hide password" : "Show password"}
           >
-            {showPassword ? (
-              <FaRegEyeSlash size={25} />
-            ) : (
-              <MdOutlineRemoveRedEye size={25} />
-            )}
+            {showPassword ? <FaRegEyeSlash /> : <MdOutlineRemoveRedEye />}
           </button>
         )}
 
@@ -100,7 +96,7 @@ export default function Input({
           >
             {label}
             {error && (
-              <span className="text-error-light dark:text-error"> *</span>
+              <span className="text-error-light-color dark:text-error"> *</span>
             )}
           </label>
         )}
@@ -108,10 +104,10 @@ export default function Input({
 
       {type === "file" && (
         <label
-          className={`bg-light-color text-orange-color-light border-orange-color-light dark:bg-main-color dark:text-orange-color dark:border-orange-color hover:bg-secondary-color-light flex h-40 w-full flex-col items-center justify-center rounded-md border-4 border-dashed p-5 text-center transition-all duration-300 ${
+          className={`bg-secondary-light-color text-text-light-color border-text-light-color dark:bg-main-color dark:text-orange-color dark:border-orange-color flex h-40 w-full flex-col items-center justify-center rounded-md border-4 border-dashed p-5 text-center transition-all duration-300 ${
             disabled
-              ? "!bg-primary-color-light dark:!bg-light-color cursor-not-allowed"
-              : "hover:text-primary-color-light hover:border-primary-color-light dark:hover:bg-secondary-color dark:hover:text-primary-color dark:hover:border-primary-color cursor-pointer"
+              ? "!bg-primary-light-color dark:!bg-primary-light-color cursor-not-allowed"
+              : "hover:bg-text-light-color hover:text-secondary-light-color hover:border-secondary-light-color dark:hover:bg-secondary-color dark:hover:text-primary-color dark:hover:border-primary-color cursor-pointer"
           } ${error ? `${normalError}` : ""}`}
           onClick={() => {
             if (fileName) {

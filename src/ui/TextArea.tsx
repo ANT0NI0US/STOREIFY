@@ -34,7 +34,7 @@ export default function TextArea({
       <textarea
         id={name}
         rows={Rows}
-        className={`input ${disabled ? "!bg-primary-color-light dark:!bg-light-color cursor-not-allowed" : ""} ${styles.input} ${errorStyles} resize-none rounded-md`}
+        className={`input ${disabled ? "!bg-primary-light-color dark:!bg-light-color cursor-not-allowed" : ""} ${styles.input} ${errorStyles} resize-none rounded-md`}
         placeholder={!label || variation === "filled" ? placeholder : " "}
         disabled={disabled}
         {...(register ? register : {})}
@@ -48,7 +48,7 @@ export default function TextArea({
         >
           {label}
           {error && (
-            <span className="text-error-light dark:text-error"> *</span>
+            <span className="text-error-light-color dark:text-error"> *</span>
           )}
         </label>
       )}

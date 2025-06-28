@@ -20,33 +20,25 @@ export default function QuantityControl({ item }: QuantityControlProps) {
     dispatch(cartActions.MaximizeQuantityItem(item?.id));
   };
   return (
-    <div className="flexBetween gap-5 rounded-md bg-secondary-color-light dark:bg-secondary-color">
-      <div className="w-[50px]" title="minus">
-        <Button
-          variation="secondary"
-          Font="h-[40px]"
-          ArialLabel="minus Product"
-          disabled={item?.quantity === 1}
-          onClick={handleDecrease}
-        >
-          <div className="flexCenter p-1">
-            <FaMinus />
-          </div>
-        </Button>
-      </div>
+    <div className="flexBetween bg-secondary-light-color dark:bg-secondary-color gap-5 rounded-md">
+      <Button
+        variation="secondary"
+        ArialLabel="minus Product"
+        disabled={item?.quantity === 1}
+        onClick={handleDecrease}
+        size="actions"
+      >
+        <FaMinus />
+      </Button>
       <span className="text-2xl font-extrabold">{item?.quantity}</span>
-      <div className="w-[50px]" title="plus">
-        <Button
-          variation="secondary"
-          Font="h-[40px]"
-          ArialLabel="Plus Product"
-          onClick={handleIncrease}
-        >
-          <div className="flexCenter p-1">
-            <FaPlus />
-          </div>
-        </Button>
-      </div>
+      <Button
+        variation="secondary"
+        ArialLabel="Plus Product"
+        onClick={handleIncrease}
+        size="actions"
+      >
+        <FaPlus />
+      </Button>
     </div>
   );
 }
