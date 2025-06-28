@@ -80,7 +80,7 @@ export default function OrderForm({
     mode: "onChange",
   });
 
-  const { uid } = currentUser as CurrentUser;
+  const uid = (currentUser as CurrentUser)?.uid;
 
   const { user } = useSelector((state: userState) => state.user);
   const { isLoading: isOrderLoading } = useSelector(
@@ -123,13 +123,13 @@ export default function OrderForm({
   }, [dispatch, reset, uid]);
 
   return (
-    <div className="border-card-bg-01-light dark:border-secondary-color col-span-12 rounded-md border-[0.5px] p-5 md:col-span-8">
-      <h3 className="mb-5 text-center text-lg font-bold md:text-left">
+    <div className="border-accent-light-color dark:border-accent-dark-color col-span-12 rounded-md border-[0.5px] p-5 md:col-span-8">
+      <h3 className="mb-8 text-center text-3xl font-bold md:text-start">
         Billing Information
       </h3>
       <form
         onSubmit={handleSubmit(addNewOrder)}
-        className="flex flex-col gap-2"
+        className="flex flex-col gap-5"
       >
         <Input
           label="Name"
@@ -281,9 +281,9 @@ export default function OrderForm({
           Icon={<MdOutlineMapsHomeWork />}
         />
 
-        <motion.div whileTap={{ scale: 1.1 }} className="mt-10! w-full">
+        <motion.div whileTap={{ scale: 1.1 }} className="w-full">
           <Button
-            ArialLabel="place-an-order"
+            ArialLabel="Place an order"
             type="submit"
             loading={isOrderLoading}
           >

@@ -43,9 +43,9 @@ export default function NavbarActions() {
           className="relative"
           onClick={() => navigate(`${href}`)}
         >
-          <Icon className="hover:text-primary-color-light/80 dark:hover:text-primary-color/80 cursor-pointer text-base transition-all sm:text-lg" />
+          <Icon className="hover:text-text-light-color/80 dark:hover:text-primary-color/80 cursor-pointer text-base transition-all sm:text-lg" />
           {value > 0 && (
-            <span className="flexCenter bg-orange-color-light text-light-color dark:bg-orange-color absolute top-[-11px] left-[11px] z-10 h-[20px] w-[20px] rounded-full p-1 text-xs">
+            <span className="flexCenter bg-text-light-color text-secondary-light-color dark:bg-orange-color absolute top-[-11px] left-[11px] z-10 h-[20px] w-[20px] rounded-full p-1 text-xs">
               {value}
             </span>
           )}

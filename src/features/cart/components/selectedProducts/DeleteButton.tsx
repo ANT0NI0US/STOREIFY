@@ -24,18 +24,15 @@ export default function DeleteButton({ item }: DeleteButtonProps) {
     <Modal>
       <Modal.Open opens="DeleteItemForm">
         <motion.div
-          title="Delete Product"
           whileTap={{ scale: 1.1 }}
-          className="absolute right-4 top-4 w-[45px] cursor-pointer"
+          className="absolute top-4 right-4 w-[45px] cursor-pointer"
         >
           <Button
             Font="rounded-full!"
             ArialLabel="Delete Product"
             variation="danger"
           >
-            <div className="flexCenter">
-              <RiDeleteBin5Line size={25} />
-            </div>
+            <RiDeleteBin5Line size={25} />
           </Button>
         </motion.div>
       </Modal.Open>

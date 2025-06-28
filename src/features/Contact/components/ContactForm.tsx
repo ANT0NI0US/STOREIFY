@@ -177,12 +177,7 @@ export default function ContactForm() {
         error={errors?.message?.message}
       />
 
-      <Button
-        type="submit"
-        ArialLabel="Submit Form"
-        variation="secondary"
-        loading={isLoading}
-      >
+      <Button type="submit" ArialLabel="Submit Form" loading={isLoading}>
         Submit
       </Button>
     </form>

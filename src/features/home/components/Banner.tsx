@@ -21,7 +21,7 @@ export default function Banner() {
             className="flex flex-col gap-2 text-center md:mt-0 md:basis-[55%] md:gap-3 md:text-left"
           >
             <p className="font-medium">Trending Product in {Year}</p>
-            <h2 className="text-orange-color-light dark:text-orange-color text-2xl font-semibold md:text-4xl">
+            <h2 className="text-2xl font-semibold md:text-4xl">
               Make your Interior More Minimalistic & Modern
             </h2>
             <p className="leading-[28px]">

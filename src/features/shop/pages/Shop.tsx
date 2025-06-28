@@ -38,7 +38,7 @@ export default function Shop() {
   }, [dispatch]);
 
   return (
-    <div className="bg-light-color text-primary-color-light dark:bg-main-color dark:text-primary-color">
+    <div className="bg-secondary-light-color dark:bg-main-color dark:text-primary-color">
       <CommonSection title="Products" />
       <Container Styles="py-[40px] md:py-[80px] flex flex-col gap-10">
         <FilterProducts

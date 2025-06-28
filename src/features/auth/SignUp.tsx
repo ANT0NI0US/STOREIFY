@@ -16,6 +16,7 @@ import { signUpFirebase } from "@/store/service/loginService.ts";
 import { AppDispatch } from "@/store";
 import useHelmet from "@/hooks/useHelmet";
 import SignInWithGoogle from "./SignInWithGoogle";
+import { MdDriveFileRenameOutline, MdOutlineMailOutline } from "react-icons/md";
 
 const allowedTypes = [
   "image/jpeg",
@@ -162,6 +163,7 @@ export default function SignUp() {
               },
             })}
             error={errors?.name?.message}
+            Icon={<MdDriveFileRenameOutline />}
           />
 
           <Input
@@ -180,6 +182,7 @@ export default function SignUp() {
               },
             })}
             error={errors?.email?.message}
+            Icon={<MdOutlineMailOutline />}
           />
 
           <Input
@@ -231,11 +234,9 @@ export default function SignUp() {
           Create An Account
         </Button>
         <div className="mx-auto text-center text-sm sm:text-base">
-          <span className="text-primary-color-light dark:text-orange-color">
-            Already have an account?
-          </span>
+          <span>Already have an account?</span>
           <Link
-            className="pl-1.5 underline transition-all hover:font-semibold"
+            className="pl-1.5 font-medium underline transition-all hover:font-bold"
             to="/login"
           >
             Login

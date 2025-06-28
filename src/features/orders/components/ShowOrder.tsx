@@ -11,15 +11,9 @@ export default function ShowOrder({ selectedOrderId }: orderDetailsProps) {
   return (
     <Modal>
       <Modal.Open opens="orderDetails">
-        <div className="w-[35px]">
-          <Button
-            ArialLabel="show order"
-            variation="secondary"
-            Font="h-[35px]!"
-          >
-            <TbListDetails />
-          </Button>
-        </div>
+        <Button ArialLabel="show order" variation="secondary" size="actions">
+          <TbListDetails />
+        </Button>
       </Modal.Open>
       <Modal.Window name="orderDetails">
         <OrderDetails selectedOrderId={selectedOrderId} />

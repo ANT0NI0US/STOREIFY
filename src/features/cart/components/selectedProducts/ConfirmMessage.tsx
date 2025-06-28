@@ -15,19 +15,12 @@ export default function ConfirmMessage({
 }: ConfirmMessageProps) {
   return (
     <>
-      <p className="rounded-tl-lg rounded-tr-lg p-[15px] text-lg capitalize text-primary-color-light dark:text-primary-color md:p-[20px]">
+      <p className="rounded-tl-lg rounded-tr-lg p-3.5 text-lg font-extrabold capitalize md:p-5">
         {message}
       </p>
 
-      <div className="rounded-bl-lg rounded-br-lg border-t bg-[#f1eded] px-4 py-6 dark:bg-[#170000]">
+      <div className="bg-primary-light-color dark:bg-primary-dark-color rounded-br-lg rounded-bl-lg border-t px-4 py-6">
         <div className="ms-auto flex w-full gap-[10px]">
-          <Button
-            ArialLabel="accept confirm"
-            loading={disabled}
-            onClick={onConfirm}
-          >
-            Yes
-          </Button>
           <Button
             ArialLabel="cancel confirm"
             loading={disabled}
@@ -35,6 +28,13 @@ export default function ConfirmMessage({
             onClick={onCloseModal}
           >
             Cancel
+          </Button>
+          <Button
+            ArialLabel="accept confirm"
+            loading={disabled}
+            onClick={onConfirm}
+          >
+            Yes
           </Button>
         </div>
       </div>

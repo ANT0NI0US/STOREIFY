@@ -18,7 +18,7 @@ export default function AuthLayout() {
       </div>
 
       <div className="z-10 flex flex-1 items-center justify-center px-4">
-        <div className="text-main-color dark:text-light-color scrollbar-hide bg-light-color dark:bg-main-color z-110 max-h-[calc(100vh-150px)] w-[95%] overflow-y-auto rounded-md p-4 shadow-2xl shadow-black drop-shadow-md sm:w-[540px] sm:p-5">
+        <div className="scrollbar-hide bg-secondary-light-color dark:bg-main-color shadow-accent-light-color z-110 max-h-[calc(100vh-150px)] w-[95%] overflow-y-auto rounded-md p-4 shadow-2xl drop-shadow-md sm:w-[540px] sm:p-5">
           <Outlet />
         </div>
       </div>

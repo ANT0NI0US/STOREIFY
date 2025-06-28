@@ -24,13 +24,22 @@
   --color-card-bg-02: #636568;
   --color-error: #dd0808;
 
+  --color-text-dark-color: #f0faff;
+  --color-primary-dark-color: #ded0b6;
+  --color-secondary-dark-color: #faeed1;
+  --color-error-dark-color: #ff0000;
+  --color-accent-dark-color: #bbab8c;
+
+  --color-text-light-color: #4b352a;
+  --color-primary-light-color: #ded0b6;
+  --color-secondary-light-color: #faeed1;
+  --color-error-light-color: #ff0000;
+  --color-accent-light-color: #bbab8c;
+
   --color-light-color: #ffeace;
-  --color-primary-color-light: #253b45;
-  --color-secondary-color-light: #c9b69b;
   --color-orange-color-light: #ba881d;
   --color-card-bg-01-light: #98afba;
   --color-card-bg-02-light: #ccb29e;
-  --color-error-light: #e60023;
 
   --font-Merienda: "Merienda", "cursive";
 }
@@ -51,10 +60,18 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+  body {
+    @apply text-text-light-color;
+  }
+
+  html.dark body {
+    @apply text-light-color;
+  }
 }
 
 @utility input {
-  @apply placeholder:text-primary-color-light dark:placeholder:text-primary-color w-full p-[10px] outline-0 transition-all duration-300 placeholder:text-sm disabled:cursor-not-allowed disabled:border-0;
+  @apply placeholder:text-primary-light-color dark:placeholder:text-primary-color w-full p-[10px] outline-0 transition-all duration-300 placeholder:text-sm disabled:cursor-not-allowed disabled:border-0;
 
   &:-webkit-autofill {
     -webkit-text-fill-color: #253b45;
@@ -111,11 +128,19 @@
   @apply w-[5px];
 }
 *::-webkit-scrollbar-track {
-  @apply bg-light-color dark:bg-main-color;
+  @apply bg-primary-light-color;
+}
+
+.dark *::-webkit-scrollbar-track {
+  @apply bg-primary-dark-color;
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-primary-color-light dark:bg-primary-color;
+  @apply bg-text-light-color;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  @apply bg-text-dark-color;
 }
 
 /* Vertical scrollbar */

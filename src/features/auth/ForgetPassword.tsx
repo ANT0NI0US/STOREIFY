@@ -80,11 +80,9 @@ Make sure to check your Spam or Promotions folder if it doesn’t arrive shortly
         </Button>
 
         <div className="mx-auto text-center text-sm sm:text-base">
-          <span className="text-primary-color-light dark:text-orange-color">
-            Don't have an account?
-          </span>
+          <span>Don't have an account?</span>
           <Link
-            className="pl-1.5 underline transition-all hover:font-semibold"
+            className="pl-1.5 font-medium underline transition-all hover:font-bold"
             to="/sign-up"
           >
             Create an account

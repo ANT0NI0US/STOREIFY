@@ -21,18 +21,18 @@ export default function SignInWithGoogle() {
       <button
         onClick={handleGoogleLogin}
         type="button"
-        className="text-primary-color-light flex w-full items-center justify-center gap-1 rounded bg-white px-4 py-2 hover:bg-white/90"
+        className="flex w-full items-center justify-center gap-1 rounded bg-white px-4 py-3 hover:bg-white/90"
       >
         <FcGoogle className="text-2xl" />
         <span>Sign in with Google</span>
       </button>
 
       <div className="flexCenter my-4 gap-2">
-        <span className="bg-primary-color-light dark:bg-primary-color h-px w-20 sm:w-40" />
-        <span className="dark:text-primary-color text-primary-color-light text-sm font-medium whitespace-nowrap">
+        <span className="bg-accent-light-color dark:bg-primary-color h-px w-20 sm:w-40" />
+        <span className="dark:text-primary-color text-sm font-medium whitespace-nowrap">
           OR
         </span>
-        <span className="bg-primary-color-light dark:bg-primary-color h-px w-20 sm:w-40" />
+        <span className="bg-accent-light-color dark:bg-primary-color h-px w-20 sm:w-40" />
       </div>
     </>
   );

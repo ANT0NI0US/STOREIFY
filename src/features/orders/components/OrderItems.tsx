@@ -10,7 +10,7 @@ interface Props {
 export default function OrderItems({ order }: Props) {
   const { items, itemsAmount } = order;
   return (
-    <div className="border-b-[0.1px] border-orange-color-light pb-4 dark:border-orange-color">
+    <div className="border-accent-light-color dark:border-orange-color border-b-[0.5px] pb-3.5 md:pb-5">
       <InformationTitle title="items" subTitle={`( ${itemsAmount}$ )`} />
       <ModalFormGrid>
         {items?.map(({ id, quantity, productName, totalPrice }: CartItem) => (

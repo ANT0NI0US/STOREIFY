@@ -23,7 +23,7 @@ export default function DescriptionReviews({
             key={label}
             className={`basis-1/2 cursor-pointer border-b-2 py-3 transition-all duration-200 ${
               tab === label
-                ? "border-primary-color-light bg-secondary-color-light font-extrabold text-primary-color-light dark:border-primary-color dark:bg-secondary-color/50 dark:text-primary-color"
+                ? "border-primary-light-color bg-secondary-light-color text-primary-light-color dark:border-primary-color dark:bg-secondary-color/50 dark:text-primary-color font-extrabold"
                 : "border-orange-color-light text-orange-color-light dark:border-orange-color dark:text-orange-color"
             }`}
             onClick={() => setTab(label as "Description" | "Reviews")}
@@ -34,7 +34,7 @@ export default function DescriptionReviews({
       </div>
 
       {tab === "Description" ? (
-        <div className="mt-5 text-left leading-8 ">{description}</div>
+        <div className="mt-5 text-left leading-8">{description}</div>
       ) : (
         <ReviewsTab reviews={reviews} />
       )}

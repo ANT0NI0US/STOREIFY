@@ -12,6 +12,7 @@ import { signInFireBase } from "@/store/service/loginService.ts";
 import { AppDispatch } from "@/store/index.ts";
 import useHelmet from "@/hooks/useHelmet";
 import SignInWithGoogle from "./SignInWithGoogle";
+import { MdOutlineMailOutline } from "react-icons/md";
 
 interface loginFormProps {
   email: string;
@@ -75,6 +76,7 @@ export default function Login() {
               },
             })}
             error={errors?.email?.message}
+            Icon={<MdOutlineMailOutline />}
           />
 
           <div className="flex flex-col gap-2">
@@ -91,7 +93,7 @@ export default function Login() {
               })}
               error={errors?.password?.message}
             />
-            <div className="flex items-center justify-between px-2">
+            <div className="flex items-center justify-between px-2 text-sm sm:text-base">
               <Checkbox
                 id="rememberMe"
                 label="Remember Me"
@@ -112,11 +114,9 @@ export default function Login() {
         </Button>
 
         <div className="mx-auto text-center text-sm sm:text-base">
-          <span className="text-primary-color-light dark:text-orange-color">
-            Don't have an account?
-          </span>
+          <span>Don't have an account?</span>
           <Link
-            className="pl-1.5 underline transition-all hover:font-semibold"
+            className="pl-1.5 font-medium underline transition-all hover:font-bold"
             to="/sign-up"
           >
             Create an account

@@ -1,7 +1,7 @@
 export default function ContactHeader() {
   return (
     <div className="mb-20 flex flex-col gap-2 text-center md:mb-32">
-      <h1 className="text-orange-color-light dark:text-orange-color text-2xl font-extrabold tracking-wider uppercase">
+      <h1 className="dark:text-orange-color text-2xl font-extrabold tracking-wider uppercase">
         Get In Touch With Us
       </h1>
       <h2 className="mx-auto text-sm md:w-[50%]">

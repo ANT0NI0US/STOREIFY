@@ -84,18 +84,18 @@ function Window({ children, name }: WindowProps) {
 
   return createPortal(
     <div>
-      <div className="fixed left-0 top-0 z-999999 h-full w-full bg-black/50 backdrop-blur-[9px] dark:bg-black/20"></div>
+      <div className="fixed top-0 left-0 z-999999 h-full w-full bg-black/50 backdrop-blur-[9px] dark:bg-black/20"></div>
 
-      <div className="fixed left-0 top-0 z-10000000 h-full w-full">
+      <div className="fixed top-0 left-0 z-10000000 h-full w-full">
         <div
-          className="fixed left-[50%] top-[50%] z-50 max-h-[80vh] w-[90%] translate-x-[-50%] translate-y-[-50%] rounded-lg  bg-light-color shadow-md dark:bg-main-color md:w-[750px] "
+          className="bg-accent-light-color dark:bg-main-color fixed top-[50%] left-[50%] z-50 max-h-[80vh] w-[90%] translate-x-[-50%] translate-y-[-50%] rounded-lg shadow-md md:w-[750px]"
           ref={ref}
         >
           <button
             aria-label="Close Modal"
             title="Close"
             onClick={close}
-            className="absolute right-[10px] top-[10px] text-primary-color-light dark:text-primary-color"
+            className="absolute top-[10px] right-[10px]"
           >
             <FaTimes />
           </button>
