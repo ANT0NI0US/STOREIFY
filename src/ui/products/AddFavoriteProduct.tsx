@@ -43,9 +43,9 @@ export default function AddFavoriteProduct({
       className="flexCenter absolute top-0 left-0 z-10 cursor-pointer rounded-full p-2"
     >
       {id && checkProductExistInPerfectProducts(id) ? (
-        <IoMdHeart className="text-error-light-color dark:text-error h-7 w-7" />
+        <IoMdHeart className="text-error-light-color dark:text-error-dark-color size-7" />
       ) : (
-        <IoMdHeartEmpty className="text-error-light-color dark:text-error h-7 w-7" />
+        <IoMdHeartEmpty className="text-error-light-color dark:text-error size-7" />
       )}
     </motion.div>
   );

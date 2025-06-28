@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Materials() {
   return (
-    <section className="flexCenter dark:bg-main-color dark:text-primary-color w-full py-[80px] md:h-[calc(100vh-80px)] md:py-[80px]">
+    <section className="flexCenter w-full py-[80px] md:h-[calc(100vh-80px)] md:py-[80px]">
       <div className="flexBetween mx-auto w-full flex-col overflow-hidden md:flex-row">
         <motion.div
           initial="hidden"
@@ -15,7 +15,7 @@ export default function Materials() {
           className="mx-auto flex w-[90%] flex-col gap-4 pb-[80px] text-center sm:w-5/6 md:w-fit md:basis-3/5 md:px-[30px] md:pb-0 md:text-left"
         >
           <p className="font-medium">MATERIALS</p>
-          <h2 className="dark:text-orange-color my-2 text-2xl font-semibold md:text-4xl">
+          <h2 className="my-2 text-2xl font-semibold md:text-4xl">
             Very Serious Materials For Making Furniture
           </h2>
           <p className="leading-7 md:w-3/4">

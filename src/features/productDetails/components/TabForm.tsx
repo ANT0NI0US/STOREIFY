@@ -63,8 +63,8 @@ export default function TabForm() {
   };
 
   return (
-    <div className="mx-auto w-[90%] md:w-5/6">
-      <h4 className="text-center text-xl font-semibold md:text-left">
+    <div className="bg-secondary-light-color dark:bg-secondary-dark-color mx-auto mt-3.5 w-[90%] rounded-md p-3.5 md:mt-5 md:w-5/6 md:p-5">
+      <h4 className="mb-3.5 text-center text-3xl font-semibold md:mb-5 md:text-left">
         Leave Your Experience
       </h4>
       <form

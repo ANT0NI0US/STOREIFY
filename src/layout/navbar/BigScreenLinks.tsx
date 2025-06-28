@@ -16,7 +16,7 @@ export default function BigScreenLinks({ links }: BigScreenLinksProps) {
           <NavLink
             className={(navClass) =>
               navClass.isActive
-                ? "flexCenter text-accent-light-color dark:text-orange-color h-full w-full text-xl font-extrabold"
+                ? "flexCenter text-accent-light-color dark:text-accent-dark-color h-full w-full text-xl font-extrabold"
                 : "flexCenter h-full w-full"
             }
             to={item?.path}

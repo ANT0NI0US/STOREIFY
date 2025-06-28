@@ -6,7 +6,7 @@ export default function HomeLayout() {
   return (
     <>
       <Navbar />
-      <main className="bg-primary-light-color dark:bg-main-color">
+      <main className="bg-primary-light-color dark:bg-primary-dark-color">
         <Outlet />
       </main>
       <Footer />

@@ -9,7 +9,7 @@ export default function Cart() {
   return (
     <>
       <CommonSection title="Shopping Cart" />
-      <section className="py-[40px] md:py-[80px]">
+      <section className="bg-secondary-light-color dark:bg-secondary-dark-color py-[40px] md:py-[80px]">
         <Container>
           <CartDetails />
         </Container>

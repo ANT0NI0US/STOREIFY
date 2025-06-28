@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <>
       <CommonSection title="Contact" />
-      <section className="bg-secondary-light-color">
+      <section className="bg-secondary-light-color dark:bg-secondary-dark-color">
         <Container Styles="md:py-[80px] py-[40px]">
           <ContactHeader />
           <div className="flex flex-col items-start justify-between gap-10 sm:flex-row">

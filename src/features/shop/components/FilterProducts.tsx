@@ -123,7 +123,7 @@ export default function FilterProducts({
       <Input
         value={searchTerm}
         onChange={handleSearch}
-        placeholder="Search...."
+        label="Search...."
         Icon={<IoIosSearch />}
       />
     </GridContainer>

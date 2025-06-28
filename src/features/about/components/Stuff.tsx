@@ -48,7 +48,7 @@ export default function Stuff() {
           {AllStuff?.map((singleStuff) => (
             <div
               key={singleStuff.id}
-              className="shadow-secondary-light-color dark:shadow-secondary-color mx-2 rounded-md shadow-md"
+              className="shadow-secondary-light-color dark:shadow-secondary-dark-color mx-2 rounded-md shadow-md"
             >
               <CardStuff singleStuff={singleStuff} />
             </div>

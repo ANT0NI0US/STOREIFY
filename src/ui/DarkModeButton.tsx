@@ -8,7 +8,7 @@ export default function DarkModeButton() {
   return (
     <div
       title={`${isDarkMode ? "light mode" : "dark mode"} `}
-      className="flexCenter bg-main-color dark:bg-light-color fixed right-2 bottom-2 cursor-pointer rounded-full p-1 sm:p-1.5 md:p-2"
+      className="flexCenter bg-secondary-dark-color dark:bg-secondary-light-color fixed right-2 bottom-2 cursor-pointer rounded-full p-1 sm:p-1.5 md:p-2"
     >
       <button
         aria-label="color theme"

@@ -41,7 +41,7 @@ const allContacts: Array<allContactsProps> = [
 
 export default function ContactInformation() {
   return (
-    <div className="dark:shadow-secondary-color flex w-full flex-col gap-10 rounded-md p-6 shadow-md sm:basis-1/3 sm:gap-8">
+    <div className="bg-primary-light-color dark:bg-primary-dark-color flex w-full flex-col gap-10 rounded-md p-6 shadow-md sm:basis-1/3 sm:gap-8">
       {allContacts.map(
         ({ title, href, icon, text, target, rel }: allContactsProps) => (
           <a
@@ -51,11 +51,9 @@ export default function ContactInformation() {
             rel={rel || undefined}
             className="mx-auto flex w-fit flex-col items-center gap-1 sm:mx-0 sm:flex-row sm:items-start sm:gap-3"
           >
-            <div className="dark:text-orange-color text-3xl">{icon}</div>
+            <div className="text-3xl">{icon}</div>
             <div className="flex flex-col gap-1 text-center sm:text-start">
-              <h3 className="dark:text-orange-color text-xl font-semibold">
-                {title}
-              </h3>
+              <h3 className="text-xl font-semibold">{title}</h3>
               <p>{text}</p>
             </div>
           </a>
