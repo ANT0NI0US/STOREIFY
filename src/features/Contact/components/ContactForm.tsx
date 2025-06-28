@@ -7,7 +7,6 @@ import { MdDriveFileRenameOutline, MdOutlineEmail } from "react-icons/md";
 import Input from "@/ui/Input";
 import TextArea from "@/ui/TextArea";
 import Button from "@/ui/Button";
-import ModalFormGrid from "@/ui/ModalFormGrid";
 import { isOnlySpaces } from "@/utils/helpers";
 import {
   EMAIL_REGEX,
