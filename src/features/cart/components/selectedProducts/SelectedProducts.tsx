@@ -9,7 +9,7 @@ export default function SelectedProducts({
   allCartItems,
 }: selectedProductsProps) {
   return (
-    <div className="divide-accent-light-color border-accent-light-color dark:divide-secondary-color dark:border-secondary-color col-span-12 divide-y-[0.5px] rounded-md border-[0.5px] md:col-span-8">
+    <div className="divide-accent-light-color border-accent-light-color dark:divide-secondary-color dark:border-secondary-color bg-secondary-light-color dark:bg-secondary-dark-color col-span-12 divide-y-[0.5px] rounded-md border-[0.5px] md:col-span-8">
       {allCartItems?.map((item) => (
         <SelectedProductItem key={item.id} item={item} />
       ))}

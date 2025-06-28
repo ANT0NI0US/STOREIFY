@@ -33,7 +33,7 @@ export default function OrderDetails({
 
   return (
     <>
-      <h1 className="bg-secondary-light-color dark:bg-secondary-dark-color rounded-tl-lg rounded-tr-lg border-b py-4 ps-4 text-xl font-bold tracking-widest uppercase shadow-xs sm:text-3xl">
+      <h1 className="bg-secondary-light-color dark:bg-secondary-dark-color rounded-tl-lg rounded-tr-lg border-b py-4 ps-4 text-xl font-semibold tracking-widest uppercase shadow-xs sm:text-3xl">
         Order Details
       </h1>
       {isCertainOrderLoading ? (

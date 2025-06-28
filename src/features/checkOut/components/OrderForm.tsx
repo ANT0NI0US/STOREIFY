@@ -123,7 +123,7 @@ export default function OrderForm({
   }, [dispatch, reset, uid]);
 
   return (
-    <div className="border-accent-light-color dark:border-accent-dark-color col-span-12 rounded-md border-[0.5px] p-5 md:col-span-8">
+    <div className="border-accent-light-color dark:border-accent-dark-color bg-secondary-light-color dark:bg-secondary-dark-color col-span-12 rounded-md border-[0.5px] p-5 md:col-span-8">
       <h3 className="mb-8 text-center text-3xl font-bold md:text-start">
         Billing Information
       </h3>

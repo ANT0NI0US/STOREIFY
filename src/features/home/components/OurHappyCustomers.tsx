@@ -54,7 +54,7 @@ export default function OurHappyCustomers() {
           {randomReviews?.map((review: Review, index: number) => (
             <div
               key={index}
-              className="border-accent-light-color dark:border-accent-dark-color mx-2 h-[200px] max-h-full overflow-y-auto rounded-md border-[.5px]"
+              className="border-accent-light-color bg-secondary-light-color dark:bg-secondary-dark-color dark:border-accent-dark-color mx-2 h-[200px] max-h-full overflow-y-auto rounded-md border-[.5px]"
             >
               <div className="flex flex-col gap-2 p-6">
                 <StarRatings readOnly={true} defaultRating={5} size={25} />

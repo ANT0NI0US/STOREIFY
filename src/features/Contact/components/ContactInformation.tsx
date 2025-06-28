@@ -51,9 +51,9 @@ export default function ContactInformation() {
             rel={rel || undefined}
             className="mx-auto flex w-fit flex-col items-center gap-1 sm:mx-0 sm:flex-row sm:items-start sm:gap-3"
           >
-            <div className="dark:text-orange-color text-[40px]">{icon}</div>
-            <div className="flex flex-col gap-2 text-center sm:text-start">
-              <h3 className="dark:text-orange-color text-xl font-extrabold">
+            <div className="dark:text-orange-color text-3xl">{icon}</div>
+            <div className="flex flex-col gap-1 text-center sm:text-start">
+              <h3 className="dark:text-orange-color text-xl font-semibold">
                 {title}
               </h3>
               <p>{text}</p>

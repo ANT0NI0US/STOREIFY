@@ -15,7 +15,7 @@ export default function ConfirmMessage({
 }: ConfirmMessageProps) {
   return (
     <>
-      <p className="rounded-tl-lg rounded-tr-lg p-3.5 text-lg font-extrabold capitalize md:p-5">
+      <p className="rounded-tl-lg rounded-tr-lg p-3.5 text-xl font-semibold capitalize md:p-5">
         {message}
       </p>
 
