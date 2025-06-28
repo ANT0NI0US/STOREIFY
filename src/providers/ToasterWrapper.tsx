@@ -13,22 +13,22 @@ export default function ToasterWrapper() {
         duration: 3000,
         success: {
           style: {
-            background: isDarkMode ? " #163b48" : "#faeed1",
-            color: isDarkMode ? "#88d07a" : "#4b352a",
+            background: isDarkMode ? " #0e1013" : "#faeed1",
+            color: isDarkMode ? "#f0faff" : "#4b352a",
           },
           iconTheme: {
-            primary: isDarkMode ? "#0e1013" : "#4b352a",
-            secondary: isDarkMode ? "#c18500" : "#faeed1",
+            primary: isDarkMode ? "#f0faff" : "#4b352a",
+            secondary: isDarkMode ? "#0e1013" : "#faeed1",
           },
         },
         error: {
           style: {
-            background: "#ff0000",
-            color: "#faeed1",
+            background: isDarkMode ? "#dd0808" : "#ff0000",
+            color: isDarkMode ? "#f0faff" : "#faeed1",
           },
           iconTheme: {
-            primary: "#faeed1",
-            secondary: isDarkMode ? "#ff0000" : "#ff0000",
+            primary: isDarkMode ? "#f0faff" : "#faeed1",
+            secondary: isDarkMode ? "#dd0808" : "#ff0000",
           },
         },
       }}

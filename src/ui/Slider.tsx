@@ -34,13 +34,13 @@ export default function Slider({ children }: sliderProps) {
       customLeftArrow={
         <MdArrowBackIosNew
           size={40}
-          className="absolute left-4 top-1/2 -translate-y-[50%] cursor-pointer rounded-full bg-transparent p-2 text-main-color/50 transition-all hover:bg-light-color dark:text-light-color dark:hover:bg-main-color/50"
+          className="hover:bg-accent-light-color hover:dark:bg-accent-dark-color absolute top-1/2 left-4 -translate-y-[50%] cursor-pointer rounded-full bg-transparent p-2 transition-all"
         />
       }
       customRightArrow={
         <MdArrowForwardIos
           size={40}
-          className="absolute right-4 top-1/2 -translate-y-[50%] cursor-pointer rounded-full bg-transparent p-2 text-main-color/50 transition-all hover:bg-light-color dark:text-light-color dark:hover:bg-main-color/50"
+          className="hover:bg-accent-light-color hover:dark:bg-accent-dark-color absolute top-1/2 right-4 -translate-y-[50%] cursor-pointer rounded-full bg-transparent p-2 transition-all"
         />
       }
       containerClass="container-with-dots"

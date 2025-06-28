@@ -20,7 +20,7 @@ export default function QuantityControl({ item }: QuantityControlProps) {
     dispatch(cartActions.MaximizeQuantityItem(item?.id));
   };
   return (
-    <div className="flexBetween bg-primary-light-color dark:bg-primary-dark-color gap-5 rounded-md">
+    <div className="flexBetween bg-secondary-light-color dark:bg-secondary-dark-color gap-5 rounded-md">
       <Button
         variation="secondary"
         ArialLabel="minus Product"

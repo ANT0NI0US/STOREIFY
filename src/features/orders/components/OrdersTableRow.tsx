@@ -24,11 +24,11 @@ export default function OrdersTableRow({ order }: orderProps) {
       <Table.Cell>
         {isDateInThePast(order.deliveryDate) ? (
           <div className="bg-text-light-color dark:bg-text-dark-color rounded-full p-2">
-            <FaCheck className="text-secondary-light-color dark:text-secondary-color" />
+            <FaCheck className="text-secondary-light-color dark:text-secondary-dark-color" />
           </div>
         ) : (
           <div className="bg-error-light-color dark:bg-error rounded-full p-2">
-            <FaXmark className="text-secondary-light-color dark:text-secondary-color" />
+            <FaXmark className="text-secondary-light-color dark:text-secondary-dark-color" />
           </div>
         )}
       </Table.Cell>

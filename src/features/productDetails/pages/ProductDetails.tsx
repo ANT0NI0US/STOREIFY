@@ -10,7 +10,6 @@ import { productCardProps, productState } from "@/utils/types";
 import { getProductById, getProducts } from "@/store/service/productService";
 import { AppDispatch } from "@/store";
 import useHelmet from "@/hooks/useHelmet";
-import Container from "@/ui/Container";
 
 export default function ProductDetails() {
   const dispatch = useDispatch<AppDispatch>();
@@ -55,7 +54,7 @@ export default function ProductDetails() {
 
   if (!product) {
     return (
-      <div className="flexCenter mt-[80px] py-[80px] text-center text-3xl text-primary-color">
+      <div className="flexCenter mt-[80px] py-[80px] text-center text-3xl">
         Product not found!
       </div>
     );
@@ -65,11 +64,9 @@ export default function ProductDetails() {
     <>
       <CommonSection title={productName} />
       <div>
-        <Container>
-          <CertainProductDetail product={product} />
-          <DescriptionReviews description={description} reviews={reviews} />
-          <ProductsInTheSameCategory sameCategories={sameCategories} />
-        </Container>
+        <CertainProductDetail product={product} />
+        <DescriptionReviews description={description} reviews={reviews} />
+        <ProductsInTheSameCategory sameCategories={sameCategories} />
       </div>
     </>
   );

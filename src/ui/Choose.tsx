@@ -6,7 +6,6 @@ import Select, {
   GroupBase,
   SelectInstance,
 } from "react-select";
-import { Error } from "./Error";
 import { useDarkMode } from "@/hooks/useDarkMode";
 
 interface Option {
@@ -24,116 +23,114 @@ interface ChooseProps {
       | SingleValue<Option>
       | null,
   ) => void;
-  error?: string;
   disabled?: boolean;
   isMulti?: boolean;
   defaultValue?: MultiValue<Option> | SingleValue<Option> | null;
   placeholder?: string;
   isClearable?: boolean;
-  Label?: string;
-  showLabel?: boolean;
   name?: string;
 }
 
 const getCustomStyles = (isDarkMode: boolean): StylesConfig<Option> => ({
   control: (provided) => ({
     ...provided,
-    border: isDarkMode ? "1px solid #c18500" : "1px solid #f39530",
+    border: isDarkMode ? "3px solid #5e4f3a" : "3px solid #bbab8c",
     boxShadow: "none",
     "&:hover": {
-      borderColor: isDarkMode ? "#c18500" : "#f39530",
+      borderColor: isDarkMode ? "#5e4f3a" : "#bbab8c",
     },
     width: "100%",
     height: "100%",
     padding: "0px",
     paddingTop: "10px",
     paddingBottom: "10px",
-    backgroundColor: isDarkMode ? "#0e1013" : "#daf3ff",
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    backgroundColor: isDarkMode ? "#192635" : "#ded0b6",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
     outline: "none",
-    maxHeight: "60px",
     overflowY: "auto",
     cursor: "pointer",
   }),
   dropdownIndicator: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
     "&:hover": {
-      color: isDarkMode ? "#88d07a" : "#253b45",
+      color: isDarkMode ? "#f0faff" : "#4b352a",
     },
   }),
   clearIndicator: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
     "&:hover": {
-      color: isDarkMode ? "#88d07a" : "#253b45",
+      color: isDarkMode ? "#f0faff" : "#4b352a",
     },
   }),
   indicatorSeparator: (provided) => ({
     ...provided,
-    backgroundColor: isDarkMode ? "#88d07a" : "#253b45",
+    backgroundColor: isDarkMode ? "#f0faff" : "#4b352a",
   }),
   noOptionsMessage: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
   }),
   menuList: (provided) => ({
     ...provided,
     maxHeight: "100px",
     overflowY: "auto",
-    backgroundColor: isDarkMode ? "#0e1013" : "#daf3ff",
-    border: isDarkMode ? "1px solid #c18500" : "1px solid #f39530",
+    backgroundColor: isDarkMode ? "#192635" : "#ded0b6",
+    border: isDarkMode ? "1px solid #5e4f3a" : "1px solid #bbab8c",
     padding: "0px",
   }),
   input: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
   }),
   placeholder: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
   }),
   option: (provided, state) => ({
     ...provided,
     cursor: "pointer",
     backgroundColor: state.isSelected
       ? isDarkMode
-        ? "#163b48"
-        : "#a3ffce"
+        ? "#0e1013"
+        : "#faeed1"
       : state.isFocused
         ? isDarkMode
-          ? "#163b48"
-          : "#a3ffce"
+          ? "#0e1013"
+          : "#faeed1"
         : undefined,
     color: state.isSelected
       ? isDarkMode
-        ? "#daf3ff"
-        : "#253b45"
+        ? "#5e4f3a"
+        : "#bbab8c"
       : state.isFocused
         ? isDarkMode
-          ? "#daf3ff"
-          : "#253b45"
+          ? "#5e4f3a"
+          : "#bbab8c"
         : isDarkMode
-          ? "#daf3ff"
-          : "#253b45",
-    "&:hover": {
-      backgroundColor: isDarkMode ? "#163b48b5" : "#a3ffceb5",
-      color: isDarkMode ? "#daf3ff" : "#253b45",
-    },
+          ? "#f0faff"
+          : "#4b352a",
+    "&:hover": state.isSelected
+      ? {}
+      : {
+          backgroundColor: isDarkMode ? "#163b48b5" : "#a3ffceb5",
+          color: isDarkMode ? "#ded0b6" : "#4b352a",
+        },
   }),
   multiValue: (provided) => ({
     ...provided,
-    backgroundColor: isDarkMode ? "#0e1013" : "#daf3ff",
+    backgroundColor: isDarkMode ? "#192635" : "#ded0b6",
     maxHeight: "100px",
     overflowY: "auto",
   }),
   multiValueLabel: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
   }),
   multiValueRemove: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
     "&:hover": {
       backgroundColor: "transparent",
       color: "#ff0000",
@@ -141,7 +138,7 @@ const getCustomStyles = (isDarkMode: boolean): StylesConfig<Option> => ({
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#88d07a" : "#253b45",
+    color: isDarkMode ? "#f0faff" : "#4b352a",
   }),
 });
 
@@ -155,15 +152,12 @@ const Choose = React.forwardRef<
       data,
       isLoading = false,
       onChange,
-      error,
       disabled = false,
       isMulti = false,
       defaultValue,
       placeholder = "",
       isClearable = false,
-      Label,
       name,
-      showLabel = false,
     }: ChooseProps,
     ref,
   ) => {
@@ -181,14 +175,6 @@ const Choose = React.forwardRef<
 
     return (
       <div className="w-full">
-        {showLabel && (
-          <label
-            htmlFor={placeholder}
-            className="text-main-color dark:text-light-color block p-[3px] text-sm font-extrabold tracking-wider uppercase"
-          >
-            {Label}
-          </label>
-        )}
         <Select
           styles={getCustomStyles(isDarkMode)}
           ref={ref}
@@ -203,8 +189,6 @@ const Choose = React.forwardRef<
           defaultValue={defaultValue}
           isMulti={isMulti}
         />
-
-        <Error message={error} />
       </div>
     );
   },

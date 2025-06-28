@@ -24,7 +24,7 @@ export default function Banner() {
             <h2 className="text-2xl font-semibold md:text-4xl">
               Make your Interior More Minimalistic & Modern
             </h2>
-            <p className="leading-[28px]">
+            <p className="leading-7">
               Explore a wide range of products with seamless shopping and secure
               checkout. Elevate your shopping experience with ease and
               convenience.

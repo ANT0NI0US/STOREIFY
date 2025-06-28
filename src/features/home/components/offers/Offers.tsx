@@ -5,7 +5,7 @@ import Container from "@/ui/Container";
 
 export default function Offers() {
   return (
-    <section className="bg-secondary-light-color dark:bg-secondary-color dark:text-primary-color w-full overflow-hidden md:h-[530px]">
+    <section className="bg-secondary-light-color dark:bg-secondary-dark-color w-full overflow-hidden md:h-[530px]">
       <div className="flex h-full w-full flex-col-reverse md:flex-row md:items-center md:justify-evenly">
         <div className="h-full w-full basis-1/2">
           <img
@@ -21,9 +21,7 @@ export default function Offers() {
             Hurry up! 40% OFF
           </h1>
           <p>Thousands of high tech are waiting for you</p>
-          <h2 className="dark:text-orange-color font-medium">
-            Offer expires in:
-          </h2>
+          <h2 className="font-medium">Offer expires in:</h2>
           <Clock />
           <motion.div
             className="mx-auto w-[150px] md:mx-0"

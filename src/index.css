@@ -16,28 +16,19 @@
     ),
     url("https://i.ibb.co/dDS4MWS/common-section.webp");
 
-  --color-main-color: #0e1013;
-  --color-primary-color: #f0faff;
-  --color-secondary-color: #192635;
-  --color-orange-color: #88d07a;
-  --color-card-bg-01: #007c49;
-  --color-card-bg-02: #636568;
-  --color-error: #dd0808;
-
   --color-text-dark-color: #f0faff;
-  --color-primary-dark-color: #ded0b6;
-  --color-secondary-dark-color: #faeed1;
-  --color-error-dark-color: #ff0000;
-  --color-accent-dark-color: #bbab8c;
+  --color-primary-dark-color: #192635;
+  --color-secondary-dark-color: #0e1013;
+  --color-error-dark-color: #dd0808;
+  --color-accent-dark-color: #5e4f3a;
+  --color-card-bg-01-dark: #007c49;
+  --color-card-bg-02-dark: #636568;
 
   --color-text-light-color: #4b352a;
   --color-primary-light-color: #ded0b6;
   --color-secondary-light-color: #faeed1;
   --color-error-light-color: #ff0000;
   --color-accent-light-color: #bbab8c;
-
-  --color-light-color: #ffeace;
-  --color-orange-color-light: #ba881d;
   --color-card-bg-01-light: #98afba;
   --color-card-bg-02-light: #ccb29e;
 
@@ -66,12 +57,12 @@
   }
 
   html.dark body {
-    @apply text-light-color;
+    @apply text-text-dark-color;
   }
 }
 
 @utility input {
-  @apply placeholder:text-primary-light-color dark:placeholder:text-primary-color w-full p-[10px] outline-0 transition-all duration-300 placeholder:text-sm disabled:cursor-not-allowed disabled:border-0;
+  @apply placeholder:text-primary-light-color dark:placeholder:text-primary-dark-color w-full p-[10px] outline-0 transition-all duration-300 placeholder:text-sm disabled:cursor-not-allowed disabled:border-0;
 
   &:-webkit-autofill {
     -webkit-text-fill-color: #253b45;

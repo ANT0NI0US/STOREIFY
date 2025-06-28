@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function OurStory() {
   return (
-    <section className="flexCenter bg-secondary-light-color py-[40px] pb-0 md:py-[80px]">
+    <section className="flexCenter bg-secondary-light-color dark:bg-secondary-dark-color py-[40px] pb-0 md:py-[80px]">
       <div className="flexBetween mx-auto w-full flex-col overflow-hidden md:flex-row">
         <motion.div
           initial="hidden"
@@ -14,7 +14,7 @@ export default function OurStory() {
           }}
           className={`mx-auto flex w-[90%] flex-col gap-4 pb-[40px] text-center sm:w-5/6 md:w-fit md:basis-3/5 md:px-[30px] md:pb-0 md:text-left`}
         >
-          <h2 className="dark:text-orange-color my-2 text-2xl font-extrabold tracking-widest uppercase md:text-4xl">
+          <h2 className="my-2 text-2xl font-extrabold tracking-widest uppercase md:text-4xl">
             Our Story
           </h2>
           <p className="leading-[28px]">

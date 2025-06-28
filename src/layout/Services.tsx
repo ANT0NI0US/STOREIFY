@@ -31,7 +31,7 @@ const serviceData: widgetProps[] = [
 
 export default function Services() {
   return (
-    <section className="w-full pb-[40px] md:pb-[80px]">
+    <section className="w-full py-[40px] md:py-[80px]">
       <Container>
         <Widgets widgetsData={serviceData} />
       </Container>

@@ -11,7 +11,7 @@ export default function Favorites() {
   return (
     <>
       <CommonSection title="Favorites" />
-      <section className="w-full py-[40px] md:py-[80px]">
+      <section className="bg-secondary-light-color dark:bg-secondary-dark-color w-full py-[40px] md:py-[80px]">
         <Container>
           <FavoriteProductTable perfectItems={perfectItems} />
         </Container>

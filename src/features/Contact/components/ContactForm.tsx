@@ -67,7 +67,7 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit(sendEmail)}
-      className="dark:shadow-secondary-color flex w-full flex-col gap-6 rounded-md p-6 shadow-md sm:basis-2/3"
+      className="bg-primary-light-color dark:bg-primary-dark-color flex w-full flex-col gap-6 rounded-md p-6 shadow-md sm:basis-2/3"
     >
       <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
         <Input
