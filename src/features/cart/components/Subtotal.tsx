@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { motion } from "framer-motion";
 import Button from "@/ui/Button";
 import { cartSliceState } from "@/utils/types";
 
@@ -17,19 +16,20 @@ export default function Subtotal() {
         taxes and shipping will calculate in checkout
       </p>
       <div className="mt-5 flex w-full flex-col items-center justify-center gap-5 md:items-start">
-        <motion.div whileTap={{ scale: 1.1 }} className="w-[200px]">
-          <Button ArialLabel="Go-To-Shop" onClick={() => navigate("/shop")}>
-            <span>Continue Shopping</span>
-          </Button>
-        </motion.div>
-        <motion.div whileTap={{ scale: 1.1 }} className="w-[100px]">
-          <Button
-            ArialLabel="Go-To-Checkout"
-            onClick={() => navigate("/checkout")}
-          >
-            <span>Checkout</span>
-          </Button>
-        </motion.div>
+        <Button
+          ArialLabel="Go-To-Shop"
+          onClick={() => navigate("/shop")}
+          Font="w-[200px]!"
+        >
+          <span>Continue Shopping</span>
+        </Button>
+        <Button
+          ArialLabel="Go-To-Checkout"
+          onClick={() => navigate("/checkout")}
+          Font="w-[100px]!"
+        >
+          <span>Checkout</span>
+        </Button>
       </div>
     </div>
   );

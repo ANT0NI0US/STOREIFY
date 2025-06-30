@@ -30,6 +30,11 @@ export interface Item {
   price: number;
 }
 
+export interface RemovedProduct {
+  id: string;
+  productName: string;
+}
+
 export interface CartItem extends Item {
   quantity?: number;
   totalPrice?: number;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import BigScreenLinks from "./BigScreenLinks";
 import NavbarActions from "./NavbarActions";
 import ToggleSidebar from "./ToggleSidebar";
@@ -8,7 +9,6 @@ import Container from "@/ui/Container";
 import ProfilePhoto from "./ProfilePhoto";
 import { userLinks } from "./links";
 import { loginState } from "@/utils/types";
-import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);

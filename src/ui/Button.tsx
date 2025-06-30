@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const sizeStyles = {
@@ -6,6 +7,12 @@ const sizeStyles = {
   medium: "px-3 py-2 text-sm sm:text-base",
   large: "px-6 py-4 text-lg sm:text-xl",
   actions: "px-3 py-1 !text-xs sm:!text-sm !w-fit",
+};
+
+const motionProps = {
+  whileHover: { scale: 1.02 },
+  whileTap: { scale: 0.95 },
+  transition: { duration: 0.125, ease: "easeInOut" },
 };
 
 interface ButtonProps {
@@ -55,25 +62,28 @@ export default function Button({
 
   if (To)
     return (
-      <Link
-        to={To}
-        className={combinedClassName}
-        aria-label={ArialLabel}
-        title={ArialLabel}
-        replace={replace}
-      >
-        {children}
-      </Link>
+      <motion.div className="w-full" {...motionProps}>
+        <Link
+          to={To}
+          className={combinedClassName}
+          aria-label={ArialLabel}
+          title={ArialLabel}
+          replace={replace}
+        >
+          {children}
+        </Link>
+      </motion.div>
     );
 
   return (
-    <button
+    <motion.button
       onClick={onClick}
       type={type}
       disabled={disabled || loading}
       className={combinedClassName}
       aria-label={ArialLabel}
       title={ArialLabel}
+      {...motionProps}
     >
       {loading ? (
         <div className="flexCenter gap-1">
@@ -84,6 +94,6 @@ export default function Button({
       ) : (
         children
       )}
-    </button>
+    </motion.button>
   );
 }

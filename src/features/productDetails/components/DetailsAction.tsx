@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
-import { motion } from "framer-motion";
 import Button from "@/ui/Button";
 import { cartActions } from "@/store/slice/cartSlice";
 import { AppDispatch } from "@/store";
@@ -44,17 +43,21 @@ export default function DetailsAction({
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start">
-      <motion.div className="w-full sm:w-[200px]" whileTap={{ scale: 1.1 }}>
-        <Button onClick={addToCart} ArialLabel="Add to cart">
-          Add to Cart
-        </Button>
-      </motion.div>
+      <Button
+        onClick={addToCart}
+        ArialLabel="Add to cart"
+        Font="w-full! sm:w-[200px]!"
+      >
+        Add to Cart
+      </Button>
 
-      <motion.div className="w-full sm:w-[200px]" whileTap={{ scale: 1.1 }}>
-        <Button onClick={addToFavorite} ArialLabel="Add to favorite">
-          Add to Favorites
-        </Button>
-      </motion.div>
+      <Button
+        onClick={addToFavorite}
+        ArialLabel="Add to favorite"
+        Font="w-full! sm:w-[200px]!"
+      >
+        Add to Favorites
+      </Button>
     </div>
   );
 }

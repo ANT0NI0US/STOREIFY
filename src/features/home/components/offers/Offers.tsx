@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Clock from "./Clock";
 import Button from "@/ui/Button";
 import Container from "@/ui/Container";
@@ -23,14 +22,14 @@ export default function Offers() {
           <p>Thousands of high tech are waiting for you</p>
           <h2 className="font-medium">Offer expires in:</h2>
           <Clock />
-          <motion.div
-            className="mx-auto w-[150px] md:mx-0"
-            whileTap={{ scale: 1.1 }}
+
+          <Button
+            ArialLabel="Shopping Now"
+            To="/shop"
+            Font="mx-auto w-[150px]!"
           >
-            <Button ArialLabel="Shopping Now" To="/shop">
-              SHOP NOW
-            </Button>
-          </motion.div>
+            SHOP NOW
+          </Button>
         </Container>
       </div>
     </section>

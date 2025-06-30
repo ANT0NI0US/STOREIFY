@@ -2,7 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { MdDriveFileRenameOutline, MdOutlineMailOutline } from "react-icons/md";
 import HeaderAuth from "./HeaderAuth";
+import SignInWithGoogle from "./SignInWithGoogle";
 import Button from "@/ui/Button";
 import Input from "@/ui/Input";
 import { loginState } from "@/utils/types";
@@ -15,8 +17,6 @@ import {
 import { signUpFirebase } from "@/store/service/loginService.ts";
 import { AppDispatch } from "@/store";
 import useHelmet from "@/hooks/useHelmet";
-import SignInWithGoogle from "./SignInWithGoogle";
-import { MdDriveFileRenameOutline, MdOutlineMailOutline } from "react-icons/md";
 
 const allowedTypes = [
   "image/jpeg",

@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
+import { MdAddShoppingCart } from "react-icons/md";
+import RemoveProductFromFavorite from "./RemoveProductFromFavorite";
 import Button from "@/ui/Button";
 import Table from "@/ui/Table";
 import { Item } from "@/utils/types";
 import { AppDispatch } from "@/store";
 import { cartActions } from "@/store/slice/cartSlice";
-import { MdAddShoppingCart } from "react-icons/md";
 
 interface perfectItemProp {
   perfectItem: Item;
@@ -45,7 +45,7 @@ export default function FavoriteProductTableRow({
       <Table.Cell>{perfectItem.productName}</Table.Cell>
       <Table.Cell>${perfectItem.price}</Table.Cell>
       <Table.Cell>
-        <motion.div whileTap={{ scale: 1.1 }}>
+        <div className="flex gap-1">
           <Button
             ArialLabel="Add to cart"
             variation="secondary"
@@ -55,7 +55,8 @@ export default function FavoriteProductTableRow({
           >
             <MdAddShoppingCart />
           </Button>
-        </motion.div>
+          <RemoveProductFromFavorite product={perfectItem} />
+        </div>
       </Table.Cell>
     </Table.Row>
   );

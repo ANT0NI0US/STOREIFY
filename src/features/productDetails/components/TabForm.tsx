@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { motion } from "framer-motion";
 import StarRatings from "@/ui/StarRatings";
 import Button from "@/ui/Button";
 import Input from "@/ui/Input";
@@ -104,11 +103,9 @@ export default function TabForm() {
           error={errors?.text?.message}
         />
 
-        <motion.div whileTap={{ scale: 1.1 }}>
-          <Button ArialLabel="submitReview" type="submit" loading={isLoading}>
-            Submit
-          </Button>
-        </motion.div>
+        <Button ArialLabel="submitReview" type="submit" loading={isLoading}>
+          Submit
+        </Button>
       </form>
     </div>
   );

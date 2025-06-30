@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -281,15 +280,13 @@ export default function OrderForm({
           Icon={<MdOutlineMapsHomeWork />}
         />
 
-        <motion.div whileTap={{ scale: 1.1 }} className="w-full">
-          <Button
-            ArialLabel="Place an order"
-            type="submit"
-            loading={isOrderLoading}
-          >
-            Place an Order
-          </Button>
-        </motion.div>
+        <Button
+          ArialLabel="Place an order"
+          type="submit"
+          loading={isOrderLoading}
+        >
+          Place an Order
+        </Button>
       </form>
     </div>
   );

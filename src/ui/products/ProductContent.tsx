@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { newProductProps } from "@/utils/types";
 import { FaOpencart } from "react-icons/fa6";
+import Button from "../Button";
+import { newProductProps } from "@/utils/types";
 import { AppDispatch } from "@/store";
 import { cartActions } from "@/store/slice/cartSlice";
-import Button from "../Button";
 
 export default function ProductContent({ item }: { item: newProductProps }) {
   const dispatch = useDispatch<AppDispatch>();

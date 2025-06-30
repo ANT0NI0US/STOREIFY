@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import ConfirmMessage from "./ConfirmMessage";
+import ConfirmMessage from "@/ui/ConfirmMessage";
 import Modal from "@/ui/Modal";
 import Button from "@/ui/Button";
 import { CartItem } from "@/utils/types";
@@ -23,10 +22,7 @@ export default function DeleteButton({ item }: DeleteButtonProps) {
   return (
     <Modal>
       <Modal.Open opens="DeleteItemForm">
-        <motion.div
-          whileTap={{ scale: 1.1 }}
-          className="absolute top-4 right-4 w-[45px] cursor-pointer"
-        >
+        <div className="absolute top-4 right-4 w-[45px] cursor-pointer">
           <Button
             Font="rounded-full!"
             ArialLabel="Delete Product"
@@ -34,7 +30,7 @@ export default function DeleteButton({ item }: DeleteButtonProps) {
           >
             <RiDeleteBin5Line size={25} />
           </Button>
-        </motion.div>
+        </div>
       </Modal.Open>
       <Modal.Window name="DeleteItemForm">
         <ConfirmMessage

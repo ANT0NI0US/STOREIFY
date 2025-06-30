@@ -6,7 +6,7 @@ import { newProductProps } from "@/utils/types";
 export default function ProductCard({ item }: { item: newProductProps }) {
   const { imgUrl, productName } = item;
   return (
-    <div className="flexBetween group hover:shadow-primary-light-color dark:hover:shadow-primary-dark-color dark:bg-primary-dark-color bg-primary-light-color relative flex-col overflow-hidden rounded-md shadow-md drop-shadow-2xl transition-all duration-500 hover:shadow-2xl">
+    <div className="flexBetween group hover:shadow-accent-light-color dark:hover:shadow-accent-dark-color dark:bg-primary-dark-color bg-primary-light-color relative flex-col overflow-hidden rounded-md shadow-lg transition-all duration-500">
       {/* ADD TO FAVORITES */}
       <AddFavoriteProduct item={item} />
       {/* PRODUCT IMAGE */}

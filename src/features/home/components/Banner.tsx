@@ -29,14 +29,13 @@ export default function Banner() {
               checkout. Elevate your shopping experience with ease and
               convenience.
             </p>
-            <motion.div
-              whileTap={{ scale: 1.1 }}
-              className="mx-auto w-[150px] md:mx-0"
+            <Button
+              ArialLabel="Go-To-Shop"
+              To="/shop"
+              Font="mx-auto w-[150px]! md:mx-0"
             >
-              <Button ArialLabel="Go-To-Shop" To="/shop">
-                SHOP NOW
-              </Button>
-            </motion.div>
+              SHOP NOW
+            </Button>
           </motion.div>
 
           {/* BANNER IMAGE */}

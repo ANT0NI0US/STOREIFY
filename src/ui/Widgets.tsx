@@ -14,9 +14,9 @@ export default function Widgets({ widgetsData, type = "color" }: WidgetsProps) {
             hidden: { opacity: 0, y: index % 2 === 0 ? -50 : 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.02 }}
           key={index}
-          className={`flex ${type === "color" ? "odd:bg-card-bg-01-light even:bg-card-bg-02-light dark:odd:bg-card-bg-01-dark dark:even:bg-card-bg-02-dark md:flex-row md:items-start md:text-left" : "border-accent-light-color bg-secondary-light-color dark:border-accent-dark-color dark:bg-secondary-dark-color border"} min-h-[125px] w-full flex-col items-center gap-[15px] rounded-md p-5 text-center`}
+          className={`flex ${type === "color" ? "odd:bg-accent-light-color even:bg-widget-light-color dark:odd:bg-accent-dark-color dark:even:bg-widget-dark-color md:flex-row md:items-start md:text-left" : "border-accent-light-color bg-secondary-light-color dark:border-accent-dark-color dark:bg-secondary-dark-color border"} min-h-[125px] w-full flex-col items-center gap-[15px] rounded-md p-5 text-center`}
         >
           <div
             className={`${type === "color" ? "bg-primary-light-color dark:bg-primary-dark-color md:text-3xl" : "border-text-light-color dark:border-text-dark-color border md:text-5xl"} flexCenter rounded-full p-3 text-4xl md:p-[10px]`}

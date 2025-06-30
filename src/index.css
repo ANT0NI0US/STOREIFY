@@ -16,21 +16,19 @@
     ),
     url("https://i.ibb.co/dDS4MWS/common-section.webp");
 
-  --color-text-dark-color: #f0faff;
-  --color-primary-dark-color: #192635;
-  --color-secondary-dark-color: #0e1013;
-  --color-error-dark-color: #dd0808;
-  --color-accent-dark-color: #5e4f3a;
-  --color-card-bg-01-dark: #007c49;
-  --color-card-bg-02-dark: #636568;
+  --color-text-dark-color: #e8d6c2;
+  --color-primary-dark-color: #1a1a1a;
+  --color-secondary-dark-color: #2a2a2a;
+  --color-error-dark-color: #d43c3c;
+  --color-accent-dark-color: #6e5e48;
+  --color-widget-dark-color: #8c7a5a;
 
   --color-text-light-color: #4b352a;
   --color-primary-light-color: #ded0b6;
   --color-secondary-light-color: #faeed1;
   --color-error-light-color: #ff0000;
   --color-accent-light-color: #bbab8c;
-  --color-card-bg-01-light: #98afba;
-  --color-card-bg-02-light: #ccb29e;
+  --color-widget-light-color: #ccb29e;
 
   --font-Merienda: "Merienda", "cursive";
 }
