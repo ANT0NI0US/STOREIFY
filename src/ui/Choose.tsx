@@ -34,82 +34,82 @@ interface ChooseProps {
 const getCustomStyles = (isDarkMode: boolean): StylesConfig<Option> => ({
   control: (provided) => ({
     ...provided,
-    border: isDarkMode ? "3px solid #5e4f3a" : "3px solid #bbab8c",
+    border: isDarkMode ? "3px solid #6e5e48" : "3px solid #bbab8c",
     boxShadow: "none",
     "&:hover": {
-      borderColor: isDarkMode ? "#5e4f3a" : "#bbab8c",
+      borderColor: isDarkMode ? "#6e5e48" : "#bbab8c",
     },
     width: "100%",
     height: "100%",
     padding: "0px",
     paddingTop: "10px",
     paddingBottom: "10px",
-    backgroundColor: isDarkMode ? "#192635" : "#ded0b6",
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    backgroundColor: isDarkMode ? "#1a1a1a" : "#ded0b6",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
     outline: "none",
     overflowY: "auto",
     cursor: "pointer",
   }),
   dropdownIndicator: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
     "&:hover": {
-      color: isDarkMode ? "#f0faff" : "#4b352a",
+      color: isDarkMode ? "#e8d6c2" : "#4b352a",
     },
   }),
   clearIndicator: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
     "&:hover": {
-      color: isDarkMode ? "#f0faff" : "#4b352a",
+      color: isDarkMode ? "#e8d6c2" : "#4b352a",
     },
   }),
   indicatorSeparator: (provided) => ({
     ...provided,
-    backgroundColor: isDarkMode ? "#f0faff" : "#4b352a",
+    backgroundColor: isDarkMode ? "#e8d6c2" : "#4b352a",
   }),
   noOptionsMessage: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
   }),
   menuList: (provided) => ({
     ...provided,
     maxHeight: "100px",
     overflowY: "auto",
-    backgroundColor: isDarkMode ? "#192635" : "#ded0b6",
-    border: isDarkMode ? "1px solid #5e4f3a" : "1px solid #bbab8c",
+    backgroundColor: isDarkMode ? "#1a1a1a" : "#ded0b6",
+    border: isDarkMode ? "1px solid #6e5e48" : "1px solid #bbab8c",
     padding: "0px",
   }),
   input: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
   }),
   placeholder: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
   }),
   option: (provided, state) => ({
     ...provided,
     cursor: "pointer",
     backgroundColor: state.isSelected
       ? isDarkMode
-        ? "#0e1013"
+        ? "#2a2a2a"
         : "#faeed1"
       : state.isFocused
         ? isDarkMode
-          ? "#0e1013"
+          ? "#2a2a2a"
           : "#faeed1"
         : undefined,
     color: state.isSelected
       ? isDarkMode
-        ? "#5e4f3a"
+        ? "#6e5e48"
         : "#bbab8c"
       : state.isFocused
         ? isDarkMode
-          ? "#5e4f3a"
+          ? "#6e5e48"
           : "#bbab8c"
         : isDarkMode
-          ? "#f0faff"
+          ? "#e8d6c2"
           : "#4b352a",
     "&:hover": state.isSelected
       ? {}
@@ -120,17 +120,17 @@ const getCustomStyles = (isDarkMode: boolean): StylesConfig<Option> => ({
   }),
   multiValue: (provided) => ({
     ...provided,
-    backgroundColor: isDarkMode ? "#192635" : "#ded0b6",
+    backgroundColor: isDarkMode ? "#1a1a1a" : "#ded0b6",
     maxHeight: "100px",
     overflowY: "auto",
   }),
   multiValueLabel: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
   }),
   multiValueRemove: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
     "&:hover": {
       backgroundColor: "transparent",
       color: "#ff0000",
@@ -138,7 +138,7 @@ const getCustomStyles = (isDarkMode: boolean): StylesConfig<Option> => ({
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: isDarkMode ? "#f0faff" : "#4b352a",
+    color: isDarkMode ? "#e8d6c2" : "#4b352a",
   }),
 });
 

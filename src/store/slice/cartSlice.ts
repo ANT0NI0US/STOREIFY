@@ -1,4 +1,4 @@
-import { CartItem, CartState, Item } from "@/utils/types";
+import { CartItem, CartState, Item, RemovedProduct } from "@/utils/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
@@ -93,7 +93,7 @@ const cartSlice = createSlice({
           (item) => item.id !== newFavoriteItem.id,
         );
         state.totalFavoriteItemsQuantity = state.totalFavoriteItemsQuantity - 1;
-        toast.success("Product removed from favorites");
+        toast.success(`${newFavoriteItem.productName} removed from favorites`);
       } else {
         state.perfectItems.push({
           id: newFavoriteItem.id,
@@ -105,6 +105,17 @@ const cartSlice = createSlice({
         toast.success(
           `${newFavoriteItem.productName} added to favorites successfully!`,
         );
+      }
+    },
+    removeFavoriteItem: (state, action: PayloadAction<RemovedProduct>) => {
+      const { id, productName } = action.payload;
+      const existingItem = state.perfectItems.find((item) => item.id === id);
+      if (existingItem) {
+        state.perfectItems = state.perfectItems.filter(
+          (item) => item.id !== id,
+        );
+        state.totalFavoriteItemsQuantity = state.totalFavoriteItemsQuantity - 1;
+        toast.success(`${productName} removed from favorites`);
       }
     },
     resetCartItemsAndTotal(state) {

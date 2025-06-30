@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import ProductCard from "./ProductCard";
-import { newProductProps } from "@/utils/types";
 import GridContainer from "../GridContainer";
+import { newProductProps } from "@/utils/types";
 
 export default function ProductsList({ items }: { items: newProductProps[] }) {
   return (

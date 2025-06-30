@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 import { cartSliceState, newProductProps } from "@/utils/types";
 import { cartActions } from "@/store/slice/cartSlice";
 import { AppDispatch } from "@/store";
-import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 
 export default function AddFavoriteProduct({
   item,

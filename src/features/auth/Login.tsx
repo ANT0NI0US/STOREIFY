@@ -1,7 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
+import { MdOutlineMailOutline } from "react-icons/md";
 import HeaderAuth from "./HeaderAuth";
+import SignInWithGoogle from "./SignInWithGoogle";
 import Button from "@/ui/Button.tsx";
 import Input from "@/ui/Input.tsx";
 import Checkbox from "@/ui/Checkbox";
@@ -11,8 +13,6 @@ import { isOnlySpaces } from "@/utils/helpers.ts";
 import { signInFireBase } from "@/store/service/loginService.ts";
 import { AppDispatch } from "@/store/index.ts";
 import useHelmet from "@/hooks/useHelmet";
-import SignInWithGoogle from "./SignInWithGoogle";
-import { MdOutlineMailOutline } from "react-icons/md";
 
 interface loginFormProps {
   email: string;

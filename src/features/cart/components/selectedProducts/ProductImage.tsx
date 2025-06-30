@@ -8,7 +8,7 @@ export default function ProductImage({
   productName,
 }: ProductImageProps) {
   return (
-    <div className="w-[250px] md:w-[300px]">
+    <div className="w-[150px] md:w-[300px]">
       <img
         loading="lazy"
         src={typeof imgUrl === "string" ? imgUrl : undefined}

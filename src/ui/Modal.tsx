@@ -8,8 +8,8 @@ import {
   ReactNode,
   ReactElement,
 } from "react";
-import { useOutsideClick } from "@/hooks/useOutsideClick";
 import { FaTimes } from "react-icons/fa";
+import { useOutsideClick } from "@/hooks/useOutsideClick";
 
 interface ModalContextType {
   openName: string;

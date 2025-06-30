@@ -1,7 +1,7 @@
 import ProductsList from "@/ui/products/ProductsList";
 import HeadText from "@/ui/HeadText";
-import { productCardProps } from "@/utils/types";
 import Container from "@/ui/Container";
+import { productCardProps } from "@/utils/types";
 
 interface sameCategoryProps {
   sameCategories: productCardProps[];
