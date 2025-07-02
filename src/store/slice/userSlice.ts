@@ -13,7 +13,6 @@ const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // get a specific user
     builder.addCase(getUserById.pending, (state) => {
       state.isLoading = true;
       state.errors = null;

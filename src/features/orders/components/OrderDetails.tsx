@@ -39,7 +39,7 @@ export default function OrderDetails({
       {isCertainOrderLoading ? (
         <Spinner height="h-[50vh]" />
       ) : (
-        <div className="bg-primary-light-color flex max-h-[calc(80vh-125px)] flex-col gap-3.5 overflow-auto p-3.5 md:gap-5 md:p-5">
+        <div className="bg-primary-light-color dark:bg-primary-dark-color flex max-h-[calc(80vh-125px)] flex-col gap-3.5 overflow-auto p-3.5 md:gap-5 md:p-5">
           <OrderItems order={order} />
 
           <OrderDetailsInfo order={order} />
@@ -47,7 +47,7 @@ export default function OrderDetails({
       )}
 
       <div className="bg-secondary-light-color dark:bg-secondary-dark-color rounded-br-lg rounded-bl-lg border-t px-4 py-6">
-        <div className="ms-auto w-full sm:w-[30%]">
+        <div className="ms-auto w-1/2 sm:w-[30%]">
           <Button ArialLabel="Close" variation="danger" onClick={onCloseModal}>
             Close
           </Button>
