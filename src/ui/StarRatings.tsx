@@ -1,24 +1,13 @@
 import { useEffect, useState } from "react";
 
-const containerStyle = {
-  display: "flex",
-  alignItems: "center",
-  gap: "16px",
-};
-
-const starContainerStyle = {
-  display: "flex",
-};
-
 interface StarRatingsProps {
   maxRating?: number;
   defaultRating?: number;
   color?: string;
-  size?: number;
   messages?: string[];
   className?: string;
   onSetRating?: (rating: number) => void;
-  readOnly?: boolean; // Added prop
+  readOnly?: boolean;
 }
 
 interface StarProps {
@@ -27,14 +16,12 @@ interface StarProps {
   onHoverIn: () => void;
   onHoverOut: () => void;
   color: string;
-  size: number;
-  readOnly: boolean; // Added prop
+  readOnly: boolean;
 }
 
 export default function StarRatings({
   maxRating = 5,
   color = "#c18500",
-  size = 48,
   className = "",
   messages = [],
   defaultRating = 0,
@@ -54,10 +41,7 @@ export default function StarRatings({
   }
 
   const textStyle = {
-    lineHeight: "1",
-    margin: "0",
     color,
-    fontSize: `${size / 1.5}px`,
   };
 
   useEffect(() => {
@@ -65,8 +49,8 @@ export default function StarRatings({
   }, [defaultRating]);
 
   return (
-    <div style={containerStyle} className={className}>
-      <div style={starContainerStyle}>
+    <div className={`flex items-center gap-4 ${className}`}>
+      <div className="flex items-center">
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
             key={i}
@@ -75,13 +59,12 @@ export default function StarRatings({
             onHoverIn={() => !readOnly && setTempRating(i + 1)}
             onHoverOut={() => !readOnly && setTempRating(0)}
             color={color}
-            size={size}
             readOnly={readOnly}
           />
         ))}
       </div>
       {!readOnly && (
-        <p style={textStyle}>
+        <p className="m-0 text-xl leading-0 md:text-2xl" style={textStyle}>
           {messages.length === maxRating
             ? messages[tempRating ? tempRating - 1 : rating - 1]
             : tempRating || rating || ""}
@@ -97,20 +80,12 @@ function Star({
   onHoverIn,
   onHoverOut,
   color,
-  size,
   readOnly,
 }: StarProps) {
-  const starStyle = {
-    width: `${size}px`,
-    height: `${size}px`,
-    display: "block",
-    cursor: readOnly ? "default" : "pointer",
-  };
-
   return (
     <span
       role="button"
-      style={starStyle}
+      className={`block size-6 md:size-8 ${readOnly ? "cursor-default" : "cursor-pointer"}`}
       onClick={!readOnly ? onRate : undefined}
       onMouseEnter={!readOnly ? onHoverIn : undefined}
       onMouseLeave={!readOnly ? onHoverOut : undefined}

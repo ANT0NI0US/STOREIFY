@@ -41,7 +41,7 @@ const allContacts: Array<allContactsProps> = [
 
 export default function ContactInformation() {
   return (
-    <div className="bg-primary-light-color dark:bg-primary-dark-color flex w-full flex-col gap-10 rounded-md p-6 shadow-md sm:basis-1/3 sm:gap-8">
+    <div className="bg-primary-light-color dark:bg-primary-dark-color flex w-full flex-col gap-4 rounded-md p-4 shadow-md sm:grid sm:grid-cols-2 md:basis-1/3 md:grid-cols-1 md:gap-6 md:p-6">
       {allContacts.map(
         ({ title, href, icon, text, target, rel }: allContactsProps) => (
           <a
@@ -49,10 +49,10 @@ export default function ContactInformation() {
             href={href}
             target={target || undefined}
             rel={rel || undefined}
-            className="mx-auto flex w-fit flex-col items-center gap-1 sm:mx-0 sm:flex-row sm:items-start sm:gap-3"
+            className="mx-auto flex w-fit flex-col items-center gap-1 md:mx-0 md:flex-row md:items-start md:gap-3"
           >
             <div className="text-3xl">{icon}</div>
-            <div className="flex flex-col gap-1 text-center sm:text-start">
+            <div className="flex flex-col gap-1 text-center md:text-start">
               <h3 className="text-xl font-semibold">{title}</h3>
               <p>{text}</p>
             </div>

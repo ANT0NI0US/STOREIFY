@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+
+const MotionLink = motion(RouterLink);
 
 const sizeStyles = {
   small: "px-2 py-1 text-xs sm:text-sm",
@@ -62,17 +64,16 @@ export default function Button({
 
   if (To)
     return (
-      <motion.div className="w-full" {...motionProps}>
-        <Link
-          to={To}
-          className={combinedClassName}
-          aria-label={ArialLabel}
-          title={ArialLabel}
-          replace={replace}
-        >
-          {children}
-        </Link>
-      </motion.div>
+      <MotionLink
+        to={To}
+        className={combinedClassName}
+        aria-label={ArialLabel}
+        title={ArialLabel}
+        replace={replace}
+        {...motionProps}
+      >
+        {children}
+      </MotionLink>
     );
 
   return (

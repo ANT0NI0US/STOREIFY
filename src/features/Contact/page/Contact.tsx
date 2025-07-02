@@ -13,7 +13,7 @@ export default function Contact() {
       <section className="bg-secondary-light-color dark:bg-secondary-dark-color">
         <Container Styles="md:py-[80px] py-[40px]">
           <ContactHeader />
-          <div className="flex flex-col items-start justify-between gap-10 sm:flex-row">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:gap-6">
             {/* CONTACT INFORMATION */}
             <ContactInformation />
 

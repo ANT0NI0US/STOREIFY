@@ -46,11 +46,7 @@ export default function CertainProductDetail({
 
             {/* Ratings for the Product */}
             <div className="flexCenter flex-col gap-1 sm:flex-row sm:gap-9 md:justify-start">
-              <StarRatings
-                defaultRating={adjustedRating}
-                size={30}
-                readOnly={true}
-              />
+              <StarRatings defaultRating={adjustedRating} readOnly={true} />
               <p className="leading-[28px]">
                 (
                 <span className="font-semibold text-lime-600">

@@ -31,7 +31,6 @@ export default function AllExistReviews({ reviews }: Props) {
         >
           <StarRatings
             defaultRating={adjustRating(review.rating)}
-            size={25}
             readOnly={true}
           />
           <div className="flex items-center gap-1">
