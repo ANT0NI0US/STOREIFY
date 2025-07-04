@@ -19,16 +19,16 @@
   --color-text-dark-color: #e8d6c2;
   --color-primary-dark-color: #1a1a1a;
   --color-secondary-dark-color: #2a2a2a;
-  --color-error-dark-color: #d43c3c;
   --color-accent-dark-color: #6e5e48;
   --color-widget-dark-color: #8c7a5a;
+  --color-error-dark-color: #fd1a1a;
 
   --color-text-light-color: #4b352a;
   --color-primary-light-color: #ded0b6;
   --color-secondary-light-color: #faeed1;
-  --color-error-light-color: #ff0000;
   --color-accent-light-color: #bbab8c;
   --color-widget-light-color: #ccb29e;
+  --color-error-light-color: #ff0000;
 
   --font-Merienda: "Merienda", "cursive";
 }

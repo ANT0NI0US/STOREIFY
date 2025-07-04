@@ -140,6 +140,10 @@ const getCustomStyles = (isDarkMode: boolean): StylesConfig<Option> => ({
     ...provided,
     color: isDarkMode ? "#e8d6c2" : "#4b352a",
   }),
+  menuPortal: (provided) => ({
+    ...provided,
+    zIndex: 1000000,
+  }),
 });
 
 // Use Select type for ref
@@ -188,6 +192,7 @@ const Choose = React.forwardRef<
           isDisabled={disabled}
           defaultValue={defaultValue}
           isMulti={isMulti}
+          menuPortalTarget={document.body}
         />
       </div>
     );

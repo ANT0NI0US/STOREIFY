@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FaOpencart } from "react-icons/fa6";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoBagCheckOutline } from "react-icons/io5";
 import Button from "@/ui/Button";
 import { cartSliceState } from "@/utils/types";
@@ -20,14 +20,16 @@ export default function Subtotal() {
       <div className="flex w-full flex-col items-center justify-center gap-3.5 md:items-start md:gap-5">
         <Button
           ArialLabel="Go-To-Shop"
+          variation="secondary"
           onClick={() => navigate("/shop")}
           Font="w-[200px]!"
         >
-          <FaOpencart />
+          <MdOutlineShoppingCart />
           <span>Continue Shopping</span>
         </Button>
         <Button
           ArialLabel="Go-To-Checkout"
+          variation="secondary"
           onClick={() => navigate("/checkout")}
           Font="w-[150px]!"
         >

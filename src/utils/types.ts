@@ -60,6 +60,8 @@ export interface userProps {
   photoURL: string;
   type: "admin" | "user";
   uid?: string;
+  cart: { productID: string }[];
+  favorites: { productID: string }[];
 }
 
 export interface userServiceState {

@@ -7,7 +7,7 @@ import GridContainer from "@/ui/GridContainer";
 import { newProductProps } from "@/utils/types";
 
 const categories = ["Sofa", "Mobile", "Chair", "Watch", "Wireless"];
-const sorts = ["Ascending", "Descending"];
+const sorts = ["Lowest Price", "Highest Price", "A To Z", "Z To A"];
 
 interface filteredProductsProps {
   handleChangingProduct: (newProductData: newProductProps[]) => void;
@@ -80,10 +80,22 @@ export default function FilterProducts({
 
     // Sort the products
     if (sortOption) {
-      if (sortOption === "ascending") {
+      if (sortOption === "lowest price") {
         filteredProducts.sort((a, b) => a.price - b.price);
-      } else if (sortOption === "descending") {
+      } else if (sortOption === "highest price") {
         filteredProducts.sort((a, b) => b.price - a.price);
+      } else if (sortOption === "a to z") {
+        filteredProducts.sort((a, b) =>
+          a.productName.localeCompare(b.productName, undefined, {
+            sensitivity: "base",
+          }),
+        );
+      } else if (sortOption === "z to a") {
+        filteredProducts.sort((a, b) =>
+          b.productName.localeCompare(a.productName, undefined, {
+            sensitivity: "base",
+          }),
+        );
       }
     }
 

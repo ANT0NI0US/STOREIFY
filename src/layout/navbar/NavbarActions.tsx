@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FaOpencart } from "react-icons/fa6";
-import { BsBox2HeartFill } from "react-icons/bs";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { RiHeartLine } from "react-icons/ri";
 import type { IconType } from "react-icons";
 import { cartSliceState } from "@/utils/types";
 
@@ -21,13 +21,13 @@ export default function NavbarActions() {
 
   const allActions: Array<allActionsProps> = [
     {
-      icon: BsBox2HeartFill,
+      icon: RiHeartLine,
       text: "Favorites",
       href: "/favorites",
       value: totalFavoriteItemsQuantity,
     },
     {
-      icon: FaOpencart,
+      icon: MdOutlineShoppingCart,
       text: "Cart",
       href: "/cart",
       value: totalQuantity,
@@ -35,7 +35,7 @@ export default function NavbarActions() {
   ];
 
   return (
-    <div className="flex items-center justify-center gap-4.5">
+    <div className="flex items-center justify-center gap-3 sm:gap-2.5">
       {allActions.map(({ text, href, icon: Icon, value }: allActionsProps) => (
         <div
           key={text}
@@ -43,9 +43,9 @@ export default function NavbarActions() {
           className="relative"
           onClick={() => navigate(`${href}`)}
         >
-          <Icon className="hover:text-text-light-color/80 dark:hover:text-text-dark-color/80 cursor-pointer text-base transition-all sm:text-lg" />
+          <Icon className="hover:text-text-light-color/80 dark:hover:text-text-dark-color/80 cursor-pointer text-lg transition-all sm:text-xl" />
           {value > 0 && (
-            <span className="flexCenter bg-text-light-color text-secondary-light-color dark:bg-text-dark-color dark:text-secondary-dark-color absolute top-[-11px] left-[11px] z-10 h-[20px] w-[20px] rounded-full p-1 text-xs">
+            <span className="flexCenter bg-text-light-color text-secondary-light-color dark:bg-text-dark-color dark:text-secondary-dark-color absolute top-[-11px] left-[11px] z-10 size-[18px] rounded-full p-0.5 text-[10px]">
               {value}
             </span>
           )}
