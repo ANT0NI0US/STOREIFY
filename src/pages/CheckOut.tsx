@@ -1,4 +1,4 @@
-import BillsDetails from "../components/BillsDetails";
+import BillsDetails from "@/components/checkout/BillsDetails";
 import CommonSection from "@/ui/CommonSection";
 import Container from "@/ui/Container";
 import useHelmet from "@/hooks/useHelmet";

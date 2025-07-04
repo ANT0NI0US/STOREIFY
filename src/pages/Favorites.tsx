@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import FavoriteProductTable from "../components/FavoriteProductTable";
+import FavoriteProductTable from "@/components/favorites/FavoriteProductTable";
 import CommonSection from "@/ui/CommonSection";
 import Container from "@/ui/Container";
 import { cartSliceState } from "@/utils/types";

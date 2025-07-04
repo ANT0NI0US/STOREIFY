@@ -7,22 +7,20 @@ import AuthLayout from "@/layout/AuthLayout";
 import AppLayout from "@/layout/AppLayout";
 
 const HomeLayout = lazy(() => import("@/layout/HomeLayout"));
-const Login = lazy(() => import("@/features/auth/Login"));
-const SignUp = lazy(() => import("@/features/auth/SignUp"));
-const ForgetPassword = lazy(() => import("@/features/auth/ForgetPassword"));
+const Login = lazy(() => import("@/pages/Login"));
+const SignUp = lazy(() => import("@/pages/SignUp"));
+const ForgetPassword = lazy(() => import("@/pages/ForgetPassword"));
 
 // USER
-const Home = lazy(() => import("@/features/home/pages/Home"));
-const Shop = lazy(() => import("@/features/shop/pages/Shop"));
-const ProductDetails = lazy(
-  () => import("@/features/productDetails/pages/ProductDetails"),
-);
-const Orders = lazy(() => import("@/features/orders/pages/Orders"));
-const About = lazy(() => import("@/features/about/page/About"));
-const Contact = lazy(() => import("@/features/Contact/page/Contact"));
-const Favorites = lazy(() => import("@/features/favorites/pages/Favorites"));
-const Cart = lazy(() => import("@/features/cart/pages/Cart"));
-const CheckOut = lazy(() => import("@/features/checkOut/pages/CheckOut"));
+const Home = lazy(() => import("@/pages/Home"));
+const Shop = lazy(() => import("@/pages/Shop"));
+const ProductDetails = lazy(() => import("@/pages/ProductDetails"));
+const Orders = lazy(() => import("@/pages/Orders"));
+const About = lazy(() => import("@/pages/About"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const Favorites = lazy(() => import("@/pages/Favorites"));
+const Cart = lazy(() => import("@/pages/Cart"));
+const CheckOut = lazy(() => import("@/pages/CheckOut"));
 
 export default function Navigation() {
   return (

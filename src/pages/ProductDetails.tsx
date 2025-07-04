@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import CertainProductDetail from "../components/CertainProductDetail";
-import DescriptionReviews from "../components/DescriptionReviews";
-import ProductsInTheSameCategory from "../components/ProductsInTheSameCategory";
+import CertainProductDetail from "@/components/productDetails/CertainProductDetail";
+import DescriptionReviews from "@/components/productDetails/DescriptionReviews";
+import ProductsInTheSameCategory from "@/components/productDetails/ProductsInTheSameCategory";
 import CommonSection from "@/ui/CommonSection";
 import Spinner from "@/ui/spinner/Spinner";
 import { productCardProps, productState } from "@/utils/types";
