@@ -1,4 +1,4 @@
-import CartDetails from "../components/CartDetails";
+import CartDetails from "@/components/cart/CartDetails";
 import CommonSection from "@/ui/CommonSection";
 import Container from "@/ui/Container";
 import useHelmet from "@/hooks/useHelmet";

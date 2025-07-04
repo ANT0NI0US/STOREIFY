@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import FilterProducts from "../components/FilterProducts";
-import Products from "../components/Products";
+import FilterProducts from "@/components/shop/FilterProducts";
+import Products from "@/components/shop/Products";
 import CommonSection from "@/ui/CommonSection";
 import Container from "@/ui/Container";
 import { newProductProps, productState } from "@/utils/types";

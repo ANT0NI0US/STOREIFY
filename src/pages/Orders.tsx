@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import OrdersTable from "../components/OrdersTable";
+import OrdersTable from "@/components/orders/OrdersTable";
 import CommonSection from "@/ui/CommonSection";
 import Container from "@/ui/Container";
 import { orderState } from "@/utils/types";
