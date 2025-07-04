@@ -1,15 +1,19 @@
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
-import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
+import { RiHeartFill, RiHeartLine } from "react-icons/ri";
 import { cartSliceState, newProductProps } from "@/utils/types";
 import { cartActions } from "@/store/slice/cartSlice";
 import { AppDispatch } from "@/store";
 
+interface AddFavoriteProductProps {
+  item: newProductProps;
+  viewMode?: "grid" | "list";
+}
+
 export default function AddFavoriteProduct({
   item,
-}: {
-  item: newProductProps;
-}) {
+  viewMode = "grid",
+}: AddFavoriteProductProps) {
   const dispatch = useDispatch<AppDispatch>();
 
   const { perfectItems } = useSelector((state: cartSliceState) => state.cart);
@@ -40,12 +44,12 @@ export default function AddFavoriteProduct({
       }
       onClick={addToFavorite}
       whileTap={{ scale: 1.2 }}
-      className="flexCenter absolute top-0 left-0 z-10 cursor-pointer rounded-full p-2"
+      className={`${viewMode === "grid" ? "left-0" : "right-0"} flexCenter absolute top-0 z-10 cursor-pointer rounded-full p-2`}
     >
       {id && checkProductExistInPerfectProducts(id) ? (
-        <IoMdHeart className="text-error-light-color dark:text-error-dark-color size-7" />
+        <RiHeartFill className="text-error-light-color dark:text-error-dark-color size-7" />
       ) : (
-        <IoMdHeartEmpty className="text-error-light-color dark:text-error size-7" />
+        <RiHeartLine className="text-error-light-color dark:text-error-dark-color size-7" />
       )}
     </motion.div>
   );

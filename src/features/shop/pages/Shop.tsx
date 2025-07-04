@@ -40,12 +40,13 @@ export default function Shop() {
   return (
     <div className="bg-secondary-light-color dark:bg-secondary-dark-color">
       <CommonSection title="Products" />
-      <Container Styles="py-[40px] md:py-[80px] flex flex-col gap-10">
+      <Container Styles="py-[40px] md:py-[80px] flex flex-col gap-4 md:gap-6">
         <FilterProducts
           productsData={productsData}
           allProducts={allProducts}
           handleChangingProduct={handleChangingProduct}
         />
+
         <Products productsData={productsData} isLoading={isLoading} />
       </Container>
     </div>

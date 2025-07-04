@@ -88,6 +88,8 @@ export const signInWithGoogle = createAsyncThunk(
           displayName: user.displayName || "",
           email: user.email || "",
           photoURL: user.photoURL || "",
+          cart: [],
+          favorites: [],
           type: "user",
         };
         await setDoc(doc(db, "users", user.uid), userData);

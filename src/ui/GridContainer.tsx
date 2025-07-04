@@ -6,7 +6,7 @@ interface gridProps {
 export default function GridContainer({ children, Styles }: gridProps) {
   return (
     <div
-      className={`flex flex-col gap-8 xs:grid xs:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] ${Styles}`}
+      className={`xs:grid xs:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] flex flex-col gap-4 md:gap-6 ${Styles}`}
     >
       {children}
     </div>
