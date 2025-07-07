@@ -19,7 +19,7 @@ export default function ToggleProductsView({
       <div className="flex items-center gap-2">
         <Button
           onClick={() => setViewMode("grid")}
-          ArialLabel="Grid View"
+          AriaLabel="Grid View"
           disabled={viewMode === "grid"}
           size="actions"
         >
@@ -27,7 +27,7 @@ export default function ToggleProductsView({
         </Button>
         <Button
           onClick={() => setViewMode("list")}
-          ArialLabel="List View"
+          AriaLabel="List View"
           disabled={viewMode === "list"}
           size="actions"
         >

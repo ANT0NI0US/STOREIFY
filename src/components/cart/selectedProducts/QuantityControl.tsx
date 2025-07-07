@@ -23,7 +23,7 @@ export default function QuantityControl({ item }: QuantityControlProps) {
     <div className="flexBetween bg-secondary-light-color dark:bg-secondary-dark-color gap-5 rounded-md">
       <Button
         variation="secondary"
-        ArialLabel="minus Product"
+        AriaLabel="minus Product"
         disabled={item?.quantity === 1}
         onClick={handleDecrease}
         size="actions"
@@ -33,7 +33,7 @@ export default function QuantityControl({ item }: QuantityControlProps) {
       <span className="text-2xl font-extrabold">{item?.quantity}</span>
       <Button
         variation="secondary"
-        ArialLabel="Plus Product"
+        AriaLabel="Plus Product"
         onClick={handleIncrease}
         size="actions"
       >

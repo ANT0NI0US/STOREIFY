@@ -12,7 +12,7 @@ export default function ClearCart() {
   };
   return (
     <Button
-      ArialLabel="Clear Cart"
+      AriaLabel="Clear Cart"
       onClick={handleResetCart}
       Font="w-full! md:w-[150px]! ms-auto mb-3.5 md:mb-5"
     >

@@ -103,7 +103,7 @@ export default function TabForm() {
           error={errors?.text?.message}
         />
 
-        <Button ArialLabel="submitReview" type="submit" loading={isLoading}>
+        <Button AriaLabel="submitReview" type="submit" loading={isLoading}>
           Submit
         </Button>
       </form>

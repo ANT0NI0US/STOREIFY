@@ -19,7 +19,7 @@ export default function Subtotal() {
       </p>
       <div className="flex w-full flex-col items-center justify-center gap-3.5 md:items-start md:gap-5">
         <Button
-          ArialLabel="Go-To-Shop"
+          AriaLabel="Go-To-Shop"
           variation="secondary"
           onClick={() => navigate("/shop")}
           Font="w-[200px]!"
@@ -28,7 +28,7 @@ export default function Subtotal() {
           <span>Continue Shopping</span>
         </Button>
         <Button
-          ArialLabel="Go-To-Checkout"
+          AriaLabel="Go-To-Checkout"
           variation="secondary"
           onClick={() => navigate("/checkout")}
           Font="w-[150px]!"

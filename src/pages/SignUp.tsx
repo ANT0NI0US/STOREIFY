@@ -227,7 +227,7 @@ export default function SignUp() {
         </div>
         <Button
           loading={isLoading}
-          ArialLabel="New Account"
+          AriaLabel="New Account"
           type="submit"
           Font="my-5"
         >

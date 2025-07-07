@@ -47,7 +47,7 @@ export default function DetailsAction({
     <div className="flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start">
       <Button
         onClick={addToCart}
-        ArialLabel="Add to cart"
+        AriaLabel="Add to cart"
         Font="w-full! sm:w-[200px]!"
       >
         <MdAddShoppingCart />
@@ -56,7 +56,7 @@ export default function DetailsAction({
 
       <Button
         onClick={addToFavorite}
-        ArialLabel="Add to favorite"
+        AriaLabel="Add to favorite"
         Font="w-full! sm:w-[200px]!"
       >
         <RiHeartAddLine />

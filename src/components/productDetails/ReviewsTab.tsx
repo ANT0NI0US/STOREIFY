@@ -18,7 +18,7 @@ export default function ReviewsTab({ reviews }: Props) {
       </div>
       <AllExistReviews reviews={reviews} />
       <Button
-        ArialLabel="ReviewForm"
+        AriaLabel="ReviewForm"
         Font="xs:w-[200px] w-full mt-3.5 md:mt-5 ms-auto"
         onClick={() => setNewReviewFormOpen((prev) => !prev)}
       >

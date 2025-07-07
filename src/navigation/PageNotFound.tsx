@@ -16,7 +16,7 @@ export default function PageNotFound() {
 
       <Button
         To="/"
-        ArialLabel="Go to home"
+        AriaLabel="Go to home"
         variation="secondary"
         replace
         Font="w-[150px]!"
