@@ -11,7 +11,7 @@ export default function ShowOrder({ selectedOrderId }: orderDetailsProps) {
   return (
     <Modal>
       <Modal.Open opens="orderDetails">
-        <Button ArialLabel="show order" variation="secondary" size="actions">
+        <Button AriaLabel="show order" variation="secondary" size="actions">
           <TbListDetails />
         </Button>
       </Modal.Open>

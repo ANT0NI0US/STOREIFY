@@ -25,7 +25,7 @@ export default function DeleteButton({ item }: DeleteButtonProps) {
         <div className="absolute top-4 right-4 w-[45px] cursor-pointer">
           <Button
             Font="rounded-full!"
-            ArialLabel="Delete Product"
+            AriaLabel="Delete Product"
             variation="danger"
           >
             <RiDeleteBin5Line size={25} />

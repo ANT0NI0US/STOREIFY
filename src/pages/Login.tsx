@@ -104,12 +104,7 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <Button
-          loading={isLoading}
-          ArialLabel="Login"
-          type="submit"
-          Font="my-5"
-        >
+        <Button loading={isLoading} AriaLabel="Login" type="submit" Font="my-5">
           Login
         </Button>
 

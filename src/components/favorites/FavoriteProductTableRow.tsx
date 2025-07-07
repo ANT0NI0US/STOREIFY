@@ -47,7 +47,7 @@ export default function FavoriteProductTableRow({
       <Table.Cell>
         <div className="flex gap-1">
           <Button
-            ArialLabel="Add to cart"
+            AriaLabel="Add to cart"
             variation="secondary"
             size="actions"
             onClick={() => addToCart(perfectItem)}

@@ -28,7 +28,7 @@ export default function RemoveProductFromFavorite({
     <Modal>
       <Modal.Open opens="RemoveProductFromFavorite">
         <Button
-          ArialLabel="Remove From Favorite"
+          AriaLabel="Remove From Favorite"
           variation="secondary"
           size="actions"
           Font="!w-10"

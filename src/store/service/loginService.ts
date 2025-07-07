@@ -80,8 +80,6 @@ export const signInWithGoogle = createAsyncThunk(
 
       let existingUser = fetchedUsers.find((u) => u.uid === user.uid);
 
-      console.log(existingUser);
-
       if (!existingUser) {
         const userData: userProps = {
           uid: user.uid,

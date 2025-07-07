@@ -15,14 +15,14 @@ export default function ConfirmMessage({
 }: ConfirmMessageProps) {
   return (
     <>
-      <p className="rounded-tl-lg rounded-tr-lg p-3.5 text-xl font-semibold capitalize md:p-5">
+      <p className="bg-primary-light-color dark:bg-primary-dark-color rounded-tl-lg rounded-tr-lg p-3.5 text-xl font-semibold capitalize md:p-5">
         {message}
       </p>
 
-      <div className="bg-primary-light-color dark:bg-primary-dark-color rounded-br-lg rounded-bl-lg border-t px-4 py-6">
+      <div className="bg-secondary-light-color dark:bg-secondary-dark-color rounded-br-lg rounded-bl-lg border-t px-4 py-6">
         <div className="ms-auto flex w-full gap-[10px]">
           <Button
-            ArialLabel="cancel confirm"
+            AriaLabel="cancel confirm"
             loading={disabled}
             variation="danger"
             onClick={onCloseModal}
@@ -30,7 +30,7 @@ export default function ConfirmMessage({
             Cancel
           </Button>
           <Button
-            ArialLabel="accept confirm"
+            AriaLabel="accept confirm"
             loading={disabled}
             onClick={onConfirm}
           >

@@ -281,7 +281,7 @@ export default function OrderForm({
         />
 
         <Button
-          ArialLabel="Place an order"
+          AriaLabel="Place an order"
           type="submit"
           loading={isOrderLoading}
         >

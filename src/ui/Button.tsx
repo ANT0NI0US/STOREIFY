@@ -26,7 +26,7 @@ interface ButtonProps {
   Font?: string;
   disabled?: boolean;
   loading?: boolean;
-  ArialLabel: string;
+  AriaLabel: string;
   replace?: boolean;
   To?: string;
 }
@@ -40,7 +40,7 @@ export default function Button({
   Font,
   disabled,
   loading,
-  ArialLabel,
+  AriaLabel,
   To,
   replace = false,
 }: ButtonProps) {
@@ -57,7 +57,7 @@ export default function Button({
     ${!disabled && !loading && "hover:bg-text-light-color hover:text-secondary-light-color hover:border-text-light-color dark:hover:bg-text-dark-color dark:hover:text-secondary-dark-color dark:hover:border-text-dark-color"}`,
     delete: `bg-error-light-color text-secondary-light-color border-error-light-color dark:bg-error-dark-color dark:text-secondary-dark-color border-error-dark-color
       ${!disabled && !loading && "hover:bg-error-light-color/90 dark:hover:bg-error-dark-color/90"}`,
-    danger: `bg-secondary-light-color text-error-light-color border-error-light-color dark:bg-secondary-dark-color dark:text-error-dark-color dark:border-error-dark-color ${!disabled && !loading && "hover:bg-error-light-color hover:text-secondary-light-color dark:hover:bg-error-dark-color dark:hover:text-secondary-dark-color"}`,
+    danger: `bg-transparent text-error-light-color border-error-light-color dark:text-error-dark-color dark:border-error-dark-color ${!disabled && !loading && "hover:bg-error-light-color dark:hover:bg-error-dark-color hover:text-secondary-light-color dark:hover:text-text-dark-color"}`,
   };
 
   const combinedClassName = `${base} ${sizeStyles[size]} ${styles[variation]} ${Font}`;
@@ -67,8 +67,8 @@ export default function Button({
       <MotionLink
         to={To}
         className={combinedClassName}
-        aria-label={ArialLabel}
-        title={ArialLabel}
+        aria-label={AriaLabel}
+        title={AriaLabel}
         replace={replace}
         {...motionProps}
       >
@@ -82,8 +82,8 @@ export default function Button({
       type={type}
       disabled={disabled || loading}
       className={combinedClassName}
-      aria-label={ArialLabel}
-      title={ArialLabel}
+      aria-label={AriaLabel}
+      title={AriaLabel}
       {...motionProps}
     >
       {loading ? (

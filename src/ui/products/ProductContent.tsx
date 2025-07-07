@@ -63,7 +63,7 @@ export default function ProductContent({
 
         <Button
           onClick={addToCart}
-          ArialLabel="Add to cart"
+          AriaLabel="Add to cart"
           variation="secondary"
           Font={`${viewMode === "grid" ? "w-[140px]!" : "w-full! xs:w-[140px]!"} `}
         >

@@ -67,7 +67,7 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit(sendEmail)}
-      className="bg-primary-light-color dark:bg-primary-dark-color flex w-full flex-col gap-4 rounded-md p-4 shadow-md sm:basis-2/3 md:gap-6 md:p-6"
+      className="bg-primary-light-color dark:bg-primary-dark-color flex w-full flex-col gap-4 rounded-md p-4 shadow-md md:basis-3/5 md:gap-6 md:p-6"
     >
       <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6">
         <Input
@@ -176,7 +176,7 @@ export default function ContactForm() {
         error={errors?.message?.message}
       />
 
-      <Button type="submit" ArialLabel="Submit Form" loading={isLoading}>
+      <Button type="submit" AriaLabel="Submit Form" loading={isLoading}>
         Submit
       </Button>
     </form>

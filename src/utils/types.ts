@@ -167,3 +167,20 @@ export interface productCardProps {
   reviews?: Review[];
   avgRating?: number;
 }
+/*----------------------------------------  CONTACT ----------------------------------------*/
+export interface ContactDataProps {
+  address: string;
+  email: string;
+  phone: string;
+  sms: string;
+}
+
+export interface ContactServiceState {
+  isLoading: boolean;
+  Contacts: ContactDataProps | null;
+  errors: null | string;
+}
+
+export interface ContactState {
+  contact: ContactServiceState;
+}

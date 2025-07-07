@@ -30,7 +30,7 @@ export default function Banner() {
               convenience.
             </p>
             <Button
-              ArialLabel="Go-To-Shop"
+              AriaLabel="Go-To-Shop"
               To="/shop"
               Font="mx-auto w-[150px]! md:mx-0"
             >

@@ -72,7 +72,7 @@ Make sure to check your Spam or Promotions folder if it doesn’t arrive shortly
         </div>
         <Button
           loading={isLoading}
-          ArialLabel="Reset Password"
+          AriaLabel="Reset Password"
           type="submit"
           Font="my-5"
         >

@@ -23,11 +23,7 @@ export default function Offers() {
           <h2 className="font-medium">Offer expires in:</h2>
           <Clock />
 
-          <Button
-            ArialLabel="Shopping Now"
-            To="/shop"
-            Font="mx-auto w-[150px]!"
-          >
+          <Button AriaLabel="Shopping Now" To="/shop" Font="mx-auto w-[150px]!">
             SHOP NOW
           </Button>
         </Container>
