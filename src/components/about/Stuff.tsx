@@ -1,6 +1,7 @@
 import CardStuff from "./CardStuff";
 import Slider from "@/ui/Slider";
 import Container from "@/ui/Container";
+import HeadText from "@/ui/HeadText";
 
 const AllStuff = [
   {
@@ -44,12 +45,10 @@ export default function Stuff() {
   return (
     <section className="bg-secondary-light-color py-[40px] md:py-[80px]">
       <Container>
+        <HeadText text="Our Stuffs" />
         <Slider>
           {AllStuff?.map((singleStuff) => (
-            <div
-              key={singleStuff.id}
-              className="shadow-secondary-light-color dark:shadow-secondary-dark-color mx-2 rounded-md shadow-md"
-            >
+            <div key={singleStuff.id} className="mx-2">
               <CardStuff singleStuff={singleStuff} />
             </div>
           ))}

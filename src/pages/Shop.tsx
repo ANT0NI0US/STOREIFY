@@ -14,9 +14,11 @@ export default function Shop() {
 
   const dispatch = useDispatch<AppDispatch>();
   const [productsData, setProductData] = useState<newProductProps[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleChangingProduct = useCallback(
     (newProductData: newProductProps[]) => {
+      setCurrentPage(1);
       setProductData(newProductData);
     },
     [],
@@ -31,9 +33,6 @@ export default function Shop() {
       .unwrap()
       .then((allProducts) => {
         setProductData(allProducts);
-      })
-      .catch((error) => {
-        throw new error();
       });
   }, [dispatch]);
 
@@ -47,7 +46,12 @@ export default function Shop() {
           handleChangingProduct={handleChangingProduct}
         />
 
-        <Products productsData={productsData} isLoading={isLoading} />
+        <Products
+          productsData={productsData}
+          isLoading={isLoading}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       </Container>
     </div>
   );

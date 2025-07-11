@@ -3,27 +3,28 @@ import { RiExchangeDollarLine } from "react-icons/ri";
 import { FaHeadphones } from "react-icons/fa";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import Widgets from "../ui/Widgets";
+import HeadText from "@/ui/HeadText";
 import Container from "@/ui/Container";
 import { widgetProps } from "@/utils/types";
 
 const serviceData: widgetProps[] = [
   {
-    icon: <FaTruck />,
+    icon: FaTruck,
     title: "FREE AND FAST DELIVERY",
     description: "Free delivery for all orders over $140",
   },
   {
-    icon: <FaHeadphones />,
+    icon: FaHeadphones,
     title: "24/7 CUSTOMER SERVICE",
     description: "Friendly 24/7 customer support",
   },
   {
-    icon: <RiSecurePaymentLine />,
+    icon: RiSecurePaymentLine,
     title: "Secure Payment",
     description: "Safe, Trusted Payment Solutions",
   },
   {
-    icon: <RiExchangeDollarLine />,
+    icon: RiExchangeDollarLine,
     title: "MONEY BACK GUARANTEE",
     description: "We return money within 30 days",
   },
@@ -33,6 +34,7 @@ export default function Services() {
   return (
     <section className="w-full py-[40px] md:py-[80px]">
       <Container>
+        <HeadText text="Services" />
         <Widgets widgetsData={serviceData} />
       </Container>
     </section>

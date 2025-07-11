@@ -11,7 +11,7 @@ export default function CardStuff({ singleStuff }: stuffProps) {
   const { id, image, name, job } = singleStuff;
   return (
     <>
-      <div className="bg-primary-light-color dark:bg-primary-dark-color">
+      <div className="bg-primary-light-color dark:bg-primary-dark-color rounded-tl-md rounded-tr-md">
         <img
           alt={`stuff-${id}`}
           src={image}
@@ -19,7 +19,7 @@ export default function CardStuff({ singleStuff }: stuffProps) {
           className="h-[250px] w-full object-contain object-center"
         />
       </div>
-      <div className="bg-accent-light-color dark:bg-accent-dark-color flex flex-col gap-1 p-6">
+      <div className="bg-accent-light-color dark:bg-accent-dark-color flex flex-col gap-1 rounded-br-md rounded-bl-md p-6">
         <h3 className="text-3xl font-semibold tracking-wider capitalize">
           {name}
         </h3>
