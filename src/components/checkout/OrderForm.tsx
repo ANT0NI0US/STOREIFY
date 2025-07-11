@@ -133,7 +133,7 @@ export default function OrderForm({
         <Input
           label="Name"
           placeholder="Name"
-          disabled={isOrderLoading}
+          disabled
           register={register("name", {
             required: "This Field is required",
             validate: {
@@ -156,7 +156,7 @@ export default function OrderForm({
         <Input
           label="Email"
           placeholder="Email"
-          disabled={isOrderLoading}
+          disabled
           register={register("email", {
             required: "This Field is required",
             validate: {

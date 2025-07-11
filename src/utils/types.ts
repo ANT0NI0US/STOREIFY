@@ -1,3 +1,5 @@
+import type { IconType } from "react-icons";
+
 /*----------------------------------------  AUTHENTICATION ----------------------------------------*/
 export interface loginServiceState {
   isLoading: boolean;
@@ -133,7 +135,7 @@ export interface orderState {
 /*----------------------------------------  UI ----------------------------------------*/
 /*  WIDGETS */
 export interface widgetProps {
-  icon: JSX.Element;
+  icon: IconType;
   title: string;
   description: string;
 }
