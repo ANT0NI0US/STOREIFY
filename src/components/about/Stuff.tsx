@@ -43,7 +43,7 @@ const AllStuff = [
 
 export default function Stuff() {
   return (
-    <section className="bg-secondary-light-color py-[40px] md:py-[80px]">
+    <section className="bg-secondary-light-color dark:bg-secondary-dark-color py-[40px] md:py-[80px]">
       <Container>
         <HeadText text="Our Stuffs" />
         <Slider>

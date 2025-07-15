@@ -47,7 +47,7 @@ export default function ProfilePhoto() {
     >
       <motion.img
         whileTap={{ scale: 1.2 }}
-        className="size-8 cursor-pointer rounded-full object-cover sm:size-10"
+        className="size-8 cursor-pointer rounded-full object-cover object-center sm:size-10"
         src={
           (currentUser as { photoURL?: string })?.photoURL ||
           "https://i.ibb.co/rtVJ2Fs/user-icon.webp"
