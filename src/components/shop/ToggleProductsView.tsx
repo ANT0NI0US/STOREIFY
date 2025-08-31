@@ -1,7 +1,7 @@
-import Button from "@/ui/Button";
-import { newProductProps } from "@/utils/types";
 import { FaList } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
+import { Button } from "@/ui";
+import { newProductProps } from "@/utils/types";
 
 interface ToggleProductsViewProps {
   productsData: newProductProps[];
@@ -19,7 +19,8 @@ export default function ToggleProductsView({
       <div className="flex items-center gap-2">
         <Button
           onClick={() => setViewMode("grid")}
-          AriaLabel="Grid View"
+          aria-label="Grid View"
+          title="Grid View"
           disabled={viewMode === "grid"}
           size="actions"
         >
@@ -27,7 +28,8 @@ export default function ToggleProductsView({
         </Button>
         <Button
           onClick={() => setViewMode("list")}
-          AriaLabel="List View"
+          aria-label="List View"
+          title="List View"
           disabled={viewMode === "list"}
           size="actions"
         >

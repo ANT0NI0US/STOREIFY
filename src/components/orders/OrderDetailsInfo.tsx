@@ -1,13 +1,13 @@
 import Information from "./Information";
 import InformationTitle from "./InformationTitle";
-import ModalFormGrid from "@/ui/ModalFormGrid";
+import { ModalFormGrid } from "@/ui";
 import { ordersFireBase } from "@/utils/types";
 
-interface Props {
+interface OrderDetailsInfoProps {
   order: ordersFireBase;
 }
 
-export default function OrderDetailsInfo({ order }: Props) {
+export default function OrderDetailsInfo({ order }: OrderDetailsInfoProps) {
   const {
     name,
     phone,

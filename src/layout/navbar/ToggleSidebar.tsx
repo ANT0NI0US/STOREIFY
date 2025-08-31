@@ -1,10 +1,10 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 
-interface toggleMenuProps {
+interface ToggleMenuProps {
   toggleSidebar: () => void;
 }
 
-export default function ToggleSidebar({ toggleSidebar }: toggleMenuProps) {
+export default function ToggleSidebar({ toggleSidebar }: ToggleMenuProps) {
   return (
     <div className="flexCenter sm:hidden">
       <button

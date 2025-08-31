@@ -1,5 +1,5 @@
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import Button from "@/ui/Button";
+import { Button } from "@/ui";
 import { PAGE_SIZE } from "@/utils/constants";
 
 interface PaginationControlsProps {
@@ -19,22 +19,24 @@ export default function PaginationControls({
     <div className="bg-accent-light-color dark:bg-accent-dark-color flex min-h-[50px] flex-wrap items-center justify-around gap-2 rounded-md p-4 text-base sm:flex-nowrap sm:justify-between">
       <div className="flexBetween gap-5">
         <Button
-          AriaLabel="Previous"
+          aria-label="Previous"
+          title="Previous"
           variation="secondary"
           onClick={() => onPageChange(currentPage - 1)}
           size="actions"
-          Font="!w-10"
+          styles="!w-10"
           disabled={currentPage === 1}
         >
           <MdKeyboardArrowLeft size={20} />
         </Button>
 
         <Button
-          AriaLabel="Next"
+          aria-label="Next"
+          title="Next"
           variation="secondary"
           onClick={() => onPageChange(currentPage + 1)}
           size="actions"
-          Font="!w-10"
+          styles="!w-10"
           disabled={currentPage === totalPages}
         >
           <MdKeyboardArrowRight size={20} />

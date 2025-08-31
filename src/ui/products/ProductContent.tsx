@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
 import { MdAddShoppingCart } from "react-icons/md";
 import Button from "../Button";
 import { newProductProps } from "@/utils/types";
-import { AppDispatch } from "@/store";
-import { cartActions } from "@/store/slice/cartSlice";
+import { addItem } from "@/store/slice/cartSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
 interface ProductContentProps {
   item: newProductProps;
@@ -16,12 +15,12 @@ export default function ProductContent({
   item,
   viewMode = "grid",
 }: ProductContentProps) {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
   const addToCart = () => {
     if (item.id) {
       dispatch(
-        cartActions.addItem({
+        addItem({
           id: item.id,
           productName: item.productName,
           price: item.price,
@@ -63,9 +62,10 @@ export default function ProductContent({
 
         <Button
           onClick={addToCart}
-          AriaLabel="Add to cart"
+          aria-label="Add to cart"
+          title="Add to cart"
           variation="secondary"
-          Font={`${viewMode === "grid" ? "w-[140px]!" : "w-full! xs:w-[140px]!"} `}
+          styles={`${viewMode === "grid" ? "w-[140px]!" : "w-full! xs:w-[140px]!"} `}
         >
           <MdAddShoppingCart />
           <span>Add to cart</span>

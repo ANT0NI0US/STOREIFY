@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ReviewsTab from "./ReviewsTab";
+import { Container } from "@/ui";
 import { Review } from "@/utils/types";
-import Container from "@/ui/Container";
 
 interface CertainProductDetailProps {
   description: string;

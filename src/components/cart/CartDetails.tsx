@@ -1,22 +1,19 @@
-import { useSelector } from "react-redux";
 import SelectedProducts from "./selectedProducts/SelectedProducts";
 import Subtotal from "./Subtotal";
-import Empty from "@/ui/Empty";
-import { cartSliceState } from "@/utils/types";
 import ClearCart from "./ClearCart";
+import { Empty } from "@/ui";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function CartDetails() {
-  const allCartItems = useSelector(
-    (state: cartSliceState) => state.cart.cartItems,
-  );
+  const { cartItems } = useAppSelector((state) => state.cart);
 
-  if (!allCartItems.length || !allCartItems)
+  if (!cartItems.length || !cartItems)
     return <Empty title="No items Added To The Cart" />;
   return (
     <>
       <ClearCart />
       <div className="grid grid-cols-12 gap-4 sm:gap-6">
-        <SelectedProducts allCartItems={allCartItems} />
+        <SelectedProducts allCartItems={cartItems} />
         <Subtotal />
       </div>
     </>

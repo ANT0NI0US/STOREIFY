@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { loginState } from "@/utils/types";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function Logo() {
-  const { isAdmin } = useSelector((state: loginState) => state.login);
+  const { isAdmin } = useAppSelector((state) => state.login);
 
   return (
     <Link

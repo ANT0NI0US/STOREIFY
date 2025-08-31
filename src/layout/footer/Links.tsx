@@ -1,14 +1,14 @@
 import { IconType } from "react-icons";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
-interface allLinksProps {
+interface AllLinksProps {
   href: string;
   icon: IconType;
   label: string;
   title?: string;
 }
 
-const links: Array<allLinksProps> = [
+const links: Array<AllLinksProps> = [
   {
     href: "https://www.linkedin.com/in/antonious-nasr/",
     label: "LinkedIn Profile",
@@ -30,7 +30,7 @@ const links: Array<allLinksProps> = [
 export default function Links() {
   return (
     <div className="flexCenter gap-2">
-      {links.map(({ href, label, icon: Icon, title }: allLinksProps) => (
+      {links.map(({ href, label, icon: Icon, title }: AllLinksProps) => (
         <a
           key={href}
           href={href}

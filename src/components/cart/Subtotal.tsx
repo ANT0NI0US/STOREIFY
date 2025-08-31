@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoBagCheckOutline } from "react-icons/io5";
-import Button from "@/ui/Button";
-import { cartSliceState } from "@/utils/types";
+import { Button } from "@/ui";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function Subtotal() {
   const navigate = useNavigate();
-  const { totalAmount } = useSelector((state: cartSliceState) => state.cart);
+  const { totalAmount } = useAppSelector((state) => state.cart);
   return (
     <div className="flexCenter border-accent-light-color dark:border-accent-dark-color bg-primary-light-color dark:bg-primary-dark-color col-span-12 h-fit flex-col rounded-md border-[0.5px] p-3.5 sm:items-start sm:justify-start md:col-span-4 md:p-5">
       <div className="flexCenter w-full gap-5 md:block">
@@ -19,19 +18,21 @@ export default function Subtotal() {
       </p>
       <div className="flex w-full flex-col items-center justify-center gap-3.5 md:items-start md:gap-5">
         <Button
-          AriaLabel="Go-To-Shop"
+          aria-label="Go-To-Shop"
+          title="Go-To-Shop"
           variation="secondary"
           onClick={() => navigate("/shop")}
-          Font="w-[200px]!"
+          styles="w-[200px]!"
         >
           <MdOutlineShoppingCart />
           <span>Continue Shopping</span>
         </Button>
         <Button
-          AriaLabel="Go-To-Checkout"
+          aria-label="Go-To-Checkout"
+          title="Go-To-Checkout"
           variation="secondary"
           onClick={() => navigate("/checkout")}
-          Font="w-[150px]!"
+          styles="w-[150px]!"
         >
           <IoBagCheckOutline />
           <span>Checkout</span>

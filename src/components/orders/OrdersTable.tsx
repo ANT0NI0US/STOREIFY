@@ -1,10 +1,8 @@
 import OrdersTableRow from "./OrdersTableRow";
-import Empty from "@/ui/Empty";
-import Spinner from "@/ui/spinner/Spinner";
-import Table from "@/ui/Table";
+import { Empty, Spinner, Table } from "@/ui";
 import { ordersFireBase } from "@/utils/types";
 
-type ordersTableProps = {
+type OrdersTableProps = {
   orders: ordersFireBase[];
   loading: boolean;
 };
@@ -18,7 +16,7 @@ const tableHeadCells = [
   "Actions",
 ];
 
-export default function OrdersTable({ orders, loading }: ordersTableProps) {
+export default function OrdersTable({ orders, loading }: OrdersTableProps) {
   if (loading) return <Spinner />;
   if (!orders || !orders.length)
     return <Empty title="No Orders Have been ordered" />;

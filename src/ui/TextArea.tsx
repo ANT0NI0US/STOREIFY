@@ -1,11 +1,10 @@
-import React from "react";
+import { TextareaHTMLAttributes } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 import { Label } from "./Label";
 import { Error } from "./Error";
 import { VARIATION_STYLES } from "@/utils/variationStyles";
 
-interface TextAreaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   error?: string;
   Rows?: number;

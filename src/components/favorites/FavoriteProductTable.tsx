@@ -1,17 +1,16 @@
 import FavoriteProductTableRow from "./FavoriteProductTableRow";
-import Empty from "@/ui/Empty";
-import Table from "@/ui/Table";
+import { Empty, Table } from "@/ui";
 import { Item } from "@/utils/types";
 
 const tableHeadCells = ["Image", "Product Name", "Price", "actions"];
 
-interface favoriteTableProps {
+interface FavoriteTableProps {
   perfectItems: Item[];
 }
 
 export default function FavoriteProductTable({
   perfectItems,
-}: favoriteTableProps) {
+}: FavoriteTableProps) {
   if (!perfectItems || !perfectItems.length)
     return <Empty title="No items Added To The Favorites" />;
   return (

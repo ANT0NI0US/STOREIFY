@@ -4,9 +4,7 @@ import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { AiOutlinePhone } from "react-icons/ai";
 import { MdDriveFileRenameOutline, MdOutlineEmail } from "react-icons/md";
-import Input from "@/ui/Input";
-import TextArea from "@/ui/TextArea";
-import Button from "@/ui/Button";
+import { Button, Input, TextArea } from "@/ui";
 import { isOnlySpaces } from "@/utils/helpers";
 import {
   EMAIL_REGEX,
@@ -176,7 +174,12 @@ export default function ContactForm() {
         error={errors?.message?.message}
       />
 
-      <Button type="submit" AriaLabel="Submit Form" loading={isLoading}>
+      <Button
+        type="submit"
+        aria-label="Submit Form"
+        title="Submit Form"
+        loading={isLoading}
+      >
         Submit
       </Button>
     </form>

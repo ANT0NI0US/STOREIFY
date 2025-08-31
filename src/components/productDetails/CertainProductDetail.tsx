@@ -1,7 +1,6 @@
-import { productCardProps } from "@/utils/types";
 import DetailsAction from "./DetailsAction";
-import StarRatings from "@/ui/StarRatings";
-import Container from "@/ui/Container";
+import { Container, StarRatings } from "@/ui";
+import { productCardProps } from "@/utils/types";
 
 interface CertainProductDetailProps {
   product: productCardProps;

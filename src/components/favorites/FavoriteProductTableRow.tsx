@@ -1,25 +1,23 @@
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
 import { MdAddShoppingCart } from "react-icons/md";
 import RemoveProductFromFavorite from "./RemoveProductFromFavorite";
-import Button from "@/ui/Button";
-import Table from "@/ui/Table";
+import { Button, Table } from "@/ui";
 import { Item } from "@/utils/types";
-import { AppDispatch } from "@/store";
-import { cartActions } from "@/store/slice/cartSlice";
+import { addItem } from "@/store/slice/cartSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
-interface perfectItemProp {
+interface PerfectItemProp {
   perfectItem: Item;
 }
 
 export default function FavoriteProductTableRow({
   perfectItem,
-}: perfectItemProp) {
-  const dispatch = useDispatch<AppDispatch>();
+}: PerfectItemProp) {
+  const dispatch = useAppDispatch();
 
   const addToCart = (product: Item) => {
     dispatch(
-      cartActions.addItem({
+      addItem({
         id: product.id,
         productName: product.productName,
         price: product.price,
@@ -47,11 +45,12 @@ export default function FavoriteProductTableRow({
       <Table.Cell>
         <div className="flex gap-1">
           <Button
-            AriaLabel="Add to cart"
+            aria-label="Add to cart"
+            title="Add to cart"
             variation="secondary"
             size="actions"
             onClick={() => addToCart(perfectItem)}
-            Font="!w-10"
+            styles="!w-10"
           >
             <MdAddShoppingCart />
           </Button>

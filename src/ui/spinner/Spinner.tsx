@@ -1,12 +1,12 @@
 import styles from "./Spinner.module.css";
 
-interface spinnerProps {
+interface SpinnerProps {
   height?: string;
 }
 
 export default function Spinner({
   height = "h-screen min-h-full",
-}: spinnerProps) {
+}: SpinnerProps) {
   return (
     <div className={`flexCenter ${height} bg-transparent backdrop-blur-xs`}>
       <div className={`${styles.loader}`}></div>

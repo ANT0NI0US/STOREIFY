@@ -1,6 +1,5 @@
 import BillsDetails from "@/components/checkout/BillsDetails";
-import CommonSection from "@/ui/CommonSection";
-import Container from "@/ui/Container";
+import { CommonSection, Container } from "@/ui";
 import useHelmet from "@/hooks/useHelmet";
 
 export default function CheckOut() {

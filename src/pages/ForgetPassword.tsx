@@ -1,15 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import HeaderAuth from "@/components/auth/HeaderAuth";
-import Button from "@/ui/Button.tsx";
-import Input from "@/ui/Input.tsx";
-import { loginState } from "@/utils/types";
+import { Button, Input } from "@/ui";
 import { EMAIL_REGEX } from "@/utils/constants.ts";
 import { isOnlySpaces } from "@/utils/helpers.ts";
 import { sendResetPasswordEmail } from "@/store/service/loginService.ts";
-import { AppDispatch } from "@/store/index.ts";
 import useHelmet from "@/hooks/useHelmet";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 interface ForgetPasswordProps {
   email: string;
@@ -22,9 +20,9 @@ const initialState: ForgetPasswordProps = {
 export default function ForgetPassword() {
   useHelmet("forget password");
   const navigate = useNavigate();
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
-  const { isLoading } = useSelector((state: loginState) => state.login);
+  const { isLoading } = useAppSelector((state) => state.login);
 
   const {
     register,
@@ -72,9 +70,10 @@ Make sure to check your Spam or Promotions folder if it doesn’t arrive shortly
         </div>
         <Button
           loading={isLoading}
-          AriaLabel="Reset Password"
+          aria-label="Reset Password"
+          title="Reset Password"
           type="submit"
-          Font="my-5"
+          styles="my-5"
         >
           Reset Password
         </Button>

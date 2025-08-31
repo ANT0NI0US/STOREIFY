@@ -1,11 +1,8 @@
-import { useDispatch } from "react-redux";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import ConfirmMessage from "@/ui/ConfirmMessage";
-import Modal from "@/ui/Modal";
-import Button from "@/ui/Button";
+import { Button, ConfirmMessage, Modal } from "@/ui";
 import { Item } from "@/utils/types";
-import { cartActions } from "@/store/slice/cartSlice";
-import { AppDispatch } from "@/store";
+import { removeFavoriteItem } from "@/store/slice/cartSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
 interface RemoveProductFromFavoriteProps {
   product: Item;
@@ -14,11 +11,11 @@ interface RemoveProductFromFavoriteProps {
 export default function RemoveProductFromFavorite({
   product,
 }: RemoveProductFromFavoriteProps) {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
   const removeFromFavorite = () => {
     dispatch(
-      cartActions.removeFavoriteItem({
+      removeFavoriteItem({
         id: product.id,
         productName: product.productName,
       }),
@@ -28,10 +25,11 @@ export default function RemoveProductFromFavorite({
     <Modal>
       <Modal.Open opens="RemoveProductFromFavorite">
         <Button
-          AriaLabel="Remove From Favorite"
+          aria-label="Remove From Favorite"
+          title="Remove From Favorite"
           variation="secondary"
           size="actions"
-          Font="!w-10"
+          styles="!w-10"
         >
           <RiDeleteBin5Line />
         </Button>

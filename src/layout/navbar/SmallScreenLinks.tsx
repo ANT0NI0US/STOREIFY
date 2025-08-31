@@ -3,7 +3,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { arrLinks } from "@/utils/types";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 
-interface smallLinksProps {
+interface SmallLinksProps {
   showSidebar: boolean;
   closeSidebar: () => void;
   links: arrLinks[];
@@ -13,7 +13,7 @@ export default function SmallScreenLinks({
   showSidebar,
   closeSidebar,
   links,
-}: smallLinksProps) {
+}: SmallLinksProps) {
   const ref = useOutsideClick(() => closeSidebar());
 
   return (

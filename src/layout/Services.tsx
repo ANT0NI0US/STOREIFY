@@ -1,10 +1,7 @@
 import { FaTruck } from "react-icons/fa";
-import { RiExchangeDollarLine } from "react-icons/ri";
+import { RiExchangeDollarLine, RiSecurePaymentLine } from "react-icons/ri";
 import { FaHeadphones } from "react-icons/fa";
-import { RiSecurePaymentLine } from "react-icons/ri";
-import Widgets from "../ui/Widgets";
-import HeadText from "@/ui/HeadText";
-import Container from "@/ui/Container";
+import { Container, HeadText, Widgets } from "@/ui";
 import { widgetProps } from "@/utils/types";
 
 const serviceData: widgetProps[] = [

@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from "react";
+import { useState, ReactElement, InputHTMLAttributes } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaRegEyeSlash } from "react-icons/fa6";
@@ -7,7 +7,7 @@ import { normalError, VARIATION_STYLES } from "@/utils/variationStyles";
 import { Label } from "./Label";
 import { Error } from "./Error";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: string;
   error?: string;
   Icon?: ReactElement;

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-interface clockListProps {
+interface ClockListProps {
   clock: {
     label: string;
   };
 }
 
-export default function ClockList({ clock }: clockListProps) {
+export default function ClockList({ clock }: ClockListProps) {
   const [days, setDays] = useState<number>();
   const [hours, setHours] = useState<number>();
   const [minutes, setMinutes] = useState<number>();

@@ -1,20 +1,21 @@
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
-import { cartActions } from "@/store/slice/cartSlice";
-import Button from "@/ui/Button";
+import { Button } from "@/ui";
+import { resetCartItemsAndTotal } from "@/store/slice/cartSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
 export default function ClearCart() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const handleResetCart = () => {
-    dispatch(cartActions.resetCartItemsAndTotal());
+    dispatch(resetCartItemsAndTotal());
     toast.success("Cart has been cleared successfully");
   };
   return (
     <Button
-      AriaLabel="Clear Cart"
+      aria-label="Clear Cart"
+      title="Clear Cart"
       onClick={handleResetCart}
-      Font="w-full! md:w-[150px]! ms-auto mb-3.5 md:mb-5"
+      styles="w-full! md:w-[150px]! ms-auto mb-3.5 md:mb-5"
     >
       <MdOutlineRemoveShoppingCart />
       <span>Clear Cart</span>

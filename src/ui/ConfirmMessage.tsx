@@ -1,4 +1,4 @@
-import Button from "@/ui/Button";
+import Button from "./Button";
 
 interface ConfirmMessageProps {
   onConfirm: () => void;
@@ -22,7 +22,8 @@ export default function ConfirmMessage({
       <div className="bg-secondary-light-color dark:bg-secondary-dark-color rounded-br-lg rounded-bl-lg border-t px-4 py-6">
         <div className="ms-auto flex w-full gap-[10px]">
           <Button
-            AriaLabel="cancel confirm"
+            aria-label="cancel confirm"
+            title="cancel confirm"
             loading={disabled}
             variation="danger"
             onClick={onCloseModal}
@@ -30,7 +31,8 @@ export default function ConfirmMessage({
             Cancel
           </Button>
           <Button
-            AriaLabel="accept confirm"
+            aria-label="accept confirm"
+            title="accept confirm"
             loading={disabled}
             onClick={onConfirm}
           >

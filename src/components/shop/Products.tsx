@@ -1,12 +1,11 @@
 import { useState } from "react";
-import ProductsList from "@/ui/products/ProductsList";
-import Spinner from "@/ui/spinner/Spinner";
-import { newProductProps } from "@/utils/types";
 import ToggleProductsView from "./ToggleProductsView";
 import PaginationControls from "./PaginationControls";
+import { ProductsList, Spinner } from "@/ui";
+import { newProductProps } from "@/utils/types";
 import { PAGE_SIZE } from "@/utils/constants";
 
-interface allProductsProps {
+interface AllProductsProps {
   isLoading: boolean;
   productsData: newProductProps[];
   setCurrentPage: (currentPage: number) => void;
@@ -18,7 +17,7 @@ export default function Products({
   isLoading,
   setCurrentPage,
   currentPage,
-}: allProductsProps) {
+}: AllProductsProps) {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   if (isLoading) return <Spinner height="h-[200px]" />;
 

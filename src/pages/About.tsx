@@ -1,7 +1,7 @@
 import OurStory from "@/components/about/OurStory";
 import Incomes from "@/components/about/Incomes";
 import Stuff from "@/components/about/Stuff";
-import CommonSection from "@/ui/CommonSection";
+import { CommonSection } from "@/ui";
 import useHelmet from "@/hooks/useHelmet";
 
 export default function About() {

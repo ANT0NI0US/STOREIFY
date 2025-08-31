@@ -1,8 +1,7 @@
-import { useSelector } from "react-redux";
 import OrderForm from "./OrderForm";
 import TotalCost from "./TotalCost";
-import Empty from "@/ui/Empty";
-import { cartSliceState } from "@/utils/types";
+import { Empty } from "@/ui";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 const formatDate = (date: Date): string => {
   return date.toLocaleDateString("en-GB", {
@@ -17,8 +16,8 @@ const orderDate = formatDate(now);
 const deliveryDate = formatDate(new Date(now.setDate(now.getDate() + 3)));
 
 export default function BillsDetails() {
-  const { totalQuantity, totalAmount, cartItems } = useSelector(
-    (state: cartSliceState) => state.cart,
+  const { totalQuantity, totalAmount, cartItems } = useAppSelector(
+    (state) => state.cart,
   );
 
   if (!cartItems || !cartItems.length)

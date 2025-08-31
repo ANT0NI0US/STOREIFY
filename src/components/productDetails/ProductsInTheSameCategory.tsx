@@ -1,15 +1,13 @@
-import ProductsList from "@/ui/products/ProductsList";
-import HeadText from "@/ui/HeadText";
-import Container from "@/ui/Container";
+import { Container, HeadText, ProductsList } from "@/ui";
 import { productCardProps } from "@/utils/types";
 
-interface sameCategoryProps {
+interface SameCategoryProps {
   sameCategories: productCardProps[];
 }
 
 export default function ProductsInTheSameCategory({
   sameCategories,
-}: sameCategoryProps) {
+}: SameCategoryProps) {
   return (
     <section className="bg-secondary-light-color dark:bg-secondary-dark-color">
       <Container Styles="py-[40px] md:py-[80px]">

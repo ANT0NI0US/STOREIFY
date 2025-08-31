@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { MdEmail, MdSms } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
-import Spinner from "@/ui/spinner/Spinner";
-import { ContactState } from "@/utils/types";
-import { AppDispatch } from "@/store";
+import { Spinner } from "@/ui";
 import { getContactData } from "@/store/service/contactService";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 interface allContactsProps {
   href: string;
@@ -17,11 +16,9 @@ interface allContactsProps {
 }
 
 export default function ContactInformation() {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
-  const { isLoading, Contacts } = useSelector(
-    (state: ContactState) => state.contact,
-  );
+  const { isLoading, Contacts } = useAppSelector((state) => state.contact);
 
   useEffect(() => {
     dispatch(getContactData());

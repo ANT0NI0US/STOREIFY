@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { MultiValue, SingleValue } from "react-select";
 import { IoIosSearch } from "react-icons/io";
-import Choose from "@/ui/Choose";
-import Input from "@/ui/Input";
-import GridContainer from "@/ui/GridContainer";
+import { Choose, GridContainer, Input } from "@/ui";
 import { newProductProps } from "@/utils/types";
 
 const categories = ["Sofa", "Mobile", "Chair", "Watch", "Wireless"];
 const sorts = ["Lowest Price", "Highest Price", "A To Z", "Z To A"];
 
-interface filteredProductsProps {
+interface FilteredProductsProps {
   handleChangingProduct: (newProductData: newProductProps[]) => void;
   allProducts: newProductProps[];
   productsData: newProductProps[];
@@ -23,7 +21,7 @@ interface Option {
 export default function FilterProducts({
   allProducts,
   handleChangingProduct,
-}: filteredProductsProps) {
+}: FilteredProductsProps) {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [sortOption, setSortOption] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");

@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import HeadText from "@/ui/HeadText";
-import StarRatings from "@/ui/StarRatings";
-import Spinner from "@/ui/spinner/Spinner";
-import Container from "@/ui/Container";
-import Slider from "@/ui/Slider";
-import { productState, Review } from "@/utils/types";
-import { AppDispatch } from "@/store";
+import { Container, HeadText, Slider, Spinner, StarRatings } from "@/ui";
+import { Review } from "@/utils/types";
 import { getProducts } from "@/store/service/productService";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function OurHappyCustomers() {
-  const dispatch = useDispatch<AppDispatch>();
-  const { isLoading } = useSelector((state: productState) => state.product);
+  const dispatch = useAppDispatch();
+  const { isLoading } = useAppSelector((state) => state.product);
 
   const [randomReviews, setRandomReviews] = useState<Review[]>([]);
 

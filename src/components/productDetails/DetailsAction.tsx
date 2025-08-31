@@ -1,12 +1,11 @@
-import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { MdAddShoppingCart } from "react-icons/md";
 import { RiHeartAddLine } from "react-icons/ri";
-import Button from "@/ui/Button";
-import { cartActions } from "@/store/slice/cartSlice";
-import { AppDispatch } from "@/store";
+import { Button } from "@/ui";
+import { addItem, addPerfectItem } from "@/store/slice/cartSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
-interface actionsProps {
+interface ActionsProps {
   id: string;
   productName: string;
   imgUrl: string;
@@ -18,11 +17,11 @@ export default function DetailsAction({
   productName,
   price,
   imgUrl,
-}: actionsProps) {
-  const dispatch = useDispatch<AppDispatch>();
+}: ActionsProps) {
+  const dispatch = useAppDispatch();
   const addToCart = () => {
     dispatch(
-      cartActions.addItem({
+      addItem({
         id,
         productName,
         price,
@@ -34,7 +33,7 @@ export default function DetailsAction({
 
   const addToFavorite = () => {
     dispatch(
-      cartActions.addPerfectItem({
+      addPerfectItem({
         id,
         productName,
         price,
@@ -47,8 +46,9 @@ export default function DetailsAction({
     <div className="flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start">
       <Button
         onClick={addToCart}
-        AriaLabel="Add to cart"
-        Font="w-full! sm:w-[200px]!"
+        aria-label="Add to cart"
+        title="Add to cart"
+        styles="w-full! sm:w-[200px]!"
       >
         <MdAddShoppingCart />
         <span>Add to Cart</span>
@@ -56,8 +56,9 @@ export default function DetailsAction({
 
       <Button
         onClick={addToFavorite}
-        AriaLabel="Add to favorite"
-        Font="w-full! sm:w-[200px]!"
+        aria-label="Add to favorite"
+        title="Add to favorite"
+        styles="w-full! sm:w-[200px]!"
       >
         <RiHeartAddLine />
         <span>Add to Favorites</span>

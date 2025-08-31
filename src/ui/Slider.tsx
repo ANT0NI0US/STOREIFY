@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 import Carousel from "react-multi-carousel";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
-interface sliderProps {
-  children: React.ReactNode;
+interface SliderProps {
+  children: ReactNode;
 }
 
 const responsive = {
@@ -24,7 +25,7 @@ const responsive = {
   },
 };
 
-export default function Slider({ children }: sliderProps) {
+export default function Slider({ children }: SliderProps) {
   return (
     <Carousel
       additionalTransfrom={0}

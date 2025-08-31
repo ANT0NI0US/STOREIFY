@@ -1,17 +1,21 @@
 import { TbListDetails } from "react-icons/tb";
 import OrderDetails from "./OrderDetails";
-import Modal from "@/ui/Modal";
-import Button from "@/ui/Button";
+import { Button, Modal } from "@/ui";
 
-interface orderDetailsProps {
+interface OrderDetailsProps {
   selectedOrderId: string | undefined;
 }
 
-export default function ShowOrder({ selectedOrderId }: orderDetailsProps) {
+export default function ShowOrder({ selectedOrderId }: OrderDetailsProps) {
   return (
     <Modal>
       <Modal.Open opens="orderDetails">
-        <Button AriaLabel="show order" variation="secondary" size="actions">
+        <Button
+          aria-label="show order"
+          title="show order"
+          variation="secondary"
+          size="actions"
+        >
           <TbListDetails />
         </Button>
       </Modal.Open>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import Button from "@/ui/Button";
-import Container from "@/ui/Container";
+import { Button, Container } from "@/ui";
 
 const Year = new Date().getFullYear();
 
@@ -30,9 +29,10 @@ export default function Banner() {
               convenience.
             </p>
             <Button
-              AriaLabel="Go-To-Shop"
-              To="/shop"
-              Font="mx-auto w-[150px]! md:mx-0"
+              aria-label="Go-To-Shop"
+              title="Go-To-Shop"
+              to="/shop"
+              styles="mx-auto w-[150px]! md:mx-0"
             >
               SHOP NOW
             </Button>
