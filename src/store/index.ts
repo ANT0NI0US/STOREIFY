@@ -6,7 +6,7 @@ import ordersSlice from "./slice/ordersSlice";
 import loginSlice from "./slice/loginSlice";
 import contactSlice from "./slice/contactSlice";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     login: loginSlice,
     cart: produceSlice,
@@ -17,5 +17,5 @@ const store = configureStore({
   },
 });
 
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-export default store;

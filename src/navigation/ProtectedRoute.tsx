@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
-import Spinner from "@/ui/spinner/Spinner";
-import { loginState } from "@/utils/types";
+import { Spinner } from "@/ui";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function ProtectedRoute() {
   const navigate = useNavigate();
-  const { isLoading, isAuthenticated } = useSelector(
-    (state: loginState) => state.login,
-  );
+  const { isLoading, isAuthenticated } = useAppSelector((state) => state.login);
 
   useEffect(() => {
     if (!isAuthenticated && !isLoading) navigate("/login", { replace: true });

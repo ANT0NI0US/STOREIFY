@@ -1,18 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import FilterProducts from "@/components/shop/FilterProducts";
 import Products from "@/components/shop/Products";
-import CommonSection from "@/ui/CommonSection";
-import Container from "@/ui/Container";
-import { newProductProps, productState } from "@/utils/types";
+import { CommonSection, Container } from "@/ui";
+import { newProductProps } from "@/utils/types";
 import { getProducts } from "@/store/service/productService";
-import { AppDispatch } from "@/store";
 import useHelmet from "@/hooks/useHelmet";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function Shop() {
   useHelmet("Products");
 
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const [productsData, setProductData] = useState<newProductProps[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -24,9 +23,7 @@ export default function Shop() {
     [],
   );
 
-  const { isLoading, allProducts } = useSelector(
-    (state: productState) => state.product,
-  );
+  const { isLoading, allProducts } = useAppSelector((state) => state.product);
 
   useEffect(() => {
     dispatch(getProducts())

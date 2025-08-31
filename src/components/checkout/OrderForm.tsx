@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
 import {
   MdDriveFileRenameOutline,
   MdOutlineMailOutline,
@@ -12,16 +11,8 @@ import { AiOutlinePhone } from "react-icons/ai";
 import { FaRegAddressBook } from "react-icons/fa";
 import { LiaCitySolid } from "react-icons/lia";
 import { IoQrCodeOutline } from "react-icons/io5";
-import Input from "@/ui/Input";
-import Button from "@/ui/Button";
-import {
-  CartItem,
-  newOrderProps,
-  order,
-  orderState,
-  userProps,
-  userState,
-} from "@/utils/types";
+import { Button, Input } from "@/ui";
+import { CartItem, newOrderProps, order, userProps } from "@/utils/types";
 import { isOnlySpaces } from "@/utils/helpers";
 import {
   EMAIL_REGEX,
@@ -31,13 +22,14 @@ import {
   PHONE_NUMBER_REGEX,
   PORTAL_CODE,
 } from "@/utils/constants";
-import { AppDispatch } from "@/store";
 import { getUserById } from "@/store/service/userService";
 import { addOrder } from "@/store/service/ordersService";
-import { cartActions } from "@/store/slice/cartSlice";
+import { resetCartItemsAndTotal } from "@/store/slice/cartSlice";
 import useAuth from "@/hooks/useAuth";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
-interface orderFormProps {
+interface OrderFormProps {
   cartItems: CartItem[];
   totalQuantity: number;
   totalAmount: number;
@@ -65,8 +57,8 @@ export default function OrderForm({
   totalAmount,
   orderDate,
   deliveryDate,
-}: orderFormProps) {
-  const dispatch = useDispatch<AppDispatch>();
+}: OrderFormProps) {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const currentUser = useAuth();
 
@@ -81,10 +73,8 @@ export default function OrderForm({
 
   const uid = (currentUser as CurrentUser)?.uid;
 
-  const { user } = useSelector((state: userState) => state.user);
-  const { isLoading: isOrderLoading } = useSelector(
-    (state: orderState) => state.order,
-  );
+  const { user } = useAppSelector((state) => state.user);
+  const { isLoading: isOrderLoading } = useAppSelector((state) => state.order);
 
   const addNewOrder: SubmitHandler<order> = (data) => {
     const { uid, photoURL } = user as userProps;
@@ -101,7 +91,7 @@ export default function OrderForm({
     dispatch(addOrder(orderObj))
       .unwrap()
       .then(() => {
-        dispatch(cartActions.resetCartItemsAndTotal());
+        dispatch(resetCartItemsAndTotal());
         toast.success("order has been submitted");
         reset();
         navigate("/");
@@ -281,7 +271,8 @@ export default function OrderForm({
         />
 
         <Button
-          AriaLabel="Place an order"
+          aria-label="Place an order"
+          title="Place an order"
           type="submit"
           loading={isOrderLoading}
         >

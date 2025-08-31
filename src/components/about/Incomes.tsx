@@ -1,10 +1,7 @@
-import { AiFillShop } from "react-icons/ai";
-import { AiFillDollarCircle } from "react-icons/ai";
+import { AiFillShop, AiFillDollarCircle } from "react-icons/ai";
 import { BiSolidShoppingBags } from "react-icons/bi";
 import { GiTakeMyMoney } from "react-icons/gi";
-import HeadText from "@/ui/HeadText";
-import Widgets from "@/ui/Widgets";
-import Container from "@/ui/Container";
+import { Container, HeadText, Widgets } from "@/ui";
 import { widgetProps } from "@/utils/types";
 
 const incomesData: widgetProps[] = [

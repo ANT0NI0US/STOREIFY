@@ -1,6 +1,5 @@
 import Clock from "./Clock";
-import Button from "@/ui/Button";
-import Container from "@/ui/Container";
+import { Button, Container } from "@/ui";
 
 export default function Offers() {
   return (
@@ -23,7 +22,12 @@ export default function Offers() {
           <h2 className="font-medium">Offer expires in:</h2>
           <Clock />
 
-          <Button AriaLabel="Shopping Now" To="/shop" Font="mx-auto w-[150px]!">
+          <Button
+            aria-label="Shopping Now"
+            title="Shopping Now"
+            to="/shop"
+            styles="mx-auto w-[150px]!"
+          >
             SHOP NOW
           </Button>
         </Container>

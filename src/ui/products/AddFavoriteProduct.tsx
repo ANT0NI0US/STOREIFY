@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { useDispatch, useSelector } from "react-redux";
 import { RiHeartFill, RiHeartLine } from "react-icons/ri";
-import { cartSliceState, newProductProps } from "@/utils/types";
-import { cartActions } from "@/store/slice/cartSlice";
-import { AppDispatch } from "@/store";
+import { newProductProps } from "@/utils/types";
+import { addPerfectItem } from "@/store/slice/cartSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 interface AddFavoriteProductProps {
   item: newProductProps;
@@ -14,9 +14,9 @@ export default function AddFavoriteProduct({
   item,
   viewMode = "grid",
 }: AddFavoriteProductProps) {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
-  const { perfectItems } = useSelector((state: cartSliceState) => state.cart);
+  const { perfectItems } = useAppSelector((state) => state.cart);
   const checkProductExistInPerfectProducts = (id: string) => {
     return perfectItems?.find((item) => item.id === id);
   };
@@ -24,7 +24,7 @@ export default function AddFavoriteProduct({
   const addToFavorite = () => {
     if (item.id) {
       dispatch(
-        cartActions.addPerfectItem({
+        addPerfectItem({
           id: item.id,
           productName: item.productName,
           price: item.price,

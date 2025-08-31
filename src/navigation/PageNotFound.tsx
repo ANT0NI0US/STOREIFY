@@ -1,4 +1,4 @@
-import Button from "@/ui/Button";
+import { Button } from "@/ui";
 
 export default function PageNotFound() {
   return (
@@ -15,11 +15,12 @@ export default function PageNotFound() {
       </p>
 
       <Button
-        To="/"
-        AriaLabel="Go to home"
+        to="/"
+        aria-label="Go to home"
+        title="Go to home"
         variation="secondary"
         replace
-        Font="w-[150px]!"
+        styles="w-[150px]!"
       >
         Go Home &rarr;
       </Button>

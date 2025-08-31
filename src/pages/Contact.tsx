@@ -1,8 +1,7 @@
 import ContactHeader from "@/components/contact/ContactHeader";
 import ContactInformation from "@/components/contact/ContactInformation";
 import ContactForm from "@/components/contact/ContactForm";
-import CommonSection from "@/ui/CommonSection";
-import Container from "@/ui/Container";
+import { CommonSection, Container } from "@/ui";
 import useHelmet from "@/hooks/useHelmet";
 
 export default function Contact() {

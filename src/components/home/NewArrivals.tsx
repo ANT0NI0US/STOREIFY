@@ -1,21 +1,18 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import HeadText from "@/ui/HeadText";
-import ProductsList from "@/ui/products/ProductsList";
-import Spinner from "@/ui/spinner/Spinner";
-import Container from "@/ui/Container";
-import { productCardProps, productState } from "@/utils/types";
+import { Container, HeadText, ProductsList, Spinner } from "@/ui";
+import { productCardProps } from "@/utils/types";
 import { getProducts } from "@/store/service/productService";
-import { AppDispatch } from "@/store";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function NewArrivals() {
   const [mobileWirelessProducts, setMobileWirelessProducts] = useState<
     productCardProps[]
   >([]);
 
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
-  const { isLoading } = useSelector((state: productState) => state.product);
+  const { isLoading } = useAppSelector((state) => state.product);
 
   useEffect(() => {
     dispatch(getProducts())

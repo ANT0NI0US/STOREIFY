@@ -1,8 +1,8 @@
-interface Props {
+interface HeadTextProps {
   text: string;
 }
 
-export default function HeadText({ text }: Props) {
+export default function HeadText({ text }: HeadTextProps) {
   return (
     <h2 className="mb-10 flex flex-row flex-nowrap items-center">
       <span className="border-text-light-color dark:border-text-dark-color block grow border-t" />

@@ -1,7 +1,5 @@
 import CardStuff from "./CardStuff";
-import Slider from "@/ui/Slider";
-import Container from "@/ui/Container";
-import HeadText from "@/ui/HeadText";
+import { Container, HeadText, Slider } from "@/ui";
 
 const AllStuff = [
   {

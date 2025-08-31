@@ -2,7 +2,7 @@ import SiteDescription from "./SiteDescription";
 import TopCategories from "./TopCategories";
 import UsefulLinks from "./UsefulLinks";
 import CopyRight from "./CopyRight";
-import Container from "@/ui/Container";
+import { Container } from "@/ui";
 
 export default function Footer() {
   return (

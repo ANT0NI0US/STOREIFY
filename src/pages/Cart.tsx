@@ -1,6 +1,5 @@
 import CartDetails from "@/components/cart/CartDetails";
-import CommonSection from "@/ui/CommonSection";
-import Container from "@/ui/Container";
+import { CommonSection, Container } from "@/ui";
 import useHelmet from "@/hooks/useHelmet";
 
 export default function Cart() {

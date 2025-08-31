@@ -1,14 +1,14 @@
 import { useState } from "react";
 import AllExistReviews from "./AllExistReviews";
 import TabForm from "./TabForm";
-import Button from "@/ui/Button";
+import { Button } from "@/ui";
 import { Review } from "@/utils/types";
 
-type Props = {
+type ReviewsTabProps = {
   reviews: Review[] | undefined;
 };
 
-export default function ReviewsTab({ reviews }: Props) {
+export default function ReviewsTab({ reviews }: ReviewsTabProps) {
   const [newReviewFormOpen, setNewReviewFormOpen] = useState<boolean>(false);
   return (
     <>
@@ -18,8 +18,9 @@ export default function ReviewsTab({ reviews }: Props) {
       </div>
       <AllExistReviews reviews={reviews} />
       <Button
-        AriaLabel="ReviewForm"
-        Font="xs:w-[200px] w-full mt-3.5 md:mt-5 ms-auto"
+        aria-label="ReviewForm"
+        title="ReviewForm"
+        styles="xs:w-[200px] w-full mt-3.5 md:mt-5 ms-auto"
         onClick={() => setNewReviewFormOpen((prev) => !prev)}
       >
         {newReviewFormOpen ? "Close the Review" : "Write a Review"}

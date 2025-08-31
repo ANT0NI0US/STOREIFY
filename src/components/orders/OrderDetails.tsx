@@ -1,13 +1,10 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import OrderItems from "./OrderItems";
 import OrderDetailsInfo from "./OrderDetailsInfo";
-import Spinner from "@/ui/spinner/Spinner";
-import { orderState } from "@/utils/types";
-import { AppDispatch } from "@/store";
+import { Button, Empty, Spinner } from "@/ui";
 import { getOrderById } from "@/store/service/ordersService";
-import Empty from "@/ui/Empty";
-import Button from "@/ui/Button";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 interface OrderDetailsProps {
   selectedOrderId: string | undefined;
@@ -18,9 +15,9 @@ export default function OrderDetails({
   selectedOrderId,
   onCloseModal,
 }: OrderDetailsProps) {
-  const dispatch = useDispatch<AppDispatch>();
-  const { isCertainOrderLoading, order } = useSelector(
-    (state: orderState) => state.order,
+  const dispatch = useAppDispatch();
+  const { isCertainOrderLoading, order } = useAppSelector(
+    (state) => state.order,
   );
 
   useEffect(() => {
@@ -48,7 +45,12 @@ export default function OrderDetails({
 
       <div className="bg-primary-light-color dark:bg-primary-dark-color rounded-br-lg rounded-bl-lg border-t px-4 py-6">
         <div className="ms-auto w-1/2 sm:w-[30%]">
-          <Button AriaLabel="Close" variation="danger" onClick={onCloseModal}>
+          <Button
+            aria-label="Close"
+            title="Close"
+            variation="danger"
+            onClick={onCloseModal}
+          >
             Close
           </Button>
         </div>

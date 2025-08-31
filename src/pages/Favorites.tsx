@@ -1,13 +1,11 @@
-import { useSelector } from "react-redux";
 import FavoriteProductTable from "@/components/favorites/FavoriteProductTable";
-import CommonSection from "@/ui/CommonSection";
-import Container from "@/ui/Container";
-import { cartSliceState } from "@/utils/types";
+import { CommonSection, Container } from "@/ui";
 import useHelmet from "@/hooks/useHelmet";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function Favorites() {
   useHelmet("Favorites");
-  const { perfectItems } = useSelector((state: cartSliceState) => state.cart);
+  const { perfectItems } = useAppSelector((state) => state.cart);
   return (
     <>
       <CommonSection title="Favorites" />

@@ -1,26 +1,23 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { MdOutlineMailOutline } from "react-icons/md";
 import HeaderAuth from "@/components/auth/HeaderAuth";
 import SignInWithGoogle from "@/components/auth/SignInWithGoogle";
-import Button from "@/ui/Button.tsx";
-import Input from "@/ui/Input.tsx";
-import Checkbox from "@/ui/Checkbox";
-import { loginState } from "@/utils/types";
+import { Button, Checkbox, Input } from "@/ui";
 import { EMAIL_REGEX } from "@/utils/constants.ts";
 import { isOnlySpaces } from "@/utils/helpers.ts";
 import { signInFireBase } from "@/store/service/loginService.ts";
-import { AppDispatch } from "@/store/index.ts";
 import useHelmet from "@/hooks/useHelmet";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
-interface loginFormProps {
+interface LoginFormProps {
   email: string;
   password: string;
   rememberMe: boolean;
 }
 
-const initialState: loginFormProps = {
+const initialState: LoginFormProps = {
   email: "",
   password: "",
   rememberMe: false,
@@ -29,9 +26,9 @@ const initialState: loginFormProps = {
 export default function Login() {
   useHelmet("login");
   const navigate = useNavigate();
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
-  const { isLoading } = useSelector((state: loginState) => state.login);
+  const { isLoading } = useAppSelector((state) => state.login);
 
   const {
     register,
@@ -42,7 +39,7 @@ export default function Login() {
     mode: "onChange",
   });
 
-  const signIn = async (data: loginFormProps) => {
+  const signIn = async (data: LoginFormProps) => {
     await dispatch(signInFireBase(data))
       .unwrap()
       .then(() => {
@@ -104,7 +101,13 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <Button loading={isLoading} AriaLabel="Login" type="submit" Font="my-5">
+        <Button
+          loading={isLoading}
+          aria-label="Login"
+          title="Login"
+          type="submit"
+          styles="my-5"
+        >
           Login
         </Button>
 

@@ -1,29 +1,32 @@
-import { useDispatch } from "react-redux";
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import Button from "@/ui/Button";
+import { Button } from "@/ui";
 import { CartItem } from "@/utils/types";
-import { AppDispatch } from "@/store";
-import { cartActions } from "@/store/slice/cartSlice";
+import {
+  MaximizeQuantityItem,
+  MinimizeQuantityItem,
+} from "@/store/slice/cartSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
 interface QuantityControlProps {
   item: CartItem;
 }
 
 export default function QuantityControl({ item }: QuantityControlProps) {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
   const handleDecrease = () => {
-    dispatch(cartActions.MinimizeQuantityItem(item?.id));
+    dispatch(MinimizeQuantityItem(item?.id));
   };
 
   const handleIncrease = () => {
-    dispatch(cartActions.MaximizeQuantityItem(item?.id));
+    dispatch(MaximizeQuantityItem(item?.id));
   };
   return (
     <div className="flexBetween bg-secondary-light-color dark:bg-secondary-dark-color gap-5 rounded-md">
       <Button
         variation="secondary"
-        AriaLabel="minus Product"
+        aria-label="minus Product"
+        title="minus Product"
         disabled={item?.quantity === 1}
         onClick={handleDecrease}
         size="actions"
@@ -33,7 +36,8 @@ export default function QuantityControl({ item }: QuantityControlProps) {
       <span className="text-2xl font-extrabold">{item?.quantity}</span>
       <Button
         variation="secondary"
-        AriaLabel="Plus Product"
+        aria-label="Plus Product"
+        title="Plus Product"
         onClick={handleIncrease}
         size="actions"
       >

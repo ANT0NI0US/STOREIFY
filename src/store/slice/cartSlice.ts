@@ -129,6 +129,15 @@ const cartSlice = createSlice({
   },
 });
 
-export const cartActions = cartSlice.actions;
+export const {
+  addItem,
+  MaximizeQuantityItem,
+  MinimizeQuantityItem,
+  deleteItem,
+  addPerfectItem,
+  removeFavoriteItem,
+  resetCartItemsAndTotal,
+  returnToInitialState,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

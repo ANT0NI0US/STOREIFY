@@ -1,13 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { MdDriveFileRenameOutline, MdOutlineMailOutline } from "react-icons/md";
 import HeaderAuth from "@/components/auth/HeaderAuth";
 import SignInWithGoogle from "@/components/auth/SignInWithGoogle";
-import Button from "@/ui/Button";
-import Input from "@/ui/Input";
-import { loginState } from "@/utils/types";
+import { Button, Input } from "@/ui";
 import { isOnlySpaces, isPasswordValid } from "@/utils/helpers";
 import {
   EMAIL_REGEX,
@@ -15,8 +12,9 @@ import {
   MIN_INPUT_LENGTH,
 } from "@/utils/constants";
 import { signUpFirebase } from "@/store/service/loginService.ts";
-import { AppDispatch } from "@/store";
 import useHelmet from "@/hooks/useHelmet";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 const allowedTypes = [
   "image/jpeg",
@@ -30,7 +28,7 @@ const allowedTypes = [
   "image/svg",
 ];
 
-interface signUpFormProps {
+interface SignUpFormProps {
   name: string;
   email: string;
   password: string;
@@ -38,7 +36,7 @@ interface signUpFormProps {
   file: File | null;
 }
 
-const initialState: signUpFormProps = {
+const initialState: SignUpFormProps = {
   name: "",
   email: "",
   password: "",
@@ -50,9 +48,9 @@ export default function SignUp() {
   useHelmet("Sign up");
 
   const navigate = useNavigate();
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
-  const { isLoading } = useSelector((state: loginState) => state.login);
+  const { isLoading } = useAppSelector((state) => state.login);
 
   const {
     register,
@@ -73,8 +71,8 @@ export default function SignUp() {
     const { name, files } = e.target;
 
     if (files && files[0]) {
-      setValue(name as keyof signUpFormProps, files[0]);
-      await trigger(name as keyof signUpFormProps);
+      setValue(name as keyof SignUpFormProps, files[0]);
+      await trigger(name as keyof SignUpFormProps);
     }
   };
 
@@ -97,7 +95,7 @@ export default function SignUp() {
     }
   }
 
-  const signUp = async (data: signUpFormProps) => {
+  const signUp = async (data: SignUpFormProps) => {
     const finalData = {
       name: data.name,
       email: data.email,
@@ -227,9 +225,10 @@ export default function SignUp() {
         </div>
         <Button
           loading={isLoading}
-          AriaLabel="New Account"
+          aria-label="New Account"
+          title="New Account"
           type="submit"
-          Font="my-5"
+          styles="my-5"
         >
           Create An Account
         </Button>

@@ -1,22 +1,21 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import CertainProductDetail from "@/components/productDetails/CertainProductDetail";
 import DescriptionReviews from "@/components/productDetails/DescriptionReviews";
 import ProductsInTheSameCategory from "@/components/productDetails/ProductsInTheSameCategory";
-import CommonSection from "@/ui/CommonSection";
-import Spinner from "@/ui/spinner/Spinner";
-import { productCardProps, productState } from "@/utils/types";
+import { CommonSection, Spinner } from "@/ui";
+import { productCardProps } from "@/utils/types";
 import { getProductById, getProducts } from "@/store/service/productService";
-import { AppDispatch } from "@/store";
 import useHelmet from "@/hooks/useHelmet";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function ProductDetails() {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
 
-  const { isLoading, allProducts, product } = useSelector(
-    (state: productState) => state.product,
+  const { isLoading, allProducts, product } = useAppSelector(
+    (state) => state.product,
   ) as {
     isLoading: boolean;
     allProducts: productCardProps[];

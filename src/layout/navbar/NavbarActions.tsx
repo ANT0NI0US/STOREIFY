@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import type { IconType } from "react-icons";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { RiHeartLine } from "react-icons/ri";
-import type { IconType } from "react-icons";
-import { cartSliceState } from "@/utils/types";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
-interface allActionsProps {
+interface AllActionsProps {
   icon: IconType;
   text: string;
   href: string;
@@ -15,11 +14,11 @@ interface allActionsProps {
 export default function NavbarActions() {
   const navigate = useNavigate();
 
-  const { totalQuantity, totalFavoriteItemsQuantity } = useSelector(
-    (state: cartSliceState) => state.cart,
+  const { totalQuantity, totalFavoriteItemsQuantity } = useAppSelector(
+    (state) => state.cart,
   );
 
-  const allActions: Array<allActionsProps> = [
+  const allActions: Array<AllActionsProps> = [
     {
       icon: RiHeartLine,
       text: "Favorites",
@@ -36,7 +35,7 @@ export default function NavbarActions() {
 
   return (
     <div className="flex items-center justify-center gap-3 sm:gap-2.5">
-      {allActions.map(({ text, href, icon: Icon, value }: allActionsProps) => (
+      {allActions.map(({ text, href, icon: Icon, value }: AllActionsProps) => (
         <div
           key={text}
           title={text}

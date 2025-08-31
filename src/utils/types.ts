@@ -9,10 +9,6 @@ export interface loginServiceState {
   isAuthenticated: boolean | undefined;
   token: string | null;
 }
-
-export interface loginState {
-  login: loginServiceState;
-}
 /*----------------------------------------  NAVBAR + FOOTER ----------------------------------------*/
 export interface arrLinks {
   path: string;
@@ -49,10 +45,6 @@ export interface CartState {
   perfectItems: Item[];
   totalFavoriteItemsQuantity: number;
 }
-
-export interface cartSliceState {
-  cart: CartState;
-}
 /*----------------------------------------  ADMIN ----------------------------------------*/
 /* ALL USERS */
 export interface userProps {
@@ -72,20 +64,12 @@ export interface userServiceState {
   errors: string | null;
 }
 
-export interface userState {
-  user: userServiceState;
-}
-
 /* ALL PRODUCTS */
 export interface productServiceState {
   isLoading: boolean;
   product: newProductProps | object;
   errors: null | string;
   allProducts: newProductProps[];
-}
-
-export interface productState {
-  product: productServiceState;
 }
 
 export interface order {
@@ -128,10 +112,6 @@ export interface orderServiceState {
   order: ordersFireBase | null;
   allOrders: ordersFireBase[];
 }
-
-export interface orderState {
-  order: orderServiceState;
-}
 /*----------------------------------------  UI ----------------------------------------*/
 /*  WIDGETS */
 export interface widgetProps {
@@ -140,9 +120,12 @@ export interface widgetProps {
   description: string;
 }
 
-export interface WidgetsProps {
+export interface WidgetType {
+  type?: "color" | "noColor";
+}
+
+export interface WidgetsProps extends WidgetType {
   widgetsData: widgetProps[];
-  type?: string;
 }
 
 /*  PRODUCTS */
@@ -181,8 +164,4 @@ export interface ContactServiceState {
   isLoading: boolean;
   Contacts: ContactDataProps | null;
   errors: null | string;
-}
-
-export interface ContactState {
-  contact: ContactServiceState;
 }

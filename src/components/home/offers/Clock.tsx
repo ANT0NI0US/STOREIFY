@@ -1,10 +1,10 @@
 import ClockList from "./ClockList";
 
-interface clockProps {
+interface ClockProps {
   label: string;
 }
 
-const allClocks: Array<clockProps> = [
+const allClocks: Array<ClockProps> = [
   {
     label: "days",
   },

@@ -1,13 +1,12 @@
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { AppDispatch } from "@/store";
 import { signInWithGoogle } from "@/store/service/loginService";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
 export default function SignInWithGoogle() {
   const navigate = useNavigate();
 
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
   const handleGoogleLogin = () => {
     dispatch(signInWithGoogle())

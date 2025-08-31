@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import PageNotFound from "./PageNotFound";
-import Spinner from "@/ui/spinner/Spinner";
+import { Spinner } from "@/ui";
 import AuthLayout from "@/layout/AuthLayout";
 import AppLayout from "@/layout/AppLayout";
 

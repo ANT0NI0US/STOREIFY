@@ -1,4 +1,4 @@
-interface stuffProps {
+interface StuffProps {
   singleStuff: {
     id: number;
     name: string;
@@ -7,7 +7,7 @@ interface stuffProps {
   };
 }
 
-export default function CardStuff({ singleStuff }: stuffProps) {
+export default function CardStuff({ singleStuff }: StuffProps) {
   const { id, image, name, job } = singleStuff;
   return (
     <>

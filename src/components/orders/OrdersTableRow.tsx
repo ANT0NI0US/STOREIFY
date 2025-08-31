@@ -1,10 +1,10 @@
 import { parse, isBefore } from "date-fns";
 import { FaCheck, FaXmark } from "react-icons/fa6";
 import ShowOrder from "./ShowOrder";
-import Table from "@/ui/Table";
+import { Table } from "@/ui";
 import { ordersFireBase } from "@/utils/types";
 
-type orderProps = {
+type OrderProps = {
   order: ordersFireBase;
 };
 
@@ -14,7 +14,7 @@ function isDateInThePast(deliveredDate: string): boolean {
   return isBefore(endDateObject, currentDate);
 }
 
-export default function OrdersTableRow({ order }: orderProps) {
+export default function OrdersTableRow({ order }: OrderProps) {
   return (
     <Table.Row key={order.id}>
       <Table.Cell>{order.name}</Table.Cell>

@@ -1,21 +1,19 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import BigScreenLinks from "./BigScreenLinks";
 import NavbarActions from "./NavbarActions";
 import ToggleSidebar from "./ToggleSidebar";
 import SmallScreenLinks from "./SmallScreenLinks";
-import Logo from "@/ui/Logo";
-import Container from "@/ui/Container";
 import ProfilePhoto from "./ProfilePhoto";
 import { userLinks } from "./links";
-import { loginState } from "@/utils/types";
+import { Container, Logo } from "@/ui";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 export default function Navbar() {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   const toggleSidebar = () => setShowSidebar((prev) => !prev);
   const closeSidebar = () => setShowSidebar(false);
 
-  const { isAuthenticated } = useSelector((state: loginState) => state.login);
+  const { isAuthenticated } = useAppSelector((state) => state.login);
   const filteredLinks = userLinks.filter((link) => {
     if (link.path === "orders" && !isAuthenticated) return false;
     return true;

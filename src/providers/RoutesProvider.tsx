@@ -1,8 +1,10 @@
+import { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
-interface Props {
-  children: React.ReactNode;
+
+interface RoutesProviderProps {
+  children: ReactNode;
 }
 
-export default function RoutesProvider({ children }: Props) {
+export default function RoutesProvider({ children }: RoutesProviderProps) {
   return <BrowserRouter>{children}</BrowserRouter>;
 }

@@ -1,9 +1,8 @@
 import { FaCheckCircle } from "react-icons/fa";
-import GridContainer from "@/ui/GridContainer";
-import StarRatings from "@/ui/StarRatings";
+import { GridContainer, StarRatings } from "@/ui";
 import { Review } from "@/utils/types";
 
-type Props = {
+type ReviewsProps = {
   reviews: Review[] | undefined;
 };
 
@@ -14,7 +13,7 @@ function adjustRating(rating: number | undefined | null) {
   return Math.round(rating);
 }
 
-export default function AllExistReviews({ reviews }: Props) {
+export default function AllExistReviews({ reviews }: ReviewsProps) {
   if (reviews?.length === 0) {
     return (
       <div className="flexCenter pt-[80px] text-center text-xl font-semibold">

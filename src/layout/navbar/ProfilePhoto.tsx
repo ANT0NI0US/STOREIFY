@@ -2,20 +2,19 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase.config";
-import { AppDispatch } from "@/store";
-import { cartActions } from "@/store/slice/cartSlice";
+import { returnToInitialState } from "@/store/slice/cartSlice";
+import { logoutUser } from "@/store/slice/loginSlice";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 import useAuth from "@/hooks/useAuth";
-import { logoutUser } from "@/store/slice/loginSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
 export default function ProfilePhoto() {
   const [toggleImageMenu, setToggleImageMenu] = useState<boolean>(false);
   const closeImageMenu = () => setToggleImageMenu(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const currentUser = useAuth();
 
   const ref = useOutsideClick<HTMLDivElement>(() => closeImageMenu());
@@ -27,7 +26,7 @@ export default function ProfilePhoto() {
         dispatch(logoutUser());
         navigate("/login", { replace: true });
         setToggleImageMenu(false);
-        dispatch(cartActions.returnToInitialState());
+        dispatch(returnToInitialState());
       })
       .catch((error) => {
         toast.error(error.message);

@@ -1,37 +1,31 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import StarRatings from "@/ui/StarRatings";
-import Button from "@/ui/Button";
-import Input from "@/ui/Input";
-import TextArea from "@/ui/TextArea";
+import { Button, Input, StarRatings, TextArea } from "@/ui";
 import { isOnlySpaces } from "@/utils/helpers";
-import { productState } from "@/utils/types";
-import { AppDispatch } from "@/store";
 import { addReviewToProduct } from "@/store/service/productService";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
-interface newReviewProps {
+interface NewReviewProps {
   name: string;
   text: string;
   rating: number | null;
 }
 
-const initialState: newReviewProps = {
+const initialState: NewReviewProps = {
   name: "",
   text: "",
   rating: 5,
 };
 
 export default function TabForm() {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
 
   const [rate, setRate] = useState<number | null>(5);
-  const { isLoading }: { isLoading: boolean } = useSelector(
-    (state: productState) => state.product,
-  );
+  const { isLoading } = useAppSelector((state) => state.product);
 
   const {
     register,
@@ -43,7 +37,7 @@ export default function TabForm() {
     mode: "onChange",
   });
 
-  const handleAddReview = (data: newReviewProps) => {
+  const handleAddReview = (data: NewReviewProps) => {
     if (id) {
       const newReview = {
         ...data,
@@ -103,7 +97,12 @@ export default function TabForm() {
           error={errors?.text?.message}
         />
 
-        <Button AriaLabel="submitReview" type="submit" loading={isLoading}>
+        <Button
+          aria-label="Submit Review"
+          title="Submit Review"
+          type="submit"
+          loading={isLoading}
+        >
           Submit
         </Button>
       </form>
